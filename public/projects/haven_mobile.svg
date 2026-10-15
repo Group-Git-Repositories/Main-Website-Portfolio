@@ -11,12 +11,12 @@
   
   <rect x="0" y="36" width="420" height="46" fill="#FFFFFF" stroke="#E2E8F0"/>
   <circle cx="25" cy="59" r="8" fill="#059669"/>
-  <text x="40" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#0F172A">Real Estate & Rentals</text>
+  <text x="40" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#0F172A">Real Estate &amp; Rentals</text>
   
   <rect x="0" y="82" width="420" height="240" fill="#ECFDF5"/>
   <rect x="25" y="105" width="120" height="20" rx="10" fill="#FFFFFF" stroke="#059669" stroke-opacity="0.4"/>
   <text x="35" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="9" fill="#059669">// Property Showcase</text>
-  <text x="25" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#0F172A">Real Estate & Rentals</text>
+  <text x="25" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#0F172A">Real Estate &amp; Rentals</text>
   <text x="25" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569">Clean property listings with direct agent WhatsApp inquiry</text>
   <rect x="25" y="215" width="120" height="34" rx="6" fill="#059669"/>
   <text x="48" y="236" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#FFFFFF">Order Now</text>

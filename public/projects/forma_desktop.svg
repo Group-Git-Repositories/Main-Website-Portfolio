@@ -12,7 +12,7 @@
   <!-- Website Header -->
   <rect x="0" y="44" width="1200" height="56" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
   <circle cx="50" cy="72" r="12" fill="#DB2777"/>
-  <text x="70" y="77" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="15" fill="#0F172A">Creative & Personal Portfolio</text>
+  <text x="70" y="77" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="15" fill="#0F172A">Creative &amp; Personal Portfolio</text>
   <text x="780" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748B">Home   •   About   •   Catalog   •   Contact</text>
   <rect x="1060" y="58" width="100" height="28" rx="6" fill="#DB2777"/>
   <text x="1084" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF">Inquire</text>
@@ -21,7 +21,7 @@
   <rect x="0" y="100" width="1200" height="260" fill="#FDF2F8"/>
   <rect x="50" y="130" width="140" height="24" rx="12" fill="#FFFFFF" stroke="#DB2777" stroke-opacity="0.4"/>
   <text x="65" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#DB2777">// Visual Portfolio</text>
-  <text x="50" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="34" fill="#0F172A">Creative & Personal Portfolio</text>
+  <text x="50" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="34" fill="#0F172A">Creative &amp; Personal Portfolio</text>
   <text x="50" y="230" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#475569">Minimalist visual showcase that puts your best work first</text>
 
   <rect x="50" y="260" width="140" height="38" rx="8" fill="#DB2777"/>

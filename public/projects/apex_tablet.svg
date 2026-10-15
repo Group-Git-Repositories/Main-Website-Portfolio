@@ -11,13 +11,13 @@
   
   <rect x="0" y="40" width="800" height="50" fill="#FFFFFF" stroke="#E2E8F0"/>
   <circle cx="35" cy="65" r="10" fill="#4F46E5"/>
-  <text x="55" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="14" fill="#0F172A">Business & Office Profile</text>
+  <text x="55" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="14" fill="#0F172A">Business &amp; Office Profile</text>
   
   <rect x="0" y="90" width="800" height="210" fill="#EEF2FF"/>
   <rect x="35" y="115" width="130" height="22" rx="11" fill="#FFFFFF" stroke="#4F46E5" stroke-opacity="0.4"/>
   <text x="48" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="10" fill="#4F46E5">// Corporate Profile</text>
-  <text x="35" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="26" fill="#0F172A">Business & Office Profile</text>
-  <text x="35" y="198" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#475569">Professional company presence for consultancies & firms</text>
+  <text x="35" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="26" fill="#0F172A">Business &amp; Office Profile</text>
+  <text x="35" y="198" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#475569">Professional company presence for consultancies &amp; firms</text>
   
   <rect x="35" y="225" width="120" height="34" rx="6" fill="#4F46E5"/>
   <text x="55" y="246" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#FFFFFF">View Details</text>

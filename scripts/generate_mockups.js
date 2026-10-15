@@ -4,6 +4,16 @@ const path = require('path');
 const dir = path.join(process.cwd(), 'public', 'projects');
 if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
+function escapeXml(unsafe) {
+  if (typeof unsafe !== 'string') return unsafe;
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 const projects = [
   {
     id: 'aura',
@@ -91,7 +101,17 @@ const devices = [
   { type: 'mobile', w: 420, h: 750 }
 ];
 
-projects.forEach(p => {
+projects.forEach(pRaw => {
+  const p = {
+    ...pRaw,
+    title: escapeXml(pRaw.title),
+    tagline: escapeXml(pRaw.tagline),
+    badge: escapeXml(pRaw.badge),
+    cards: pRaw.cards.map(c => ({
+      name: escapeXml(c.name),
+      price: escapeXml(c.price)
+    }))
+  };
   devices.forEach(d => {
     const filename = `${p.id}_${d.type}.svg`;
     let body = '';
