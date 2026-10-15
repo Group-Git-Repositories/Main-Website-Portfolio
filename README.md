@@ -64,8 +64,8 @@ SESSION_SECRET=your_32_character_random_secret_key
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the workshop showroom.  
-Access [http://localhost:3000/admin](http://localhost:3000/admin) to manage content.
+Open [http://localhost:3010](http://localhost:3010) to view the workshop showroom.  
+Access [http://localhost:3010/admin](http://localhost:3010/admin) to manage content.
 
 ---
 
