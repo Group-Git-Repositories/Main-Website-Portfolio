@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
+  <defs>
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7F00FF"/>
+      <stop offset="100%" stop-color="#00F2FE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1050" height="600" fill="#090D18"/>
+  <rect x="25" y="25" width="1000" height="550" rx="14" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1.5"/>
+
+  <!-- Left Cyber Color Accent Pillar -->
+  <rect x="0" y="0" width="16" height="600" fill="url(#edgeGrad)"/>
+
+  <!-- Header Title -->
+  <g transform="translate(100, 110)">
+    <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="2">HOPE <tspan font-size="20" font-weight="400" fill="#64748B">// Direct Inquiries &amp; Channels</tspan></text>
+  </g>
+
+  <!-- Contact Rows -->
+  <g transform="translate(100, 170)">
+    
+    <!-- Row 1: LinkedIn -->
+    <g transform="translate(0, 0)">
+      <!-- Icon -->
+      <path d="M22 0h-20c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2v-20c0-1.1-.9-2-2-2zm-14 20h-4v-12h4v12zm-2-13.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zm16 13.6h-4v-6.2c0-1.5-.6-2.5-1.9-2.5s-1.8 1-1.8 2.5v6.2h-4v-12h4v1.8c.6-1 1.7-1.8 3.5-1.8 2.7 0 4.2 1.8 4.2 5.2v6.8z" fill="#00F2FE" transform="scale(1.4)"/>
+      <text x="60" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="23" font-weight="700" fill="#FFFFFF">LinkedIn:</text>
+      <text x="180" y="24" font-family="'JetBrains Mono', monospace" font-size="23" fill="#94A3B8">linkedin.com/company/hope-web-dev</text>
+    </g>
+
+    <!-- Row 2: Telegram -->
+    <g transform="translate(0, 80)">
+      <!-- Icon -->
+      <path d="M12 0c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12-5.4-12-12-12zm5.9 8.2l-2 9.3c-.1.7-.5.8-1.1.5l-3-2.2-1.4 1.4c-.1.2-.4.3-.6.3l.2-3.1 5.6-5c.2-.2-.1-.3-.4-.1l-6.9 4.3-3-.9c-.6-.2-.7-.6.1-1l11.6-4.5c.5-.2 1 .1.8.9z" fill="#00F2FE" transform="scale(1.4)"/>
+      <text x="60" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="23" font-weight="700" fill="#FFFFFF">Telegram:</text>
+      <text x="180" y="24" font-family="'JetBrains Mono', monospace" font-size="23" fill="#94A3B8">@hopewebdevelopment</text>
+    </g>
+
+    <!-- Row 3: Email -->
+    <g transform="translate(0, 160)">
+      <!-- Icon -->
+      <path d="M0 3v18h24v-18h-24zm21.5 2l-9.5 7.7-9.5-7.7h19zm-19.5 14v-11.8l10 8.1 10-8.1v11.8h-20z" fill="#00F2FE" transform="scale(1.4)"/>
+      <text x="60" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="23" font-weight="700" fill="#FFFFFF">Email:</text>
+      <text x="180" y="24" font-family="'JetBrains Mono', monospace" font-size="23" fill="#94A3B8">contact@hopewebdev.com</text>
+    </g>
+
+    <!-- Row 4: Phone -->
+    <g transform="translate(0, 240)">
+      <!-- Icon -->
+      <path d="M20 22.6l-3.5-6.8c-.1 0-2 1-2.1 1-2.2 1.1-6.8-7.8-4.6-9l2.1-1-3.5-6.8-2.1 1c-7.2 3.8 4.2 26 11.6 22.6l2.1-1z" fill="#00F2FE" transform="scale(1.2)"/>
+      <text x="60" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="23" font-weight="700" fill="#FFFFFF">Phone:</text>
+      <text x="180" y="24" font-family="'JetBrains Mono', monospace" font-size="23" fill="#94A3B8">+1 (800) 555-4673</text>
+    </g>
+
+  </g>
+</svg>

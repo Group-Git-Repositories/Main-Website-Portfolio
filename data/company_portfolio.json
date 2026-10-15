@@ -1,0 +1,313 @@
+{
+  "company": {
+    "name": "HOPE Web Development",
+    "legalName": "Hope Teams Digital Solutions",
+    "tagline": "Precision Engineered Web Architecture & Digital Showroom",
+    "shortAbout": "We design and engineer bespoke, high-conversion web applications, digital showrooms, and enterprise platforms tailored for modern businesses.",
+    "location": "Addis Ababa, Ethiopia",
+    "email": "contact@hopeteams.com",
+    "phone": "+251 973 951 191",
+    "github": "https://github.com/Group-Git-Repositories/Main-Website-Portfolio",
+    "channels": {
+      "whatsapp": {
+        "enabled": true,
+        "number": "+251973951191",
+        "defaultMessage": "Hello HOPE Web Development, I am interested in building a website."
+      },
+      "telegram": {
+        "enabled": true,
+        "username": "TeddyEt"
+      },
+      "quoteForm": {
+        "enabled": true
+      }
+    }
+  },
+  "hero": {
+    "badgeText": "Crafting High-Performance Web Platforms",
+    "headline": "Engineering Websites That Command Authority and Drive Measurable Growth",
+    "subheadline": "Explore our interactive workshop showroom of live websites and bespoke digital architectures. Test them across real device viewports and commission your build today.",
+    "primaryCta": "Explore Workshop Showroom",
+    "secondaryCta": "Build an Instant Estimate"
+  },
+  "settings": {
+    "accentTheme": "neon-cyan",
+    "allowIframePreview": true
+  },
+  "projects": [
+    {
+      "id": "proj-ecom-01",
+      "title": "Aura Luxury Retail",
+      "tagline": "Headless e-commerce storefront with single-page checkout and automated stock sync",
+      "category": "e-Commerce",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/aura_desktop.svg",
+        "tablet": "/projects/aura_tablet.svg",
+        "mobile": "/projects/aura_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/aura-store",
+      "deliverables": [
+        "Headless Next.js Storefront",
+        "Stripe & Multi-Currency Payment",
+        "Real-Time Inventory Sync",
+        "Sub-Second Server-Side Rendering"
+      ],
+      "specs": {
+        "turnaroundDays": 10,
+        "showTurnaround": true,
+        "startingPrice": "$1,450",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Engineered for an international luxury retail brand requiring instant page transitions, fluid filtering, and an frictionless mobile checkout experience.",
+      "techStack": ["Next.js", "Tailwind CSS", "Stripe API", "Node.js"]
+    },
+    {
+      "id": "proj-corp-02",
+      "title": "Apex Capital Advisory",
+      "tagline": "Corporate consulting & institutional finance portal with client appointment desk",
+      "category": "Corporate & B2B",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/apex_desktop.svg",
+        "tablet": "/projects/apex_tablet.svg",
+        "mobile": "/projects/apex_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/apex-capital",
+      "deliverables": [
+        "Interactive Meeting Scheduler",
+        "Client Portal Authentication",
+        "Compliance & Privacy Architecture",
+        "Institutional Whitepaper Library"
+      ],
+      "specs": {
+        "turnaroundDays": 7,
+        "showTurnaround": true,
+        "startingPrice": "$950",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Designed for a top-tier asset management firm, conveying confidence, precision typography, and clean data disclosures for institutional partners.",
+      "techStack": ["React", "Next.js", "Tailwind CSS", "PostgreSQL"]
+    },
+    {
+      "id": "proj-rest-03",
+      "title": "Lumina Bistro & Wine Bar",
+      "tagline": "Atmospheric culinary experience with digital sommelier menu and instant table booking",
+      "category": "Restaurant & Hospitality",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/lumina_desktop.svg",
+        "tablet": "/projects/lumina_tablet.svg",
+        "mobile": "/projects/lumina_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/lumina-bistro",
+      "deliverables": [
+        "Real-Time Table Reservation Desk",
+        "Interactive Digital Tasting Menu",
+        "Chef's Event Announcement Hub",
+        "Location & Geo-Directions Integration"
+      ],
+      "specs": {
+        "turnaroundDays": 5,
+        "showTurnaround": true,
+        "startingPrice": "$750",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Bespoke hospitality showcase prioritizing fast mobile ordering, rich food photography cards, and WhatsApp table reservation triggers.",
+      "techStack": ["Next.js", "Tailwind CSS", "WhatsApp API"]
+    },
+    {
+      "id": "proj-real-04",
+      "title": "Haven Estates & Residences",
+      "tagline": "High-end residential real estate portal featuring interactive floorplans and inquiry tours",
+      "category": "Real Estate & Property",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/haven_desktop.svg",
+        "tablet": "/projects/haven_tablet.svg",
+        "mobile": "/projects/haven_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/haven-estates",
+      "deliverables": [
+        "Advanced Property Search & Filter",
+        "Virtual Tour & Floorplan Lightbox",
+        "Agent WhatsApp Direct Inquiries",
+        "Automated Lead Capture Routing"
+      ],
+      "specs": {
+        "turnaroundDays": 8,
+        "showTurnaround": true,
+        "startingPrice": "$1,200",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Built for modern real estate developers with smooth search filtering by neighborhood, bedrooms, price tier, and immediate broker dispatch.",
+      "techStack": ["Next.js", "Tailwind CSS", "Mapbox", "REST API"]
+    },
+    {
+      "id": "proj-saas-05",
+      "title": "PulseMetrics Analytics Suite",
+      "tagline": "Product showcase and interactive documentation hub for enterprise telemetry software",
+      "category": "SaaS & Web Apps",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/pulse_desktop.svg",
+        "tablet": "/projects/pulse_tablet.svg",
+        "mobile": "/projects/pulse_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/pulse-metrics",
+      "deliverables": [
+        "Interactive Interactive ROI Calculator",
+        "Tiered Pricing Comparison Table",
+        "Self-Service Developer Docs",
+        "Product Tour Interactive Walkthrough"
+      ],
+      "specs": {
+        "turnaroundDays": 12,
+        "showTurnaround": true,
+        "startingPrice": "$1,600",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Clean, technical, high-converting product marketing website designed to explain complex software features and drive trial signups.",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Lucide"]
+    },
+    {
+      "id": "proj-creat-06",
+      "title": "Studio Forma Architecture",
+      "tagline": "Editorial portfolio and spatial design archive with fluid gallery transitions",
+      "category": "Creative & Portfolio",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/forma_desktop.svg",
+        "tablet": "/projects/forma_tablet.svg",
+        "mobile": "/projects/forma_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/studio-forma",
+      "deliverables": [
+        "Asymmetric Editorial Grid Layout",
+        "Full-Screen Project Lightbox",
+        "Exhibition & Award Timeline",
+        "Minimalist Contact Inquiries"
+      ],
+      "specs": {
+        "turnaroundDays": 6,
+        "showTurnaround": true,
+        "startingPrice": "$850",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Minimalist architectural showcase focusing on large-format imagery, high contrast typography, and architectural awards showcase.",
+      "techStack": ["Next.js", "Tailwind CSS", "CSS Grid"]
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-bespoke-web",
+      "title": "Bespoke Web Development",
+      "summary": "Handcrafted web applications built with Next.js and Tailwind CSS for businesses that demand top-tier speed and distinct branding.",
+      "startingPrice": "$800",
+      "turnaround": "5-7 Business Days",
+      "features": [
+        "Zero-template bespoke visual identity",
+        "Full Content Admin Gateway included",
+        "Mobile, tablet, and ultra-wide responsive",
+        "Structured SEO schema and OpenGraph assets"
+      ]
+    },
+    {
+      "id": "srv-ecommerce",
+      "title": "High-Conversion e-Commerce",
+      "summary": "Fast, secure online stores with frictionless checkout, inventory tracking, and payment processor integrations.",
+      "startingPrice": "$1,400",
+      "turnaround": "8-12 Business Days",
+      "features": [
+        "Stripe, PayPal, or local gateway integration",
+        "Single-page streamlined mobile checkout",
+        "Admin inventory & order tracking manager",
+        "Automated customer confirmation receipts"
+      ]
+    },
+    {
+      "id": "srv-redesign",
+      "title": "Web Performance & Redesign",
+      "summary": "Transform your slow, outdated website into a modern, 99+ PageSpeed platform engineered for maximum client acquisition.",
+      "startingPrice": "$650",
+      "turnaround": "4-6 Business Days",
+      "features": [
+        "Full audit of conversion bottlenecks",
+        "Core Web Vitals 95+ score guarantee",
+        "Content migration with zero downtime",
+        "Modernized brand typography and layouts"
+      ]
+    }
+  ],
+  "pricingPackages": [
+    {
+      "id": "pkg-starter",
+      "name": "Standard Showcase",
+      "price": "$650",
+      "idealFor": "Small businesses, consultants, and service professionals",
+      "turnaround": "5 Business Days",
+      "features": [
+        "Up to 5 Custom Pages",
+        "Responsive Mobile, Tablet & Desktop Layouts",
+        "Contact & Lead Capture Form",
+        "WhatsApp / Telegram Direct Chat Widget",
+        "Standard Admin Gateway for Content Editing",
+        "30 Days Post-Launch Warranty"
+      ]
+    },
+    {
+      "id": "pkg-business",
+      "name": "Professional Workshop",
+      "price": "$1,200",
+      "popular": true,
+      "idealFor": "Growing brands, restaurants, and real estate agencies",
+      "turnaround": "8 Business Days",
+      "features": [
+        "Up to 10 Tailored Dynamic Pages",
+        "Interactive Device Workshop / Portfolio Showroom",
+        "Direct Booking / Appointment Integration",
+        "Advanced SEO & Structured Rich Snippets",
+        "Full Content & Image Media Admin Gateway",
+        "Priority Support & 60 Days Warranty"
+      ]
+    },
+    {
+      "id": "pkg-enterprise",
+      "name": "Enterprise Custom",
+      "price": "$2,100+",
+      "idealFor": "E-commerce stores, SaaS applications, and high-volume platforms",
+      "turnaround": "12-15 Business Days",
+      "features": [
+        "Custom Database & User Authentication",
+        "Payment Processing & Inventory Management",
+        "Multi-language & Multi-currency Architecture",
+        "Custom Automated Email & Lead Routing",
+        "Dedicated Engineering Lead & Ongoing SLA"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Can I edit the text and images on my website myself?",
+      "answer": "Yes. Every website we build includes a secure Admin Gateway allowing your team to update text, upload new portfolio samples, change pricing, and manage incoming leads with zero code."
+    },
+    {
+      "question": "How quickly can our company website go live?",
+      "answer": "Most standard showcases are deployed within 5 to 7 business days once initial requirements and branding assets are gathered. Custom e-commerce and complex web applications typically take 10 to 14 days."
+    },
+    {
+      "question": "What is required from our side to get started?",
+      "answer": "You can select any template style from our workshop showroom or specify your custom requirements via our interactive estimate builder. Once we align on scope, we handle the entire design, engineering, and hosting configuration."
+    },
+    {
+      "question": "Will our website look good on mobile and tablet devices?",
+      "answer": "Every layout is engineered mobile-first and tested rigorously on real physical viewports. You can test our interactive device simulator directly on this showroom to see how our platforms perform on phones, tablets, and desktops."
+    }
+  ]
+}

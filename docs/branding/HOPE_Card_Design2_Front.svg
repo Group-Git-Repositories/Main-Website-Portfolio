@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
+  <defs>
+    <linearGradient id="d2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#7F00FF"/>
+    </linearGradient>
+    <radialGradient id="d2Radial" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#090D18" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#050811" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1050" height="600" fill="#050811"/>
+  <rect width="1050" height="600" fill="url(#d2Radial)"/>
+  <rect x="25" y="25" width="1000" height="550" rx="12" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1.5"/>
+
+  <!-- Centered Hero Branding -->
+  <g transform="translate(525, 230)" text-anchor="middle">
+    <!-- Geometric Hexagon Shield -->
+    <polygon points="0,-100 86,-50 86,50 0,100 -86,50 -86,-50" stroke="url(#d2Grad)" stroke-width="5" fill="#0B101E" fill-opacity="0.7"/>
+    <!-- Stylized H -->
+    <path d="M-30,-36 V36 M30,-36 V36 M-30,0 H30" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Company Name -->
+    <text y="150" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="8">HOPE</text>
+    <text y="190" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="600" fill="#00F2FE" letter-spacing="6">WEB DEVELOPMENT</text>
+  </g>
+
+  <!-- Centered Micro QR Code -->
+  <g transform="translate(475, 460)">
+    <rect x="-10" y="-10" width="120" height="120" rx="12" fill="#090E1A" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5"/>
+    <!-- Position 1 -->
+    <rect x="5" y="5" width="24" height="24" stroke="#00F2FE" stroke-width="3" fill="none"/>
+    <rect x="11" y="11" width="12" height="12" fill="#00F2FE"/>
+    <!-- Position 2 -->
+    <rect x="71" y="5" width="24" height="24" stroke="#00F2FE" stroke-width="3" fill="none"/>
+    <rect x="77" y="11" width="12" height="12" fill="#00F2FE"/>
+    <!-- Position 3 -->
+    <rect x="5" y="71" width="24" height="24" stroke="#00F2FE" stroke-width="3" fill="none"/>
+    <rect x="11" y="77" width="12" height="12" fill="#00F2FE"/>
+    <!-- Data points -->
+    <rect x="40" y="8" width="8" height="8" fill="#7F00FF"/>
+    <rect x="55" y="8" width="8" height="8" fill="#00F2FE"/>
+    <rect x="40" y="25" width="8" height="8" fill="#00F2FE"/>
+    <rect x="40" y="45" width="12" height="12" fill="#7F00FF"/>
+    <rect x="60" y="45" width="8" height="8" fill="#00F2FE"/>
+    <rect x="40" y="75" width="8" height="8" fill="#7F00FF"/>
+    <rect x="55" y="80" width="12" height="12" fill="#00F2FE"/>
+    <rect x="75" y="75" width="8" height="8" fill="#7F00FF"/>
+  </g>
+</svg>

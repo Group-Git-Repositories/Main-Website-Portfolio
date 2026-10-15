@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOPE Web Development - 5 Landscape Outline Templates (Clear Center)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #060911;
+      --card-bg: #090D18;
+      --neon-cyan: #00F2FE;
+      --neon-violet: #7F00FF;
+      --electric-blue: #4FACFE;
+      --text-white: #FFFFFF;
+      --text-dim: #94A3B8;
+      --text-sub: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 0%, #0F172A 0%, #04060B 100%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-white);
+      min-height: 100vh;
+      padding: 40px 20px 80px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 850px;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #FFFFFF 40%, var(--neon-cyan) 85%, var(--neon-violet) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--text-dim);
+      font-size: 0.98rem;
+    }
+
+    .badge-bar {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 8px var(--neon-cyan);
+    }
+
+    /* Templates Stack */
+    .templates-list {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      width: 100%;
+      max-width: 1140px;
+      margin-top: 25px;
+    }
+
+    .template-box {
+      background: rgba(13, 19, 33, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .template-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .template-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--neon-cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .template-desc {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    .cards-pair-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 28px;
+      justify-items: center;
+    }
+
+    .card-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    /* Standard Card 3.5" x 2" (504px x 288px) Landscape */
+    .biz-card-landscape {
+      width: 504px;
+      height: 288px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      background: var(--card-bg);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .biz-card-landscape:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 242, 254, 0.18);
+    }
+
+    /* General Outline Border */
+    .monoline-frame {
+      position: absolute;
+      inset: 12px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    /* CLEAR EXPANSIVE MIDDLE ZONE */
+    .empty-center-field {
+      flex: 1;
+      width: 100%;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================
+       TEMPLATE 1: LUMINOUS PERIMETER (BOTTOM DOCK)
+       ========================================================== */
+    .t1-frame {
+      border: 1.5px solid transparent;
+      background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                  linear-gradient(135deg, var(--neon-cyan), var(--neon-violet)) border-box;
+    }
+
+    .t1-l-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 32px;
+    }
+
+    .t1-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .t1-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .t1-h-icon {
+      width: 36px;
+      height: 36px;
+      border: 1.2px solid var(--neon-cyan);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #FFF;
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.25);
+    }
+    .t1-h-icon span { color: var(--neon-violet); }
+
+    .t1-name-group h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #FFF;
+      line-height: 1.1;
+    }
+
+    .t1-name-group p {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+      font-weight: 500;
+    }
+
+    .t1-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .t1-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-sub);
+    }
+
+    .t1-qr-badge {
+      border: 1px solid rgba(0, 242, 254, 0.4);
+      border-radius: 6px;
+      padding: 4px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    /* Back 1: Clear middle, 2x2 bottom dock */
+    .t1-l-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 32px;
+    }
+
+    .t1-back-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 8px;
+    }
+
+    .t1-back-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFF;
+    }
+
+    .t1-back-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--neon-cyan);
+      letter-spacing: 1.5px;
+    }
+
+    /* Bottom 2x2 Dock */
+    .t1-contact-dock {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 12px;
+    }
+
+    .t1-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #CBD5E1;
+    }
+
+    .t1-item svg {
+      color: var(--neon-cyan);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================
+       TEMPLATE 2: TECH VIEWPORT / CAD CORNER TICKS
+       ========================================================== */
+    .cad-corners {
+      position: absolute;
+      inset: 12px;
+      pointer-events: none;
+    }
+    .c-tl { position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-top: 1.5px solid var(--neon-cyan); border-left: 1.5px solid var(--neon-cyan); }
+    .c-tr { position: absolute; top: 0; right: 0; width: 14px; height: 14px; border-top: 1.5px solid var(--neon-violet); border-right: 1.5px solid var(--neon-violet); }
+    .c-bl { position: absolute; bottom: 0; left: 0; width: 14px; height: 14px; border-bottom: 1.5px solid var(--neon-violet); border-left: 1.5px solid var(--neon-violet); }
+    .c-br { position: absolute; bottom: 0; right: 0; width: 14px; height: 14px; border-bottom: 1.5px solid var(--neon-cyan); border-right: 1.5px solid var(--neon-cyan); }
+
+    .t2-l-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 34px;
+    }
+
+    .t2-top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .t2-wire-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .t2-l-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 34px;
+    }
+
+    .t2-bottom-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+    }
+
+    .t2-contact-entry {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 0.74rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #E2E8F0;
+    }
+
+    .t2-contact-entry svg {
+      color: var(--neon-cyan);
+    }
+
+    /* ==========================================================
+       TEMPLATE 3: SPLIT HORIZON (HAIRLINE DIVIDER)
+       ========================================================== */
+    .t3-l-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 34px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .t3-top-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .t3-top-brand h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #FFF;
+    }
+
+    .t3-top-brand p {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+    }
+
+    .t3-l-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 34px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .t3-hairline {
+      height: 1px;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet), transparent);
+      width: 100%;
+    }
+
+    .t3-edge-contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px 24px;
+    }
+
+    .t3-row-entry {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+    }
+
+    .t3-label { color: var(--neon-cyan); text-transform: uppercase; font-size: 0.65rem; }
+    .t3-val { color: #E2E8F0; }
+
+    /* ==========================================================
+       TEMPLATE 4: MONOLINE CAPSULE / TERMINAL DOCK
+       ========================================================== */
+    .t4-l-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .t4-brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--neon-cyan);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    .t4-l-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .t4-capsule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 12px;
+    }
+
+    .t4-pill {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.015);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+    }
+
+    .t4-pill-tag {
+      font-weight: 700;
+      color: var(--neon-cyan);
+      font-size: 0.65rem;
+    }
+
+    /* ==========================================================
+       TEMPLATE 5: ASYMMETRIC DUAL-CORNER ANCHOR
+       ========================================================== */
+    .t5-l-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 34px;
+      border-left: 2px solid var(--neon-cyan);
+      border-bottom: 2px solid var(--neon-violet);
+    }
+
+    .t5-l-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 34px;
+      border-right: 2px solid var(--neon-cyan);
+      border-top: 2px solid var(--neon-violet);
+    }
+
+    .t5-footer-contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 18px;
+    }
+
+    .t5-item-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: #CBD5E1;
+    }
+
+    .t5-item-line svg {
+      color: var(--neon-cyan);
+      flex-shrink: 0;
+    }
+
+    /* Print Setup */
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      header, .template-header, .card-label, .badge-bar {
+        display: none !important;
+      }
+      .template-box {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        page-break-after: always;
+      }
+      .biz-card-landscape {
+        width: 3.5in !important;
+        height: 2in !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HOPE Web Development</h1>
+    <p>5 Landscaped Simple Outline Business Card Templates &bull; Minimalist Wireframe &amp; Clear Center Suite</p>
+    <div class="badge-bar">
+      <div class="badge"><div class="dot"></div> Strictly Landscape (3.5" &times; 2")</div>
+      <div class="badge">Simple Hairline Outlines</div>
+      <div class="badge">Clear &amp; Empty Middle Section (Back &amp; Front)</div>
+      <div class="badge">Peripheral Contact Docking</div>
+    </div>
+  </header>
+
+  <div class="templates-list">
+
+    <!-- ==========================================
+         TEMPLATE 1: LUMINOUS PERIMETER (BOTTOM DOCK)
+         ========================================== -->
+    <div class="template-box">
+      <div class="template-header">
+        <div class="template-title"><div class="dot"></div> Template 1 &bull; Luminous Perimeter &amp; Lower Dock</div>
+        <div class="template-desc">Fine glowing neon outline frame. Middle is completely empty; contact channels docked neatly at the bottom edge.</div>
+      </div>
+
+      <div class="cards-pair-row">
+        <!-- Front -->
+        <div class="card-wrap">
+          <div class="card-label">Front (Top Header + Open Center + Bottom QR)</div>
+          <div class="biz-card-landscape t1-l-front">
+            <div class="monoline-frame t1-frame"></div>
+
+            <!-- Top Header -->
+            <div class="t1-top-row">
+              <div class="t1-brand">
+                <div class="t1-h-icon"><span>{</span>H<span>}</span></div>
+                <div class="t1-name-group">
+                  <h2>HOPE</h2>
+                  <p>Web Development</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clear, 100% Uncluttered Middle Space -->
+            <div class="empty-center-field"></div>
+
+            <!-- Bottom Row -->
+            <div class="t1-bottom-row">
+              <div class="t1-tagline">// Modern Web Architecture</div>
+              <div class="t1-qr-badge">
+                <svg width="40" height="40" viewBox="0 0 25 25" fill="none">
+                  <rect x="2" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="17" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="18.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="2" y="17" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="18.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="10" y="3" width="2" height="2" fill="#7F00FF"/>
+                  <rect x="10" y="10" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="15" y="15" width="3" height="3" fill="#7F00FF"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back -->
+        <div class="card-wrap">
+          <div class="card-label">Back (Clear Empty Center &bull; Bottom Edge Contact Dock)</div>
+          <div class="biz-card-landscape t1-l-back">
+            <div class="monoline-frame t1-frame"></div>
+
+            <!-- Subtle Minimalist Top Bar -->
+            <div class="t1-back-header">
+              <div class="t1-back-title">HOPE Web Development</div>
+              <div class="t1-back-sub">CHANNELS</div>
+            </div>
+
+            <!-- CLEAR EMPTY MIDDLE SPACE (Completely free of text/clutter) -->
+            <div class="empty-center-field"></div>
+
+            <!-- Bottom Perimeter 2x2 Contact Dock -->
+            <div class="t1-contact-dock">
+              <div class="t1-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>linkedin.com/company/hope-web-dev</span>
+              </div>
+              <div class="t1-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                <span>contact@hopewebdev.com</span>
+              </div>
+              <div class="t1-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+                <span>@hopewebdevelopment</span>
+              </div>
+              <div class="t1-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615l2.104-1.028z"/></svg>
+                <span>+1 (800) 555-HOPE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TEMPLATE 2: TECH VIEWPORT / CAD CORNER TICKS
+         ========================================== -->
+    <div class="template-box">
+      <div class="template-header">
+        <div class="template-title"><div class="dot"></div> Template 2 &bull; CAD Corner Ticks &amp; Minimal Horizon</div>
+        <div class="template-desc">Subtle hairline corner markings. Central area left wide open; contacts clean along the bottom edge.</div>
+      </div>
+
+      <div class="cards-pair-row">
+        <!-- Front -->
+        <div class="card-wrap">
+          <div class="card-label">Front (Corner Marks &bull; Clear Center)</div>
+          <div class="biz-card-landscape t2-l-front">
+            <div class="cad-corners">
+              <div class="c-tl"></div><div class="c-tr"></div>
+              <div class="c-bl"></div><div class="c-br"></div>
+            </div>
+
+            <div class="t2-top-header">
+              <div class="t2-wire-logo">
+                <svg width="28" height="28" viewBox="0 0 60 60" fill="none">
+                  <path d="M16 12 L30 4 L44 12 L44 48 L30 56 L16 48 Z" stroke="#00F2FE" stroke-width="2"/>
+                  <path d="M22 20 V40 M38 20 V40 M22 30 H38" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: 2px;">HOPE <span style="font-size: 0.7rem; font-weight: 500; color: var(--neon-cyan); letter-spacing: 1px;">WEB DEV</span></div>
+              </div>
+            </div>
+
+            <!-- Clear Middle -->
+            <div class="empty-center-field"></div>
+
+            <div style="display: flex; justify-content: flex-end;">
+              <div style="border: 1px solid rgba(255, 255, 255, 0.12); padding: 4px; border-radius: 5px;">
+                <svg width="36" height="36" viewBox="0 0 25 25" fill="none">
+                  <rect x="2" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="17" y="2" width="6" height="6" stroke="#7F00FF" stroke-width="1.2"/>
+                  <rect x="18.5" y="3.5" width="3" height="3" fill="#7F00FF"/>
+                  <rect x="2" y="17" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="18.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="11" y="11" width="3" height="3" fill="#00F2FE"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back -->
+        <div class="card-wrap">
+          <div class="card-label">Back (Empty Center &bull; Lower Peripheral Row)</div>
+          <div class="biz-card-landscape t2-l-back">
+            <div class="cad-corners">
+              <div class="c-tl"></div><div class="c-tr"></div>
+              <div class="c-bl"></div><div class="c-br"></div>
+            </div>
+
+            <div style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-sub); font-family: 'JetBrains Mono', monospace;">
+              // INQUIRIES
+            </div>
+
+            <!-- CLEAR CENTER -->
+            <div class="empty-center-field"></div>
+
+            <!-- Bottom Edge Row -->
+            <div class="t2-bottom-bar">
+              <div class="t2-contact-entry">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>linkedin.com/company/hope-web-dev</span>
+              </div>
+              <div class="t2-contact-entry">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                <span>contact@hopewebdev.com</span>
+              </div>
+              <div class="t2-contact-entry">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+                <span>@hopewebdevelopment</span>
+              </div>
+              <div class="t2-contact-entry">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615l2.104-1.028z"/></svg>
+                <span>+1 (800) 555-HOPE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TEMPLATE 3: SPLIT HORIZON (HAIRLINE DIVIDER)
+         ========================================== -->
+    <div class="template-box">
+      <div class="template-header">
+        <div class="template-title"><div class="dot"></div> Template 3 &bull; Split Horizon &amp; Hairline Border</div>
+        <div class="template-desc">Refined hairline divider across top and bottom; deep uncluttered negative space throughout.</div>
+      </div>
+
+      <div class="cards-pair-row">
+        <!-- Front -->
+        <div class="card-wrap">
+          <div class="card-label">Front (Split Horizon)</div>
+          <div class="biz-card-landscape t3-l-front">
+            <div class="t3-top-brand">
+              <h2>HOPE</h2>
+              <p>Web Development</p>
+            </div>
+
+            <!-- Clear Middle -->
+            <div class="empty-center-field"></div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #64748B;">
+                &lt;web-solutions-tailored&gt;
+              </div>
+              <div style="border: 1px solid rgba(0, 242, 254, 0.4); padding: 4px; border-radius: 6px;">
+                <svg width="36" height="36" viewBox="0 0 25 25" fill="none">
+                  <rect x="2" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="17" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="18.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="2" y="17" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="18.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="11" y="11" width="3" height="3" fill="#7F00FF"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back -->
+        <div class="card-wrap">
+          <div class="card-label">Back (Clear Space &bull; Lower Bordered Matrix)</div>
+          <div class="biz-card-landscape t3-l-back">
+            <div class="t3-hairline"></div>
+
+            <!-- CLEAR EMPTY MIDDLE -->
+            <div class="empty-center-field"></div>
+
+            <!-- Bottom Hairline Matrix -->
+            <div class="t3-edge-contacts">
+              <div class="t3-row-entry">
+                <span class="t3-label">LinkedIn</span>
+                <span class="t3-val">linkedin.com/company/hope-web-dev</span>
+              </div>
+              <div class="t3-row-entry">
+                <span class="t3-label">Email</span>
+                <span class="t3-val">contact@hopewebdev.com</span>
+              </div>
+              <div class="t3-row-entry">
+                <span class="t3-label">Telegram</span>
+                <span class="t3-val">@hopewebdevelopment</span>
+              </div>
+              <div class="t3-row-entry">
+                <span class="t3-label">Phone</span>
+                <span class="t3-val">+1 (800) 555-HOPE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TEMPLATE 4: MONOLINE CAPSULE / TERMINAL DOCK
+         ========================================== -->
+    <div class="template-box">
+      <div class="template-header">
+        <div class="template-title"><div class="dot"></div> Template 4 &bull; Monoline Capsule &amp; Dual Edge Rails</div>
+        <div class="template-desc">Tactile outline capsule tags placed strictly along the bottom edge, leaving the center field 100% airy.</div>
+      </div>
+
+      <div class="cards-pair-row">
+        <!-- Front -->
+        <div class="card-wrap">
+          <div class="card-label">Front (Monoline Capsule)</div>
+          <div class="biz-card-landscape t4-l-front">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="t4-brand-pill">
+                <span>{</span> HOPE <span>}</span>
+              </div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--neon-cyan);">
+                WEB DEV
+              </div>
+            </div>
+
+            <!-- Empty Center -->
+            <div class="empty-center-field"></div>
+
+            <div style="display: flex; justify-content: flex-end;">
+              <div style="border: 1px solid rgba(255, 255, 255, 0.15); padding: 4px; border-radius: 6px;">
+                <svg width="36" height="36" viewBox="0 0 25 25" fill="none">
+                  <rect x="2" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="17" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="18.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="2" y="17" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="18.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="11" y="11" width="3" height="3" fill="#7F00FF"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back -->
+        <div class="card-wrap">
+          <div class="card-label">Back (Empty Center &bull; Bottom Capsule Rail)</div>
+          <div class="biz-card-landscape t4-l-back">
+            <div style="font-size: 0.75rem; font-weight: 700; color: #FFF; letter-spacing: 1px;">
+              HOPE // DIRECT
+            </div>
+
+            <!-- CLEAR CENTER -->
+            <div class="empty-center-field"></div>
+
+            <!-- Capsule Grid along bottom -->
+            <div class="t4-capsule-grid">
+              <div class="t4-pill">
+                <span class="t4-pill-tag">LI</span>
+                <span>linkedin.com/company/hope-web-dev</span>
+              </div>
+              <div class="t4-pill">
+                <span class="t4-pill-tag">EM</span>
+                <span>contact@hopewebdev.com</span>
+              </div>
+              <div class="t4-pill">
+                <span class="t4-pill-tag">TG</span>
+                <span>@hopewebdevelopment</span>
+              </div>
+              <div class="t4-pill">
+                <span class="t4-pill-tag">PH</span>
+                <span>+1 (800) 555-HOPE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TEMPLATE 5: ASYMMETRIC DUAL-CORNER ANCHOR
+         ========================================== -->
+    <div class="template-box">
+      <div class="template-header">
+        <div class="template-title"><div class="dot"></div> Template 5 &bull; Asymmetric Dual-Corner &amp; Geometric Hex</div>
+        <div class="template-desc">L-shaped cyber accent border. Expansive open body with contacts pinned cleanly to the bottom margin.</div>
+      </div>
+
+      <div class="cards-pair-row">
+        <!-- Front -->
+        <div class="card-wrap">
+          <div class="card-label">Front (Corner Hex &bull; Open Center)</div>
+          <div class="biz-card-landscape t5-l-front">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <svg width="34" height="34" viewBox="0 0 50 50" fill="none">
+                <polygon points="25,4 46,16 46,38 25,48 4,38 4,16" stroke="#00F2FE" stroke-width="1.8"/>
+                <path d="M18 18 V32 M32 18 V32 M18 25 H32" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <h2 style="font-size: 1.3rem; font-weight: 800; letter-spacing: 1.5px; color: #FFF;">HOPE</h2>
+                <p style="font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--neon-cyan);">Web Development</p>
+              </div>
+            </div>
+
+            <!-- Clear Middle Space -->
+            <div class="empty-center-field"></div>
+
+            <div style="display: flex; justify-content: flex-end;">
+              <div style="border: 1px solid rgba(0, 242, 254, 0.4); padding: 4px; border-radius: 6px;">
+                <svg width="36" height="36" viewBox="0 0 25 25" fill="none">
+                  <rect x="2" y="2" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="3.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="17" y="2" width="6" height="6" stroke="#7F00FF" stroke-width="1.2"/>
+                  <rect x="18.5" y="3.5" width="3" height="3" fill="#7F00FF"/>
+                  <rect x="2" y="17" width="6" height="6" stroke="#00F2FE" stroke-width="1.2"/>
+                  <rect x="3.5" y="18.5" width="3" height="3" fill="#00F2FE"/>
+                  <rect x="11" y="11" width="3" height="3" fill="#00F2FE"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back -->
+        <div class="card-wrap">
+          <div class="card-label">Back (Clear Space &bull; Perimeter Rows)</div>
+          <div class="biz-card-landscape t5-l-back">
+            <div style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-sub); font-family: 'JetBrains Mono', monospace;">
+              HOPE // CONNECT
+            </div>
+
+            <!-- CLEAR CENTER -->
+            <div class="empty-center-field"></div>
+
+            <!-- Footer Contacts -->
+            <div class="t5-footer-contacts">
+              <div class="t5-item-line">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>linkedin.com/company/hope-web-dev</span>
+              </div>
+              <div class="t5-item-line">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                <span>contact@hopewebdev.com</span>
+              </div>
+              <div class="t5-item-line">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+                <span>@hopewebdevelopment</span>
+              </div>
+              <div class="t5-item-line">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615l2.104-1.028z"/></svg>
+                <span>+1 (800) 555-HOPE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

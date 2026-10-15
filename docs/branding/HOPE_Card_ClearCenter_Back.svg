@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
+  <defs>
+    <linearGradient id="neonBorderGradBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7F00FF"/>
+      <stop offset="100%" stop-color="#00F2FE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1050" height="600" fill="#070A12"/>
+
+  <!-- Simple Glowing Outline Perimeter -->
+  <rect x="25" y="25" width="1000" height="550" rx="16" fill="none" stroke="url(#neonBorderGradBack)" stroke-width="2.5"/>
+
+  <!-- Minimalist Top Header -->
+  <g transform="translate(70, 75)">
+    <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="2">HOPE <tspan font-size="16" font-weight="500" fill="#64748B">Web Development</tspan></text>
+    <text x="910" y="0" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" fill="#00F2FE" text-anchor="end" letter-spacing="3">CONNECT</text>
+    <line x1="0" y1="20" x2="910" y2="20" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.5"/>
+  </g>
+
+  <!-- ==============================================
+       MIDDLE SECTION: 100% CLEAR, AIRY, EMPTY SPACE
+       ============================================== -->
+
+  <!-- Bottom Dock: 2x2 Grid anchored cleanly along the bottom perimeter -->
+  <g transform="translate(70, 440)">
+    <!-- Top divider above bottom dock -->
+    <line x1="0" y1="0" x2="910" y2="0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.5"/>
+
+    <!-- Left Column: LinkedIn -->
+    <g transform="translate(0, 30)">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="#00F2FE" transform="scale(0.85)"/>
+      <text x="30" y="16" font-family="'JetBrains Mono', monospace" font-size="19" fill="#CBD5E1">linkedin.com/company/hope-web-dev</text>
+    </g>
+
+    <!-- Left Column: Telegram -->
+    <g transform="translate(0, 68)">
+      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z" fill="#00F2FE" transform="scale(0.85)"/>
+      <text x="30" y="16" font-family="'JetBrains Mono', monospace" font-size="19" fill="#CBD5E1">@hopewebdevelopment</text>
+    </g>
+
+    <!-- Right Column: Email -->
+    <g transform="translate(480, 30)">
+      <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" fill="#00F2FE" transform="scale(0.85)"/>
+      <text x="30" y="16" font-family="'JetBrains Mono', monospace" font-size="19" fill="#CBD5E1">contact@hopewebdev.com</text>
+    </g>
+
+    <!-- Right Column: Phone -->
+    <g transform="translate(480, 68)">
+      <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615l2.104-1.028z" fill="#00F2FE" transform="scale(0.85)"/>
+      <text x="30" y="16" font-family="'JetBrains Mono', monospace" font-size="19" fill="#CBD5E1">+1 (800) 555-HOPE</text>
+    </g>
+  </g>
+</svg>

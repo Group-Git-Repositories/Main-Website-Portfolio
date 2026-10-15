@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
+  <defs>
+    <linearGradient id="neonBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#7F00FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1050" height="600" fill="#070A12"/>
+
+  <!-- Simple Glowing Outline Perimeter -->
+  <rect x="25" y="25" width="1000" height="550" rx="16" fill="none" stroke="url(#neonBorderGrad)" stroke-width="2.5"/>
+
+  <!-- Top-Left Branding Header -->
+  <g transform="translate(70, 75)">
+    <!-- Outline {H} Icon -->
+    <rect x="0" y="0" width="70" height="70" rx="12" fill="none" stroke="#00F2FE" stroke-width="2"/>
+    <text x="35" y="47" font-family="'JetBrains Mono', monospace" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+      <tspan fill="#7F00FF">{</tspan>H<tspan fill="#00F2FE">}</tspan>
+    </text>
+
+    <!-- Company Name & Subtitle -->
+    <text x="95" y="40" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" letter-spacing="1.5">HOPE</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#00F2FE" letter-spacing="4">WEB DEVELOPMENT</text>
+  </g>
+
+  <!-- ==============================================
+       MIDDLE SECTION: COMPLETELY CLEAR & UNOBSTRUCTED
+       ============================================== -->
+
+  <!-- Bottom-Left Micro Tagline -->
+  <g transform="translate(70, 520)">
+    <text font-family="'JetBrains Mono', monospace" font-size="17" fill="#64748B">// Modern Web Architecture</text>
+  </g>
+
+  <!-- Bottom-Right Outline QR Code -->
+  <g transform="translate(885, 415)">
+    <rect x="-10" y="-10" width="115" height="115" rx="12" fill="none" stroke="#00F2FE" stroke-width="1.8"/>
+    <!-- Position 1 -->
+    <rect x="5" y="5" width="24" height="24" stroke="#00F2FE" stroke-width="3" fill="none"/>
+    <rect x="11" y="11" width="12" height="12" fill="#00F2FE"/>
+    <!-- Position 2 -->
+    <rect x="66" y="5" width="24" height="24" stroke="#00F2FE" stroke-width="3" fill="none"/>
+    <rect x="72" y="11" width="12" height="12" fill="#00F2FE"/>
+    <!-- Position 3 -->
+    <rect x="5" y="66" width="24" height="24" stroke="#00F2FE" stroke-width="3" fill="none"/>
+    <rect x="11" y="72" width="12" height="12" fill="#00F2FE"/>
+    <!-- Data points -->
+    <rect x="40" y="8" width="8" height="8" fill="#7F00FF"/>
+    <rect x="40" y="25" width="8" height="8" fill="#00F2FE"/>
+    <rect x="40" y="45" width="12" height="12" fill="#7F00FF"/>
+    <rect x="60" y="45" width="8" height="8" fill="#00F2FE"/>
+    <rect x="40" y="75" width="8" height="8" fill="#7F00FF"/>
+    <rect x="60" y="75" width="8" height="8" fill="#00F2FE"/>
+  </g>
+</svg>
