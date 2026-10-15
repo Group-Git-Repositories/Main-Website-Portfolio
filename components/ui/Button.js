@@ -20,11 +20,11 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      'bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold shadow-lg shadow-cyan-500/20 focus:ring-cyan-400 dark:bg-cyan-400 dark:hover:bg-cyan-300 dark:text-slate-950',
+      'bg-slate-900 hover:bg-slate-800 text-white shadow-sm focus:ring-slate-900 dark:bg-cyan-400 dark:hover:bg-cyan-300 dark:text-slate-950 font-semibold',
     secondary:
-      'bg-slate-900 hover:bg-slate-800 text-white border border-slate-700/80 shadow-sm focus:ring-slate-700 dark:bg-slate-800/90 dark:hover:bg-slate-750 dark:border-slate-700',
+      'bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 shadow-sm focus:ring-slate-400 dark:bg-slate-800/90 dark:hover:bg-slate-750 dark:text-white dark:border-slate-700',
     outline:
-      'border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200 focus:ring-slate-400',
+      'border border-slate-300 hover:bg-slate-100 text-slate-800 focus:ring-slate-400 dark:border-slate-700 dark:hover:bg-slate-800/60 dark:text-slate-200 font-medium',
     ghost:
       'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40',
   };

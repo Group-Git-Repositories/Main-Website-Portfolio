@@ -2,17 +2,21 @@
   "company": {
     "name": "HOPE Web Development",
     "legalName": "Hope Teams Digital Solutions",
-    "tagline": "Precision Engineered Web Architecture & Digital Showroom",
-    "shortAbout": "We design and engineer bespoke, high-conversion web applications, digital showrooms, and enterprise platforms tailored for modern businesses.",
+    "tagline": "Fast Static Websites For Modern Businesses",
+    "shortAbout": "We build clean, ultra-fast static websites that load instantly, never crash, and help your business get more clients. Easy to maintain with a simple admin page.",
     "location": "Addis Ababa, Ethiopia",
     "email": "contact@hopeteams.com",
     "phone": "+251 973 951 191",
     "github": "https://github.com/Group-Git-Repositories/Main-Website-Portfolio",
+    "linkedin": "https://www.linkedin.com/company/hope-web-development",
     "channels": {
-      "whatsapp": {
+      "email": {
         "enabled": true,
-        "number": "+251973951191",
-        "defaultMessage": "Hello HOPE Web Development, I am interested in building a website."
+        "address": "contact@hopeteams.com"
+      },
+      "linkedin": {
+        "enabled": true,
+        "url": "https://www.linkedin.com/company/hope-web-development"
       },
       "telegram": {
         "enabled": true,
@@ -24,11 +28,11 @@
     }
   },
   "hero": {
-    "badgeText": "Crafting High-Performance Web Platforms",
-    "headline": "Engineering Websites That Command Authority and Drive Measurable Growth",
-    "subheadline": "Explore our interactive workshop showroom of live websites and bespoke digital architectures. Test them across real device viewports and commission your build today.",
-    "primaryCta": "Explore Workshop Showroom",
-    "secondaryCta": "Build an Instant Estimate"
+    "badgeText": "Fast Static Websites",
+    "headline": "Simple, Fast Websites That Help Your Business Grow",
+    "subheadline": "We build clean static websites that open instantly on any phone or computer. Pick a sample from our showroom or ask for a custom build.",
+    "primaryCta": "See Website Samples",
+    "secondaryCta": "Calculate Price"
   },
   "settings": {
     "accentTheme": "neon-cyan",
@@ -37,8 +41,8 @@
   "projects": [
     {
       "id": "proj-ecom-01",
-      "title": "Aura Luxury Retail",
-      "tagline": "Headless e-commerce storefront with single-page checkout and automated stock sync",
+      "title": "Shop & Product Catalog",
+      "tagline": "Clean product catalog with direct WhatsApp and phone ordering",
       "category": "e-Commerce",
       "featured": true,
       "mockups": {
@@ -48,25 +52,29 @@
       },
       "liveUrl": "https://example.com/demo/aura-store",
       "deliverables": [
-        "Headless Next.js Storefront",
-        "Stripe & Multi-Currency Payment",
-        "Real-Time Inventory Sync",
-        "Sub-Second Server-Side Rendering"
+        "Fast static pages",
+        "Mobile-friendly design",
+        "WhatsApp order button",
+        "Simple admin page"
       ],
       "specs": {
-        "turnaroundDays": 10,
+        "turnaroundDays": 7,
         "showTurnaround": true,
-        "startingPrice": "$1,450",
+        "startingPrice": "",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Engineered for an international luxury retail brand requiring instant page transitions, fluid filtering, and an frictionless mobile checkout experience.",
-      "techStack": ["Next.js", "Tailwind CSS", "Stripe API", "Node.js"]
+      "description": "A clean online catalog for your products. Customers can browse easily on their phone and click one button to order directly on WhatsApp or call your shop.",
+      "techStack": [
+        "Fast Static HTML",
+        "Tailwind CSS",
+        "WhatsApp Button"
+      ]
     },
     {
       "id": "proj-corp-02",
-      "title": "Apex Capital Advisory",
-      "tagline": "Corporate consulting & institutional finance portal with client appointment desk",
+      "title": "Business & Office Profile",
+      "tagline": "Professional company website for consulting, agencies, and offices",
       "category": "Corporate & B2B",
       "featured": true,
       "mockups": {
@@ -76,25 +84,29 @@
       },
       "liveUrl": "https://example.com/demo/apex-capital",
       "deliverables": [
-        "Interactive Meeting Scheduler",
-        "Client Portal Authentication",
-        "Compliance & Privacy Architecture",
-        "Institutional Whitepaper Library"
+        "Company overview",
+        "Services & team list",
+        "Location map & phone",
+        "Simple text editor"
       ],
       "specs": {
-        "turnaroundDays": 7,
+        "turnaroundDays": 5,
         "showTurnaround": true,
-        "startingPrice": "$950",
+        "startingPrice": "18,000 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Designed for a top-tier asset management firm, conveying confidence, precision typography, and clean data disclosures for institutional partners.",
-      "techStack": ["React", "Next.js", "Tailwind CSS", "PostgreSQL"]
+      "description": "Showcase your company services, client work, and contact details with zero loading delay. Built to make a strong, trustworthy impression on clients.",
+      "techStack": [
+        "Fast Static Pages",
+        "Clean Layout",
+        "Fast Loading"
+      ]
     },
     {
       "id": "proj-rest-03",
-      "title": "Lumina Bistro & Wine Bar",
-      "tagline": "Atmospheric culinary experience with digital sommelier menu and instant table booking",
+      "title": "Café & Restaurant Menu",
+      "tagline": "Digital food and drink menu with one-tap phone calls and table booking",
       "category": "Restaurant & Hospitality",
       "featured": true,
       "mockups": {
@@ -104,25 +116,29 @@
       },
       "liveUrl": "https://example.com/demo/lumina-bistro",
       "deliverables": [
-        "Real-Time Table Reservation Desk",
-        "Interactive Digital Tasting Menu",
-        "Chef's Event Announcement Hub",
-        "Location & Geo-Directions Integration"
+        "Mobile food menu",
+        "One-tap call button",
+        "Location & hours",
+        "Photo gallery"
       ],
       "specs": {
-        "turnaroundDays": 5,
+        "turnaroundDays": 4,
         "showTurnaround": true,
-        "startingPrice": "$750",
+        "startingPrice": "14,000 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Bespoke hospitality showcase prioritizing fast mobile ordering, rich food photography cards, and WhatsApp table reservation triggers.",
-      "techStack": ["Next.js", "Tailwind CSS", "WhatsApp API"]
+      "description": "Let customers check your food and drink prices on their phone before visiting. Loads fast even on slow mobile internet.",
+      "techStack": [
+        "Static Menu",
+        "Mobile First",
+        "Instant Loading"
+      ]
     },
     {
       "id": "proj-real-04",
-      "title": "Haven Estates & Residences",
-      "tagline": "High-end residential real estate portal featuring interactive floorplans and inquiry tours",
+      "title": "Real Estate & House Rentals",
+      "tagline": "Property showcase with clear photos, prices, and agent contact",
       "category": "Real Estate & Property",
       "featured": true,
       "mockups": {
@@ -132,25 +148,29 @@
       },
       "liveUrl": "https://example.com/demo/haven-estates",
       "deliverables": [
-        "Advanced Property Search & Filter",
-        "Virtual Tour & Floorplan Lightbox",
-        "Agent WhatsApp Direct Inquiries",
-        "Automated Lead Capture Routing"
+        "Clean property cards",
+        "Photo viewer",
+        "Direct agent phone",
+        "Filter by area"
       ],
       "specs": {
-        "turnaroundDays": 8,
+        "turnaroundDays": 6,
         "showTurnaround": true,
-        "startingPrice": "$1,200",
+        "startingPrice": "24,000 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Built for modern real estate developers with smooth search filtering by neighborhood, bedrooms, price tier, and immediate broker dispatch.",
-      "techStack": ["Next.js", "Tailwind CSS", "Mapbox", "REST API"]
+      "description": "Display available houses, apartments, or land with clear photos, prices, and direct phone contact for your agents.",
+      "techStack": [
+        "Static Gallery",
+        "Fast Photos",
+        "Agent Contact"
+      ]
     },
     {
       "id": "proj-saas-05",
-      "title": "PulseMetrics Analytics Suite",
-      "tagline": "Product showcase and interactive documentation hub for enterprise telemetry software",
+      "title": "App & Software Showcase",
+      "tagline": "Simple product landing page explaining features and downloads",
       "category": "SaaS & Web Apps",
       "featured": true,
       "mockups": {
@@ -160,25 +180,29 @@
       },
       "liveUrl": "https://example.com/demo/pulse-metrics",
       "deliverables": [
-        "Interactive Interactive ROI Calculator",
-        "Tiered Pricing Comparison Table",
-        "Self-Service Developer Docs",
-        "Product Tour Interactive Walkthrough"
+        "Simple feature list",
+        "Clear pricing table",
+        "Download button",
+        "User guide"
       ],
       "specs": {
-        "turnaroundDays": 12,
+        "turnaroundDays": 5,
         "showTurnaround": true,
-        "startingPrice": "$1,600",
+        "startingPrice": "22,000 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Clean, technical, high-converting product marketing website designed to explain complex software features and drive trial signups.",
-      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Lucide"]
+      "description": "Explain what your app does in plain words. Designed to help visitors understand your tool and download or sign up easily.",
+      "techStack": [
+        "Fast Static Pages",
+        "Clean Layout",
+        "Call to Action"
+      ]
     },
     {
       "id": "proj-creat-06",
-      "title": "Studio Forma Architecture",
-      "tagline": "Editorial portfolio and spatial design archive with fluid gallery transitions",
+      "title": "Creative & Personal Portfolio",
+      "tagline": "Clean photo gallery and bio for architects, photographers, and artists",
       "category": "Creative & Portfolio",
       "featured": true,
       "mockups": {
@@ -188,126 +212,124 @@
       },
       "liveUrl": "https://example.com/demo/studio-forma",
       "deliverables": [
-        "Asymmetric Editorial Grid Layout",
-        "Full-Screen Project Lightbox",
-        "Exhibition & Award Timeline",
-        "Minimalist Contact Inquiries"
+        "Large photo gallery",
+        "Short personal bio",
+        "Contact form",
+        "Fast loading"
       ],
       "specs": {
-        "turnaroundDays": 6,
+        "turnaroundDays": 4,
         "showTurnaround": true,
-        "startingPrice": "$850",
+        "startingPrice": "15,000 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Minimalist architectural showcase focusing on large-format imagery, high contrast typography, and architectural awards showcase.",
-      "techStack": ["Next.js", "Tailwind CSS", "CSS Grid"]
+      "description": "A calm, clean portfolio that puts your work first. Loads fast with no clutter.",
+      "techStack": [
+        "Static Gallery",
+        "Minimalist",
+        "Mobile First"
+      ]
     }
   ],
   "services": [
     {
       "id": "srv-bespoke-web",
-      "title": "Bespoke Web Development",
-      "summary": "Handcrafted web applications built with Next.js and Tailwind CSS for businesses that demand top-tier speed and distinct branding.",
-      "startingPrice": "$800",
-      "turnaround": "5-7 Business Days",
+      "title": "New Static Website",
+      "summary": "We build your business website from start to finish. Fast, secure, and easy to read on all phone screens.",
+      "startingPrice": "14,000 Birr",
+      "turnaround": "4-6 Days",
       "features": [
-        "Zero-template bespoke visual identity",
-        "Full Content Admin Gateway included",
-        "Mobile, tablet, and ultra-wide responsive",
-        "Structured SEO schema and OpenGraph assets"
+        "Opens in less than 1 second",
+        "Works smoothly on all phones",
+        "Simple admin page to change text and photos",
+        "Free 1-year hosting setup"
       ]
     },
     {
       "id": "srv-ecommerce",
-      "title": "High-Conversion e-Commerce",
-      "summary": "Fast, secure online stores with frictionless checkout, inventory tracking, and payment processor integrations.",
-      "startingPrice": "$1,400",
-      "turnaround": "8-12 Business Days",
+      "title": "Catalog & Product Showcase",
+      "summary": "Display your products with photos, prices, and direct WhatsApp or phone ordering buttons.",
+      "startingPrice": "26,000 Birr",
+      "turnaround": "6-8 Days",
       "features": [
-        "Stripe, PayPal, or local gateway integration",
-        "Single-page streamlined mobile checkout",
-        "Admin inventory & order tracking manager",
-        "Automated customer confirmation receipts"
+        "Product photos and clean layout",
+        "One-click WhatsApp order button",
+        "Simple admin page to add new items",
+        "No monthly shop fees"
       ]
     },
     {
       "id": "srv-redesign",
-      "title": "Web Performance & Redesign",
-      "summary": "Transform your slow, outdated website into a modern, 99+ PageSpeed platform engineered for maximum client acquisition.",
-      "startingPrice": "$650",
-      "turnaround": "4-6 Business Days",
+      "title": "Website Redesign & Speed Fix",
+      "summary": "Is your current website slow or hard to use on phones? We rebuild it into a fast, clean static website.",
+      "startingPrice": "12,000 Birr",
+      "turnaround": "3-5 Days",
       "features": [
-        "Full audit of conversion bottlenecks",
-        "Core Web Vitals 95+ score guarantee",
-        "Content migration with zero downtime",
-        "Modernized brand typography and layouts"
+        "Instant loading on mobile data",
+        "Modern clean layout",
+        "Keep your existing domain and text",
+        "No complex maintenance needed"
       ]
     }
   ],
   "pricingPackages": [
     {
       "id": "pkg-starter",
-      "name": "Standard Showcase",
-      "price": "$650",
-      "idealFor": "Small businesses, consultants, and service professionals",
-      "turnaround": "5 Business Days",
+      "name": "Starter Website",
+      "price": "14,000 Birr",
+      "idealFor": "Small shops, consultants, and personal profiles",
+      "turnaround": "4 Days",
       "features": [
-        "Up to 5 Custom Pages",
-        "Responsive Mobile, Tablet & Desktop Layouts",
-        "Contact & Lead Capture Form",
-        "WhatsApp / Telegram Direct Chat Widget",
-        "Standard Admin Gateway for Content Editing",
-        "30 Days Post-Launch Warranty"
+        "Up to 4 clean pages",
+        "Mobile & computer friendly",
+        "Contact form & direct WhatsApp link",
+        "Simple admin page to edit text",
+        "Zero monthly hosting maintenance"
       ]
     },
     {
       "id": "pkg-business",
-      "name": "Professional Workshop",
-      "price": "$1,200",
+      "name": "Standard Business",
+      "price": "24,000 Birr",
       "popular": true,
-      "idealFor": "Growing brands, restaurants, and real estate agencies",
-      "turnaround": "8 Business Days",
+      "idealFor": "Companies, restaurants, and real estate offices",
+      "turnaround": "6 Days",
       "features": [
-        "Up to 10 Tailored Dynamic Pages",
-        "Interactive Device Workshop / Portfolio Showroom",
-        "Direct Booking / Appointment Integration",
-        "Advanced SEO & Structured Rich Snippets",
-        "Full Content & Image Media Admin Gateway",
-        "Priority Support & 60 Days Warranty"
+        "Up to 8 custom pages",
+        "Product or project showroom",
+        "Photo gallery & menu/catalog",
+        "Custom contact form",
+        "Simple admin page to update photos and text"
       ]
     },
     {
       "id": "pkg-enterprise",
-      "name": "Enterprise Custom",
-      "price": "$2,100+",
-      "idealFor": "E-commerce stores, SaaS applications, and high-volume platforms",
-      "turnaround": "12-15 Business Days",
+      "name": "Full Custom",
+      "price": "38,000 Birr",
+      "idealFor": "Larger catalogs and custom business needs",
+      "turnaround": "8-10 Days",
       "features": [
-        "Custom Database & User Authentication",
-        "Payment Processing & Inventory Management",
-        "Multi-language & Multi-currency Architecture",
-        "Custom Automated Email & Lead Routing",
-        "Dedicated Engineering Lead & Ongoing SLA"
+        "Complete multi-page static website",
+        "Interactive product or project viewer",
+        "Direct ordering workflows",
+        "Full admin control room",
+        "Dedicated launch support"
       ]
     }
   ],
   "faq": [
     {
-      "question": "Can I edit the text and images on my website myself?",
-      "answer": "Yes. Every website we build includes a secure Admin Gateway allowing your team to update text, upload new portfolio samples, change pricing, and manage incoming leads with zero code."
+      "question": "Why should I choose a static website?",
+      "answer": "Static websites are pre-built pages that open instantly without waiting for a slow database. They are secure, rarely break, cost almost nothing to host, and load smoothly even on slow mobile internet."
     },
     {
-      "question": "How quickly can our company website go live?",
-      "answer": "Most standard showcases are deployed within 5 to 7 business days once initial requirements and branding assets are gathered. Custom e-commerce and complex web applications typically take 10 to 14 days."
+      "question": "How long does it take to finish?",
+      "answer": "Most websites are ready in 4 to 7 days once you send us your logo, photos, and basic company details."
     },
     {
-      "question": "What is required from our side to get started?",
-      "answer": "You can select any template style from our workshop showroom or specify your custom requirements via our interactive estimate builder. Once we align on scope, we handle the entire design, engineering, and hosting configuration."
-    },
-    {
-      "question": "Will our website look good on mobile and tablet devices?",
-      "answer": "Every layout is engineered mobile-first and tested rigorously on real physical viewports. You can test our interactive device simulator directly on this showroom to see how our platforms perform on phones, tablets, and desktops."
+      "question": "How does payment work?",
+      "answer": "We accept local bank transfers (CBE, Telebirr, Awash, etc.). We start work with a small initial deposit, and you pay the rest after you review and approve the final website."
     }
   ]
 }

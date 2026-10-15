@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ShieldCheck, Lock, User, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { ShieldCheck, Lock, User, ArrowRight, ArrowLeft } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
 export default function AdminLoginPage() {
@@ -97,7 +98,7 @@ export default function AdminLoginPage() {
             </div>
           )}
 
-          <div className="pt-2">
+          <div className="pt-2 space-y-3">
             <Button
               type="submit"
               disabled={loading}
@@ -107,8 +108,18 @@ export default function AdminLoginPage() {
               iconPosition="right"
               className="w-full text-xs font-bold"
             >
-              {loading ? 'Verifying Credentials...' : 'Authenticate & Enter Gateway'}
+              {loading ? 'Logging in...' : 'Login'}
             </Button>
+
+            <div className="text-center pt-1">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>Return to Website</span>
+              </Link>
+            </div>
           </div>
         </form>
 

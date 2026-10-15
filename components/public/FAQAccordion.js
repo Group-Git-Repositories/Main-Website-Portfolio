@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function FAQAccordion({ items = [] }) {
   const [openIndex, setOpenIndex] = useState(0);
@@ -14,9 +14,8 @@ export default function FAQAccordion({ items = [] }) {
     <section id="faq" className="py-20 md:py-28 border-t border-slate-200/80 dark:border-slate-800/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/20 text-cyan-400 text-xs font-mono font-medium mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Frequently Answered Inquiries</span>
+          <div className="text-xs font-mono font-semibold tracking-wider text-cyan-700 dark:text-cyan-400 uppercase mb-3">
+            Inquiries & FAQ
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
             Common Client Questions
@@ -26,24 +25,24 @@ export default function FAQAccordion({ items = [] }) {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {items.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="rounded-xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-[#0E1626] overflow-hidden transition-colors"
+                className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0E1626] shadow-sm overflow-hidden"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left gap-4 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors"
+                  className="w-full px-6 py-4 flex items-center justify-between text-left gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
                 >
-                  <span className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                  <span className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
                     {item.question}
                   </span>
                   <ChevronDown
                     className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-cyan-400' : ''
+                      isOpen ? 'rotate-180 text-cyan-500 dark:text-cyan-400' : ''
                     }`}
                   />
                 </button>

@@ -1,18 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
-import { Github, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
+import { Github, Mail, Phone, MapPin, Lock, Linkedin } from 'lucide-react';
 
 export default function Footer({ company }) {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-slate-200/80 dark:border-slate-800/80 bg-slate-900 dark:bg-[#070B16] text-slate-400 text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-slate-800 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-white">
+              <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center font-mono font-bold text-white">
                 <span className="text-violet-400 text-[10px]">{'{'}</span>
                 <span className="text-white text-xs">H</span>
                 <span className="text-cyan-400 text-[10px]">{'}'}</span>
@@ -23,8 +23,7 @@ export default function Footer({ company }) {
             </div>
 
             <p className="text-slate-400 max-w-sm leading-relaxed text-xs">
-              {company?.tagline ||
-                'Precision Engineered Web Architecture & Interactive Workshop Showroom.'}
+              Fast, simple static websites that load instantly on all phones and help your business get more clients.
             </p>
 
             <div className="space-y-1.5 pt-2 text-slate-400 font-mono text-[11px]">
@@ -46,27 +45,27 @@ export default function Footer({ company }) {
           {/* Navigation Links */}
           <div className="space-y-3">
             <div className="text-xs font-mono uppercase font-semibold text-white tracking-wider">
-              Navigation
+              Links
             </div>
             <ul className="space-y-2">
               <li>
                 <a href="#showroom" className="hover:text-cyan-400 transition-colors">
-                  Workshop Showroom
+                  Website Samples
                 </a>
               </li>
               <li>
                 <a href="#estimator" className="hover:text-cyan-400 transition-colors">
-                  Scope Estimator
+                  Price Calculator
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-cyan-400 transition-colors">
-                  Engineering Services
+                  Services
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="hover:text-cyan-400 transition-colors">
-                  Package Matrix
+                  Pricing
                 </a>
               </li>
               <li>
@@ -74,13 +73,22 @@ export default function Footer({ company }) {
                   FAQ
                 </a>
               </li>
+              <li className="pt-2 border-t border-slate-800/60">
+                <Link
+                  href="/admin/login"
+                  className="hover:text-cyan-400 text-slate-400 transition-colors flex items-center gap-1.5"
+                >
+                  <Lock className="w-3 h-3 text-cyan-500" />
+                  <span>Admin Login</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Repositories & Control */}
+          {/* Repositories */}
           <div className="space-y-3">
             <div className="text-xs font-mono uppercase font-semibold text-white tracking-wider">
-              Engineering & Access
+              Code & Details
             </div>
             <ul className="space-y-2">
               <li>
@@ -95,13 +103,15 @@ export default function Footer({ company }) {
                 </a>
               </li>
               <li>
-                <Link
-                  href="/admin"
-                  className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors font-mono"
+                <a
+                  href={company?.linkedin || 'https://www.linkedin.com/company/hope-web-development'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
                 >
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Admin Gateway</span>
-                </Link>
+                  <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
+                  <span>LinkedIn Page</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -110,9 +120,19 @@ export default function Footer({ company }) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-500">
           <div>
-            &copy; {currentYear} {company?.legalName || 'Hope Teams Digital Solutions'}. All rights reserved.
+            &copy; {currentYear} {company?.legalName || 'Hope Teams Digital Solutions'}.
           </div>
-          <div>Bespoke Next.js 14 App Architecture • Zero AI Templates</div>
+          <div className="flex items-center gap-3">
+            <span>Fast Static Websites • Addis Ababa</span>
+            <span>•</span>
+            <Link
+              href="/admin/login"
+              className="text-slate-500 hover:text-cyan-400 flex items-center gap-1 transition-colors"
+            >
+              <Lock className="w-3 h-3 text-slate-500" />
+              <span>Admin</span>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

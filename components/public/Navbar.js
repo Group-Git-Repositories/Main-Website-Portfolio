@@ -10,19 +10,18 @@ export default function Navbar({ onOpenQuote, company }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Workshop Showroom', href: '#showroom' },
-    { label: 'Cost Estimator', href: '#estimator' },
+    { label: 'Website Samples', href: '#showroom' },
+    { label: 'Prices', href: '#pricing' },
     { label: 'Services', href: '#services' },
-    { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
   ];
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-[#070B16]/85 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-white/95 dark:bg-[#070B16]/90 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-white shadow-sm shadow-cyan-500/20 group-hover:border-cyan-400 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center font-mono font-bold text-white shadow-sm group-hover:border-cyan-500/50 transition-colors">
             <span className="text-violet-500 text-xs">{'{'}</span>
             <span className="text-white text-base">H</span>
             <span className="text-cyan-400 text-xs">{'}'}</span>
@@ -38,7 +37,7 @@ export default function Navbar({ onOpenQuote, company }) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((item) => (
             <a
               key={item.href}
@@ -54,14 +53,6 @@ export default function Navbar({ onOpenQuote, company }) {
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
 
-          <Link
-            href="/admin"
-            title="Admin Gateway"
-            className="p-2 text-slate-500 hover:text-cyan-500 dark:text-slate-400 dark:hover:text-cyan-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-          >
-            <ShieldCheck className="w-4 h-4" />
-          </Link>
-
           <Button
             size="sm"
             variant="primary"
@@ -69,7 +60,7 @@ export default function Navbar({ onOpenQuote, company }) {
             icon={ArrowRight}
             iconPosition="right"
           >
-            Request a Quote
+            Get a Website
           </Button>
         </div>
 
@@ -111,14 +102,6 @@ export default function Navbar({ onOpenQuote, company }) {
             >
               Request a Quote
             </Button>
-            <Link
-              href="/admin"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-2 py-2 text-xs font-mono text-slate-500 hover:text-cyan-400"
-            >
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Admin Gateway</span>
-            </Link>
           </div>
         </div>
       )}

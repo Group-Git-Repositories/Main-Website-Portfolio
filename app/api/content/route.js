@@ -9,7 +9,11 @@ export async function GET() {
   if (!data) {
     return NextResponse.json({ error: 'Failed to load company data' }, { status: 500 });
   }
-  return NextResponse.json(data);
+  return NextResponse.json(data, {
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+    },
+  });
 }
 
 export async function POST(request) {

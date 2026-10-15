@@ -53,8 +53,8 @@ body {
   background: rgba(148, 163, 184, 0.45);
 }
 
-/* Smooth Focus Rings */
+/* Neutral Focus Rings */
 *:focus-visible {
-  outline: 2px solid #00F2FE;
+  outline: 2px solid #64748B;
   outline-offset: 2px;
 }

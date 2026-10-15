@@ -12,24 +12,23 @@ import Footer from '../components/public/Footer';
 import DirectChannelsBar from '../components/public/DirectChannelsBar';
 import QuoteModal from '../components/public/QuoteModal';
 
+import defaultPortfolioData from '../data/company_portfolio.json';
+
 export default function HomePage() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(defaultPortfolioData);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteInitialData, setQuoteInitialData] = useState(null);
 
   useEffect(() => {
     async function loadContent() {
       try {
-        const res = await fetch('/api/content');
+        const res = await fetch('/api/content', { cache: 'no-store' });
         if (res.ok) {
           const json = await res.json();
           setData(json);
         }
       } catch (err) {
         console.error('Failed to load portfolio content:', err);
-      } finally {
-        setLoading(false);
       }
     }
     loadContent();
@@ -40,14 +39,6 @@ export default function HomePage() {
     setQuoteModalOpen(true);
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#070B16] flex flex-col items-center justify-center text-cyan-400 font-mono text-xs gap-3">
-        <div className="w-8 h-8 rounded-lg border-2 border-cyan-500/30 border-t-cyan-400 animate-spin" />
-        <span>INITIALIZING HOPE SHOWROOM...</span>
-      </div>
-    );
-  }
 
   const company = data?.company || {};
   const hero = data?.hero || {};
@@ -57,7 +48,7 @@ export default function HomePage() {
   const faq = data?.faq || [];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#070B16] text-slate-900 dark:text-slate-100 selection:bg-cyan-500/20">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-[#070B16] text-slate-900 dark:text-slate-100">
       <Navbar company={company} onOpenQuote={() => handleOpenQuote(null)} />
 
       <main className="flex-1">

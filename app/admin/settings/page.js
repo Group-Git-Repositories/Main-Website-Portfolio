@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Check, MessageSquare, Send, Globe } from 'lucide-react';
+import { Save, Check, Phone, Mail, Linkedin, Send, MapPin, Globe } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
 export default function SettingsAdminPage() {
@@ -56,7 +56,6 @@ export default function SettingsAdminPage() {
 
   const company = data?.company || {};
   const channels = company?.channels || {};
-  const whatsapp = channels.whatsapp || {};
   const telegram = channels.telegram || {};
 
   return (
@@ -64,10 +63,10 @@ export default function SettingsAdminPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Channel & Identity Settings
+            Contact & Channel Settings
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 font-mono">
-            Configure direct chat messaging triggers and company contact endpoints.
+            Manage the phone, email, LinkedIn, and Telegram channels that appear in your website contact widget.
           </p>
         </div>
 
@@ -89,94 +88,95 @@ export default function SettingsAdminPage() {
         </div>
       )}
 
-      {/* WhatsApp Configuration */}
+      {/* 1. Phone Number */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <MessageSquare className="w-5 h-5 text-emerald-400" />
-            <h3 className="font-bold text-white text-base">WhatsApp Direct Trigger</h3>
-          </div>
-          <label className="flex items-center gap-2 cursor-pointer text-xs font-mono text-slate-300">
-            <input
-              type="checkbox"
-              checked={whatsapp.enabled}
-              onChange={(e) =>
-                setData({
-                  ...data,
-                  company: {
-                    ...company,
-                    channels: {
-                      ...channels,
-                      whatsapp: { ...whatsapp, enabled: e.target.checked },
-                    },
-                  },
-                })
-              }
-              className="rounded text-emerald-500"
-            />
-            <span>Enabled</span>
-          </label>
+        <div className="flex items-center gap-2.5">
+          <Phone className="w-5 h-5 text-emerald-400" />
+          <h3 className="font-bold text-white text-base">Phone Call Endpoint</h3>
         </div>
-
         <div>
           <label className="block text-xs font-mono text-slate-400 mb-1">
-            WhatsApp Phone Number (with Country Code)
+            Display Phone Number (e.g. +251 973 951 191)
           </label>
           <input
             type="text"
-            value={whatsapp.number || ''}
+            value={company.phone || ''}
             onChange={(e) =>
               setData({
                 ...data,
-                company: {
-                  ...company,
-                  channels: {
-                    ...channels,
-                    whatsapp: { ...whatsapp, number: e.target.value },
-                  },
-                },
+                company: { ...company, phone: e.target.value },
               })
             }
             placeholder="+251 973 951 191"
-            className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
+          <p className="text-[11px] font-mono text-slate-500 mt-1.5">
+            Clicking this on mobile will dial this number directly.
+          </p>
         </div>
+      </div>
 
+      {/* 2. Company Email */}
+      <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
+        <div className="flex items-center gap-2.5">
+          <Mail className="w-5 h-5 text-amber-400" />
+          <h3 className="font-bold text-white text-base">Email Endpoint</h3>
+        </div>
         <div>
           <label className="block text-xs font-mono text-slate-400 mb-1">
-            Pre-Filled Greeting Message
+            Inquiry & Contact Email
           </label>
           <input
-            type="text"
-            value={whatsapp.defaultMessage || ''}
+            type="email"
+            value={company.email || ''}
             onChange={(e) =>
               setData({
                 ...data,
-                company: {
-                  ...company,
-                  channels: {
-                    ...channels,
-                    whatsapp: { ...whatsapp, defaultMessage: e.target.value },
-                  },
-                },
+                company: { ...company, email: e.target.value },
               })
             }
-            className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs"
+            placeholder="contact@hopeteams.com"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
         </div>
       </div>
 
-      {/* Telegram Configuration */}
+      {/* 3. LinkedIn Profile */}
+      <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
+        <div className="flex items-center gap-2.5">
+          <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+          <h3 className="font-bold text-white text-base">LinkedIn Profile URL</h3>
+        </div>
+        <div>
+          <label className="block text-xs font-mono text-slate-400 mb-1">
+            Full LinkedIn URL
+          </label>
+          <input
+            type="url"
+            value={company.linkedin || ''}
+            onChange={(e) =>
+              setData({
+                ...data,
+                company: { ...company, linkedin: e.target.value },
+              })
+            }
+            placeholder="https://www.linkedin.com/company/hope-web-development"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      {/* 4. Telegram Direct Trigger */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <Send className="w-5 h-5 text-sky-400" />
-            <h3 className="font-bold text-white text-base">Telegram Direct Trigger</h3>
+            <h3 className="font-bold text-white text-base">Telegram Direct Chat</h3>
           </div>
           <label className="flex items-center gap-2 cursor-pointer text-xs font-mono text-slate-300">
             <input
               type="checkbox"
-              checked={telegram.enabled}
+              checked={telegram.enabled !== false}
               onChange={(e) =>
                 setData({
                   ...data,
@@ -215,33 +215,36 @@ export default function SettingsAdminPage() {
               })
             }
             placeholder="TeddyEt"
-            className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
         </div>
       </div>
 
-      {/* Company Contact Endpoints */}
+      {/* 5. General Location & Company Details */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
-        <h3 className="font-bold text-white text-base">Company Contact Information</h3>
+        <div className="flex items-center gap-2.5">
+          <MapPin className="w-5 h-5 text-cyan-400" />
+          <h3 className="font-bold text-white text-base">Location & Identity</h3>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-mono text-slate-400 mb-1">Company Email</label>
+            <label className="block text-xs font-mono text-slate-400 mb-1">Company Display Name</label>
             <input
-              type="email"
-              value={company.email || ''}
+              type="text"
+              value={company.name || ''}
               onChange={(e) =>
                 setData({
                   ...data,
-                  company: { ...company, email: e.target.value },
+                  company: { ...company, name: e.target.value },
                 })
               }
-              className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-mono text-slate-400 mb-1">Location</label>
+            <label className="block text-xs font-mono text-slate-400 mb-1">Office Location</label>
             <input
               type="text"
               value={company.location || ''}
@@ -251,7 +254,7 @@ export default function SettingsAdminPage() {
                   company: { ...company, location: e.target.value },
                 })
               }
-              className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
             />
           </div>
         </div>

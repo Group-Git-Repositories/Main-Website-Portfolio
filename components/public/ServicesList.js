@@ -11,17 +11,16 @@ export default function ServicesList({ services = [], onOpenQuote }) {
 
   return (
     <section id="services" className="py-20 md:py-28 border-t border-slate-200/80 dark:border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/20 text-cyan-400 text-xs font-mono font-medium mb-4">
-            <Code className="w-3.5 h-3.5" />
-            <span>Engineering Capabilities</span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mb-12">
+          <div className="text-xs font-mono font-semibold tracking-wider text-cyan-700 dark:text-cyan-400 uppercase mb-3">
+            Our Services
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-            Bespoke Web Development Solutions
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+            What We Build
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            From modern responsive brand sites to high-volume headless e-commerce architectures, we engineer web solutions built to perform.
+          <p className="text-base text-slate-600 dark:text-slate-300">
+            Clean, ultra-fast static websites built to show your products and bring in real client inquiries.
           </p>
         </div>
 
@@ -31,14 +30,14 @@ export default function ServicesList({ services = [], onOpenQuote }) {
             return (
               <div
                 key={srv.id}
-                className="flex flex-col justify-between p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 shadow-sm"
+                className="flex flex-col justify-between p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-200"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-6">
+                    <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
                     {srv.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
@@ -48,7 +47,7 @@ export default function ServicesList({ services = [], onOpenQuote }) {
                   <div className="space-y-2.5 mb-8">
                     {srv.features?.map((f, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                        <Check className="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" />
+                        <Check className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5 stroke-[2.5]" />
                         <span>{f}</span>
                       </div>
                     ))}
@@ -57,8 +56,8 @@ export default function ServicesList({ services = [], onOpenQuote }) {
 
                 <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] font-mono text-slate-400 uppercase">Starting From</span>
-                    <div className="text-lg font-bold text-slate-900 dark:text-white">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase">From</span>
+                    <div className="text-base font-bold text-slate-900 dark:text-white">
                       {srv.startingPrice}
                     </div>
                   </div>
@@ -67,8 +66,6 @@ export default function ServicesList({ services = [], onOpenQuote }) {
                     size="sm"
                     variant="outline"
                     onClick={() => onOpenQuote?.()}
-                    icon={ArrowRight}
-                    iconPosition="right"
                     className="text-xs"
                   >
                     Inquire
