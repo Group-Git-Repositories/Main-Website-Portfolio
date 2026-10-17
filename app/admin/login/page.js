@@ -54,14 +54,16 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-[#070B16] text-white flex flex-col justify-center items-center p-4">
       <div className="w-full max-w-md bg-[#0E1626] border border-slate-800 rounded-2xl p-8 shadow-2xl">
         <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-white shadow-sm shadow-cyan-500/20">
-            <span className="text-violet-500 text-xs">{'{'}</span>
-            <span className="text-white text-base">{companyName ? companyName.trim().charAt(0).toUpperCase() : 'H'}</span>
-            <span className="text-cyan-400 text-xs">{'}'}</span>
+          <div className="w-12 h-12 rounded-xl bg-white border border-slate-700 flex items-center justify-center overflow-hidden shadow-sm shadow-cyan-500/20 shrink-0">
+            <img
+              src="/logo.png"
+              alt={companyName || 'ROHA Dev'}
+              className="w-full h-full object-contain p-1"
+            />
           </div>
           <div>
             <div className="text-base font-bold tracking-tight uppercase">
-              {companyName ? `${companyName} Gateway` : 'HOPE GATEWAY'}
+              {companyName ? `${companyName} Gateway` : 'ROHA DEV GATEWAY'}
             </div>
             <div className="text-[10px] font-mono tracking-widest text-cyan-400 uppercase">
               Admin Authentication

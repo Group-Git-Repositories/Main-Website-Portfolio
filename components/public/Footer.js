@@ -12,13 +12,15 @@ export default function Footer({ company }) {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center font-mono font-bold text-white">
-                <span className="text-violet-400 text-[10px]">{'{'}</span>
-                <span className="text-white text-xs">H</span>
-                <span className="text-cyan-400 text-[10px]">{'}'}</span>
+              <div className="w-8 h-8 rounded-lg bg-white border border-slate-700 flex items-center justify-center overflow-hidden shrink-0">
+                <img
+                  src="/logo.png"
+                  alt={company?.name || 'ROHA Dev'}
+                  className="w-full h-full object-contain p-0.5"
+                />
               </div>
               <span className="text-sm font-bold text-white tracking-wide">
-                {company?.name || 'HOPE Web Development'}
+                {company?.name || 'ROHA Dev'}
               </span>
             </div>
 

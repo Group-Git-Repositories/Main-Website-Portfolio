@@ -1,14 +1,20 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'HOPE Web Development | Fast Static Websites for Your Business',
+  title: 'ROHA Dev | Fast Static Websites & Software Development',
   description:
-    'Clean, fast static websites that load instantly on all phones and computers. Zero database crashes, no maintenance headaches, and transparent pricing in Birr.',
-  metadataBase: new URL('https://hopeteams.com'),
+    'Clean, fast static websites and software solutions that load instantly on all phones and computers. Zero database crashes, no maintenance headaches, and transparent pricing in Birr.',
+  metadataBase: new URL('https://main-website-portfolio-sandy.vercel.app'),
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
-    title: 'HOPE Web Development | Fast Static Websites',
-    description: 'Fast, reliable static websites for Ethiopian businesses.',
-    siteName: 'HOPE Web Development',
+    title: 'ROHA Dev | Software & Web Development',
+    description: 'Fast, reliable websites and software solutions for modern businesses.',
+    siteName: 'ROHA Dev',
+    images: ['/logo.png'],
     locale: 'en_US',
     type: 'website',
   },

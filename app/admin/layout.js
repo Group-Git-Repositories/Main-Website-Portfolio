@@ -98,14 +98,16 @@ export default function AdminLayout({ children }) {
       <header className="border-b border-slate-800 bg-[#0E1626] px-4 sm:px-8 h-16 flex items-center justify-between sticky top-0 z-30">
         <div className="flex items-center gap-6">
           <Link href="/admin" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-slate-900 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-white text-xs">
-              <span className="text-violet-400">{'{'}</span>
-              <span>{companyName ? companyName.trim().charAt(0).toUpperCase() : 'H'}</span>
-              <span className="text-cyan-400">{'}'}</span>
+            <div className="w-8 h-8 rounded-lg bg-white border border-slate-700 flex items-center justify-center overflow-hidden shrink-0">
+              <img
+                src="/logo.png"
+                alt={companyName || 'ROHA Dev'}
+                className="w-full h-full object-contain p-0.5"
+              />
             </div>
             <div className="hidden sm:block">
               <div className="text-xs font-bold text-white tracking-wide uppercase">
-                {companyName ? `${companyName} Admin Gateway` : 'HOPE ADMIN GATEWAY'}
+                {companyName ? `${companyName} Admin Gateway` : 'ROHA DEV ADMIN GATEWAY'}
               </div>
               <div className="text-[10px] font-mono text-cyan-400">Content Management Control</div>
             </div>

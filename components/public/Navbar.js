@@ -21,17 +21,19 @@ export default function Navbar({ onOpenQuote, company }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center font-mono font-bold text-white shadow-sm group-hover:border-cyan-500/50 transition-colors">
-            <span className="text-violet-500 text-xs">{'{'}</span>
-            <span className="text-white text-base">H</span>
-            <span className="text-cyan-400 text-xs">{'}'}</span>
+          <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-cyan-500/50 transition-colors shrink-0">
+            <img
+              src="/logo.png"
+              alt={company?.name || 'ROHA Dev'}
+              className="w-full h-full object-contain p-1"
+            />
           </div>
           <div>
             <div className="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-              {company?.name || 'HOPE'}
+              {company?.name || 'ROHA Dev'}
             </div>
             <div className="text-[10px] font-mono tracking-widest text-cyan-600 dark:text-cyan-400 uppercase font-semibold">
-              Web Development
+              Software Development
             </div>
           </div>
         </Link>
