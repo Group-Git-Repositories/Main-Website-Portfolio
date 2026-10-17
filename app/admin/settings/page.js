@@ -41,7 +41,10 @@ export default function SettingsAdminPage() {
         body: JSON.stringify(data),
       });
 
-      if (!res.ok) throw new Error('Failed to update channel settings.');
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(result.error || 'Failed to update channel settings.');
+      }
       showToast('Settings saved successfully.');
     } catch (err) {
       alert(err.message);
@@ -132,7 +135,17 @@ export default function SettingsAdminPage() {
             onChange={(e) =>
               setData({
                 ...data,
-                company: { ...company, email: e.target.value },
+                company: {
+                  ...company,
+                  email: e.target.value,
+                  channels: {
+                    ...channels,
+                    email: {
+                      ...(channels.email || {}),
+                      address: e.target.value,
+                    },
+                  },
+                },
               })
             }
             placeholder="contact@hopeteams.com"

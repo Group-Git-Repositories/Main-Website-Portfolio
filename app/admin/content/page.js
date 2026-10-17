@@ -41,7 +41,10 @@ export default function ContentAdminPage() {
         body: JSON.stringify(data),
       });
 
-      if (!res.ok) throw new Error('Failed to save website content.');
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(result.error || 'Failed to save website content.');
+      }
       showToast('Website content updated successfully.');
     } catch (err) {
       alert(err.message);
