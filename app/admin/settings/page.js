@@ -45,6 +45,9 @@ export default function SettingsAdminPage() {
       if (!res.ok) {
         throw new Error(result.error || 'Failed to update channel settings.');
       }
+      if (typeof window !== 'undefined' && data?.company) {
+        window.dispatchEvent(new CustomEvent('company-updated', { detail: data.company }));
+      }
       showToast('Settings saved successfully.');
     } catch (err) {
       alert(err.message);

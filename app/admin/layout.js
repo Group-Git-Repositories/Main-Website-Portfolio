@@ -31,8 +31,8 @@ export default function AdminLayout({ children }) {
 
       try {
         const [authRes, contentRes] = await Promise.all([
-          fetch('/api/auth/verify'),
-          fetch('/api/content'),
+          fetch('/api/auth/verify', { cache: 'no-store' }),
+          fetch('/api/content?t=' + Date.now(), { cache: 'no-store' }),
         ]);
 
         if (!authRes.ok) {
@@ -53,6 +53,14 @@ export default function AdminLayout({ children }) {
     }
 
     checkAuth();
+
+    const handleUpdate = (e) => {
+      if (e.detail?.name) {
+        setCompanyName(e.detail.name);
+      }
+    };
+    window.addEventListener('company-updated', handleUpdate);
+    return () => window.removeEventListener('company-updated', handleUpdate);
   }, [pathname, isLoginPage, router]);
 
   const handleLogout = async () => {
