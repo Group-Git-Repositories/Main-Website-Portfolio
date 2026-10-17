@@ -18,6 +18,7 @@ export default function AdminLayout({ children }) {
   const pathname = usePathname();
   const router = useRouter();
   const [checking, setChecking] = useState(true);
+  const [companyName, setCompanyName] = useState('');
 
   const isLoginPage = pathname === '/admin/login';
 
@@ -29,9 +30,20 @@ export default function AdminLayout({ children }) {
       }
 
       try {
-        const res = await fetch('/api/auth/verify');
-        if (!res.ok) {
+        const [authRes, contentRes] = await Promise.all([
+          fetch('/api/auth/verify'),
+          fetch('/api/content'),
+        ]);
+
+        if (!authRes.ok) {
           router.push('/admin/login');
+        }
+
+        if (contentRes.ok) {
+          const content = await contentRes.json();
+          if (content?.company?.name) {
+            setCompanyName(content.company.name);
+          }
         }
       } catch (err) {
         router.push('/admin/login');
@@ -80,11 +92,13 @@ export default function AdminLayout({ children }) {
           <Link href="/admin" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-slate-900 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-white text-xs">
               <span className="text-violet-400">{'{'}</span>
-              <span>H</span>
+              <span>{companyName ? companyName.trim().charAt(0).toUpperCase() : 'H'}</span>
               <span className="text-cyan-400">{'}'}</span>
             </div>
             <div className="hidden sm:block">
-              <div className="text-xs font-bold text-white tracking-wide">HOPE ADMIN GATEWAY</div>
+              <div className="text-xs font-bold text-white tracking-wide uppercase">
+                {companyName ? `${companyName} Admin Gateway` : 'HOPE ADMIN GATEWAY'}
+              </div>
               <div className="text-[10px] font-mono text-cyan-400">Content Management Control</div>
             </div>
           </Link>

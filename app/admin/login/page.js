@@ -12,6 +12,16 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [companyName, setCompanyName] = useState('');
+
+  useEffect(() => {
+    fetch('/api/content')
+      .then((r) => r.json())
+      .then((d) => {
+        if (d?.company?.name) setCompanyName(d.company.name);
+      })
+      .catch(() => {});
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -46,11 +56,13 @@ export default function AdminLoginPage() {
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl bg-slate-900 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-white shadow-sm shadow-cyan-500/20">
             <span className="text-violet-500 text-xs">{'{'}</span>
-            <span className="text-white text-base">H</span>
+            <span className="text-white text-base">{companyName ? companyName.trim().charAt(0).toUpperCase() : 'H'}</span>
             <span className="text-cyan-400 text-xs">{'}'}</span>
           </div>
           <div>
-            <div className="text-base font-bold tracking-tight">HOPE GATEWAY</div>
+            <div className="text-base font-bold tracking-tight uppercase">
+              {companyName ? `${companyName} Gateway` : 'HOPE GATEWAY'}
+            </div>
             <div className="text-[10px] font-mono tracking-widest text-cyan-400 uppercase">
               Admin Authentication
             </div>
