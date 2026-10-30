@@ -10,8 +10,8 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
     email: '',
     phone: '',
     company: '',
-    budget: '14,000 - 24,000 Birr',
-    timeline: 'Within 1-2 Weeks',
+    budget: '9,500 - 16,500 Birr',
+    timeline: 'Within 1 Week',
     projectRef: '',
     message: '',
   });
@@ -22,12 +22,12 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
 
   useEffect(() => {
     if (initialData) {
-      if (initialData.type === 'estimator') {
+      if (initialData.type === 'estimator' || initialData.type === 'restaurant-estimator') {
         setFormData((prev) => ({
           ...prev,
           budget: initialData.estimatedPrice || prev.budget,
           timeline: initialData.estimatedDays || prev.timeline,
-          projectRef: `Estimator Spec: ${initialData.industry} with modules: ${initialData.features?.join(', ')}`,
+          projectRef: `Restaurant Estimator: ${initialData.industry} with features: ${initialData.features?.join(', ')}`,
         }));
       } else if (initialData.id) {
         setFormData((prev) => ({
@@ -60,7 +60,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
 
       setSubmitted(true);
     } catch (err) {
-      setError(err.message || 'Error sending request. Please try again or reach out directly via Telegram or Email.');
+      setError(err.message || 'Error sending request. Please reach out directly via Telegram or Phone.');
     } finally {
       setLoading(false);
     }
@@ -69,7 +69,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
   const telegramUrl = company?.channels?.telegram?.username
     ? `https://t.me/${company.channels.telegram.username}`
     : 'https://t.me/TeddyEt';
-  const emailAddress = company?.email || 'contact@hopeteams.com';
+  const emailAddress = company?.email || 'rohadev0@gmail.com';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
@@ -81,12 +81,13 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               Get Started
             </div>
             <h3 className="text-lg font-bold text-white tracking-tight">
-              Order Your Website
+              Order Your Restaurant Website / Menu
             </h3>
           </div>
           <button
             onClick={onClose}
             className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800"
+            aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
@@ -99,9 +100,9 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto border border-cyan-500/20">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
-              <h4 className="text-xl font-bold text-white">Inquiry Received</h4>
+              <h4 className="text-xl font-bold text-white">Inquiry Received!</h4>
               <p className="text-sm text-slate-300 max-w-sm mx-auto">
-                Thank you! Our engineering team will review your project specification and respond within 24 hours.
+                Thank you! Our team will review your restaurant details and contact you within 24 hours to begin your setup.
               </p>
 
               <div className="pt-4 flex flex-wrap justify-center gap-3">
@@ -133,7 +134,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
             <form onSubmit={handleSubmit} className="space-y-4">
               {formData.projectRef && (
                 <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-400">
-                  <span className="text-slate-500">Referenced Scope: </span>
+                  <span className="text-slate-500">Selected Setup: </span>
                   {formData.projectRef}
                 </div>
               )}
@@ -148,21 +149,21 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. John Doe"
+                    placeholder="e.g. Dawit Tesfaye"
                     className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                    Work Email *
+                    Email Address *
                   </label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="john@company.com"
+                    placeholder="dawit@restaurant.com"
                     className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
                   />
                 </div>
@@ -171,26 +172,26 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                    Phone or WhatsApp
+                    Phone / Telegram (Ethiopia)
                   </label>
                   <input
                     type="text"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+251 911 ..."
+                    placeholder="+251 988 ..."
                     className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                    Company / Brand Name
+                    Restaurant or Café Name
                   </label>
                   <input
                     type="text"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="Acme Corp"
+                    placeholder="Lucy Restaurant / Aroma Café"
                     className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
                   />
                 </div>
@@ -199,45 +200,45 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                    Estimated Budget (Birr)
+                    Target Budget (Birr)
                   </label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
                   >
-                    <option value="12,000 - 20,000 Birr">12,000 – 20,000 Birr (Starter)</option>
-                    <option value="20,000 - 35,000 Birr">20,000 – 35,000 Birr (Standard Business)</option>
-                    <option value="35,000+ Birr">35,000+ Birr (Full Custom / Catalog)</option>
+                    <option value="9,500 - 16,500 Birr">9,500 – 16,500 Birr (QR Digital Menu / Café)</option>
+                    <option value="16,500 - 28,000 Birr">16,500 – 28,000 Birr (Standard Restaurant & Bar)</option>
+                    <option value="28,000+ Birr">28,000+ Birr (Premium Multi-Branch / Hotel)</option>
+                    <option value="Custom Quote">Custom Quote</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                    Target Delivery
+                    Desired Timeline
                   </label>
                   <select
                     value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
                   >
-                    <option value="Urgent (< 5 Days)">Urgent (Under 5 Days)</option>
-                    <option value="Standard (1-2 Weeks)">Standard (1 to 2 Weeks)</option>
+                    <option value="Urgent (2-3 Days)">Urgent (2 to 3 Days)</option>
+                    <option value="Standard (4-6 Days)">Standard (4 to 6 Days)</option>
                     <option value="Flexible">Flexible</option>
-                    <option value="Flexible">Flexible Planning</option>
                   </select>
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-mono text-slate-300 mb-1.5">
-                  Project Notes & Requirements
+                  Menu Items & Specific Preferences
                 </label>
                 <textarea
                   rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your target audience, required integrations, or design preferences..."
+                  placeholder="Mention your restaurant location in Addis Ababa, number of dishes, fasting categories, or specific order buttons..."
                   className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none resize-none"
                 />
               </div>
@@ -256,7 +257,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                   variant="primary"
                   icon={Send}
                   iconPosition="right"
-                  className="w-full text-xs font-bold"
+                  className="w-full text-xs font-bold py-2.5"
                 >
                   {loading ? 'Sending...' : 'Send Inquiry'}
                 </Button>

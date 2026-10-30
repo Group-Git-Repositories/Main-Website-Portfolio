@@ -102,7 +102,7 @@ export default function SettingsAdminPage() {
         </div>
         <div>
           <label className="block text-xs font-mono text-slate-400 mb-1">
-            Display Phone Number (e.g. +251 973 951 191)
+            Display Phone Number (e.g. +251 988717219)
           </label>
           <input
             type="text"
@@ -113,7 +113,7 @@ export default function SettingsAdminPage() {
                 company: { ...company, phone: e.target.value },
               })
             }
-            placeholder="+251 973 951 191"
+            placeholder="+251 988717219"
             className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
           <p className="text-[11px] font-mono text-slate-500 mt-1.5">
@@ -151,21 +151,21 @@ export default function SettingsAdminPage() {
                 },
               })
             }
-            placeholder="contact@hopeteams.com"
+            placeholder="rohadev0@gmail.com"
             className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
         </div>
       </div>
 
-      {/* 3. LinkedIn Profile */}
+      {/* 3. LinkedIn Channel */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
         <div className="flex items-center gap-2.5">
           <Linkedin className="w-5 h-5 text-[#0A66C2]" />
-          <h3 className="font-bold text-white text-base">LinkedIn Profile URL</h3>
+          <h3 className="font-bold text-white text-base">LinkedIn Profile Link</h3>
         </div>
         <div>
           <label className="block text-xs font-mono text-slate-400 mb-1">
-            Full LinkedIn URL
+            Company / Founder Profile URL
           </label>
           <input
             type="url"
@@ -173,7 +173,17 @@ export default function SettingsAdminPage() {
             onChange={(e) =>
               setData({
                 ...data,
-                company: { ...company, linkedin: e.target.value },
+                company: {
+                  ...company,
+                  linkedin: e.target.value,
+                  channels: {
+                    ...channels,
+                    linkedin: {
+                      ...(channels.linkedin || {}),
+                      url: e.target.value,
+                    },
+                  },
+                },
               })
             }
             placeholder="https://www.linkedin.com/company/hope-web-development"
@@ -182,17 +192,17 @@ export default function SettingsAdminPage() {
         </div>
       </div>
 
-      {/* 4. Telegram Direct Trigger */}
+      {/* 4. Telegram Direct Link */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <Send className="w-5 h-5 text-sky-400" />
-            <h3 className="font-bold text-white text-base">Telegram Direct Chat</h3>
+            <h3 className="font-bold text-white text-base">Telegram Direct Contact</h3>
           </div>
-          <label className="flex items-center gap-2 cursor-pointer text-xs font-mono text-slate-300">
+          <label className="flex items-center gap-2 text-xs font-mono text-slate-300 cursor-pointer">
             <input
               type="checkbox"
-              checked={telegram.enabled !== false}
+              checked={telegram.enabled ?? true}
               onChange={(e) =>
                 setData({
                   ...data,
@@ -260,6 +270,22 @@ export default function SettingsAdminPage() {
           </div>
 
           <div>
+            <label className="block text-xs font-mono text-slate-400 mb-1">Legal / Copyright Name</label>
+            <input
+              type="text"
+              value={company.legalName || ''}
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  company: { ...company, legalName: e.target.value },
+                })
+              }
+              placeholder="roha dev software development"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
+            />
+          </div>
+
+          <div className="sm:col-span-2">
             <label className="block text-xs font-mono text-slate-400 mb-1">Office Location</label>
             <input
               type="text"

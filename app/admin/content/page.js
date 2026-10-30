@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Check, Plus, Trash2 } from 'lucide-react';
+import { Save, Check, Plus, Trash2, Star, MessageSquareQuote, Utensils, Tag } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
 export default function ContentAdminPage() {
@@ -60,17 +60,18 @@ export default function ContentAdminPage() {
   const hero = data?.hero || {};
   const services = data?.services || [];
   const packages = data?.pricingPackages || [];
+  const testimonials = data?.testimonials || [];
   const faq = data?.faq || [];
 
   return (
-    <div className="space-y-8 max-w-4xl">
+    <div className="space-y-8 max-w-5xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Site Copy & Services Editor
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 font-mono">
-            Customize homepage hero messaging, engineering services, and pricing tiers.
+            Customize homepage hero messaging, restaurant services, pricing tiers, and Ethiopian client testimonials.
           </p>
         </div>
 
@@ -80,6 +81,7 @@ export default function ContentAdminPage() {
           onClick={handleSave}
           icon={Save}
           disabled={saving}
+          className="text-xs font-bold"
         >
           {saving ? 'Saving...' : 'Save All Changes'}
         </Button>
@@ -94,7 +96,9 @@ export default function ContentAdminPage() {
 
       {/* Hero Section Copy */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
-        <h3 className="text-base font-bold text-white">Homepage Hero Section</h3>
+        <h3 className="text-base font-bold text-white flex items-center gap-2">
+          <span>Homepage Hero Section</span>
+        </h3>
 
         <div>
           <label className="block text-xs font-mono text-slate-400 mb-1">
@@ -137,45 +141,312 @@ export default function ContentAdminPage() {
             className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs resize-none"
           />
         </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-xs font-mono text-slate-400 mb-1">
+              Primary Button Text
+            </label>
+            <input
+              type="text"
+              value={hero.primaryCta || ''}
+              onChange={(e) =>
+                setData({ ...data, hero: { ...hero, primaryCta: e.target.value } })
+              }
+              className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-mono text-slate-400 mb-1">
+              Secondary Button Text
+            </label>
+            <input
+              type="text"
+              value={hero.secondaryCta || ''}
+              onChange={(e) =>
+                setData({ ...data, hero: { ...hero, secondaryCta: e.target.value } })
+              }
+              className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Pricing Packages */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
-        <h3 className="text-base font-bold text-white">Pricing Packages</h3>
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-bold text-white flex items-center gap-2">
+            <Tag className="w-4 h-4 text-cyan-400" />
+            <span>Restaurant Pricing Packages</span>
+          </h3>
+          <span className="text-[11px] font-mono text-cyan-400">Editable for Live Site</span>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {packages.map((pkg, idx) => (
             <div key={pkg.id || idx} className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
-              <input
-                type="text"
-                value={pkg.name}
-                onChange={(e) => {
-                  const next = [...packages];
-                  next[idx].name = e.target.value;
-                  setData({ ...data, pricingPackages: next });
-                }}
-                className="w-full font-bold text-white text-xs px-2 py-1 bg-slate-950 border border-slate-800 rounded"
-              />
-              <input
-                type="text"
-                value={pkg.price}
-                onChange={(e) => {
-                  const next = [...packages];
-                  next[idx].price = e.target.value;
-                  setData({ ...data, pricingPackages: next });
-                }}
-                className="w-full font-mono text-cyan-400 text-xs px-2 py-1 bg-slate-950 border border-slate-800 rounded"
-              />
-              <input
-                type="text"
-                value={pkg.turnaround}
-                onChange={(e) => {
-                  const next = [...packages];
-                  next[idx].turnaround = e.target.value;
-                  setData({ ...data, pricingPackages: next });
-                }}
-                className="w-full text-slate-400 text-[11px] px-2 py-1 bg-slate-950 border border-slate-800 rounded"
-              />
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Package Name</label>
+                <input
+                  type="text"
+                  value={pkg.name || ''}
+                  onChange={(e) => {
+                    const next = [...packages];
+                    next[idx].name = e.target.value;
+                    setData({ ...data, pricingPackages: next });
+                  }}
+                  className="w-full font-bold text-white text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Price (ETB / Birr)</label>
+                <input
+                  type="text"
+                  value={pkg.price || ''}
+                  onChange={(e) => {
+                    const next = [...packages];
+                    next[idx].price = e.target.value;
+                    setData({ ...data, pricingPackages: next });
+                  }}
+                  className="w-full font-mono text-cyan-400 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded font-bold"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Turnaround Time</label>
+                <input
+                  type="text"
+                  value={pkg.turnaround || ''}
+                  onChange={(e) => {
+                    const next = [...packages];
+                    next[idx].turnaround = e.target.value;
+                    setData({ ...data, pricingPackages: next });
+                  }}
+                  className="w-full text-slate-300 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Ideal For</label>
+                <textarea
+                  rows={2}
+                  value={pkg.idealFor || ''}
+                  onChange={(e) => {
+                    const next = [...packages];
+                    next[idx].idealFor = e.target.value;
+                    setData({ ...data, pricingPackages: next });
+                  }}
+                  className="w-full text-slate-300 text-[11px] px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded resize-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">
+                  Features (One per line)
+                </label>
+                <textarea
+                  rows={4}
+                  value={(pkg.features || []).join('\n')}
+                  onChange={(e) => {
+                    const next = [...packages];
+                    next[idx].features = e.target.value.split('\n').filter(Boolean);
+                    setData({ ...data, pricingPackages: next });
+                  }}
+                  className="w-full text-slate-300 text-[11px] px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded resize-none font-mono"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Services Section ("What We Build") */}
+      <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
+        <h3 className="text-base font-bold text-white flex items-center gap-2">
+          <Utensils className="w-4 h-4 text-cyan-400" />
+          <span>What We Build (Restaurant Services)</span>
+        </h3>
+
+        <div className="space-y-4">
+          {services.map((srv, idx) => (
+            <div key={srv.id || idx} className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="sm:col-span-2">
+                  <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Service Title</label>
+                  <input
+                    type="text"
+                    value={srv.title || ''}
+                    onChange={(e) => {
+                      const next = [...services];
+                      next[idx].title = e.target.value;
+                      setData({ ...data, services: next });
+                    }}
+                    className="w-full font-bold text-white text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Starting Price</label>
+                  <input
+                    type="text"
+                    value={srv.startingPrice || ''}
+                    onChange={(e) => {
+                      const next = [...services];
+                      next[idx].startingPrice = e.target.value;
+                      setData({ ...data, services: next });
+                    }}
+                    className="w-full font-mono text-cyan-400 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">Summary</label>
+                <textarea
+                  rows={2}
+                  value={srv.summary || ''}
+                  onChange={(e) => {
+                    const next = [...services];
+                    next[idx].summary = e.target.value;
+                    setData({ ...data, services: next });
+                  }}
+                  className="w-full text-slate-300 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded resize-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">
+                  Features (One per line)
+                </label>
+                <textarea
+                  rows={3}
+                  value={(srv.features || []).join('\n')}
+                  onChange={(e) => {
+                    const next = [...services];
+                    next[idx].features = e.target.value.split('\n').filter(Boolean);
+                    setData({ ...data, services: next });
+                  }}
+                  className="w-full text-slate-300 text-[11px] px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded resize-none font-mono"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Client Testimonials Section */}
+      <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-bold text-white flex items-center gap-2">
+            <MessageSquareQuote className="w-4 h-4 text-cyan-400" />
+            <span>Ethiopian Client Testimonials (የደንበኞች ምስክርነት)</span>
+          </h3>
+          <button
+            onClick={() => {
+              const next = [
+                ...testimonials,
+                {
+                  id: `test-${Date.now()}`,
+                  clientName: 'አዲስ ደንበኛ (Client Name)',
+                  role: 'ባለቤት (Owner)',
+                  restaurant: 'የሬስቶራንት ስም (Restaurant Name)',
+                  location: 'አዲስ አበባ (Addis Ababa)',
+                  rating: 5,
+                  quote: 'የምስክርነት ጽሁፍ እዚህ ይጻፉ...',
+                  translation: 'English translation here...',
+                },
+              ];
+              setData({ ...data, testimonials: next });
+            }}
+            className="text-xs font-mono text-cyan-400 flex items-center gap-1 hover:underline"
+          >
+            <Plus className="w-3.5 h-3.5" />
+            <span>Add Testimonial</span>
+          </button>
+        </div>
+
+        <div className="space-y-4">
+          {testimonials.map((t, idx) => (
+            <div key={t.id || idx} className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 flex-1">
+                  <input
+                    type="text"
+                    placeholder="Client Name"
+                    value={t.clientName || ''}
+                    onChange={(e) => {
+                      const next = [...testimonials];
+                      next[idx].clientName = e.target.value;
+                      setData({ ...data, testimonials: next });
+                    }}
+                    className="font-bold text-white text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Role (e.g. ባለቤት)"
+                    value={t.role || ''}
+                    onChange={(e) => {
+                      const next = [...testimonials];
+                      next[idx].role = e.target.value;
+                      setData({ ...data, testimonials: next });
+                    }}
+                    className="text-cyan-400 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Restaurant & Location"
+                    value={t.restaurant || ''}
+                    onChange={(e) => {
+                      const next = [...testimonials];
+                      next[idx].restaurant = e.target.value;
+                      setData({ ...data, testimonials: next });
+                    }}
+                    className="text-slate-300 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
+                  />
+                </div>
+                <button
+                  onClick={() => {
+                    const next = testimonials.filter((_, i) => i !== idx);
+                    setData({ ...data, testimonials: next });
+                  }}
+                  className="p-2 text-red-400 hover:bg-red-950/40 rounded transition-colors"
+                  title="Delete testimonial"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">
+                  Amharic Quote (የአማርኛ ምስክርነት)
+                </label>
+                <textarea
+                  rows={2}
+                  value={t.quote || ''}
+                  onChange={(e) => {
+                    const next = [...testimonials];
+                    next[idx].quote = e.target.value;
+                    setData({ ...data, testimonials: next });
+                  }}
+                  className="w-full text-xs text-slate-100 px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded resize-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-400 mb-1 uppercase">
+                  English Subtitle / Translation
+                </label>
+                <textarea
+                  rows={2}
+                  value={t.translation || ''}
+                  onChange={(e) => {
+                    const next = [...testimonials];
+                    next[idx].translation = e.target.value;
+                    setData({ ...data, testimonials: next });
+                  }}
+                  className="w-full text-xs text-slate-400 px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded resize-none italic"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -189,7 +460,7 @@ export default function ContentAdminPage() {
             onClick={() => {
               const next = [
                 ...faq,
-                { question: 'New Question?', answer: 'Detailed response here.' },
+                { question: 'አዲስ ጥያቄ (New Question)?', answer: 'መልስ እዚህ ይጻፉ (Answer here).' },
               ];
               setData({ ...data, faq: next });
             }}
