@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "company": {
     "name": "ROHA Dev Software Development",
     "legalName": "roha dev software development",
@@ -7,9 +7,9 @@
     "shortAbout": "We build ultra-fast restaurant websites, digital QR menus, and online ordering systems that open instantly on any phone in Addis Ababa and across Ethiopia. Easy to maintain with a simple admin page.",
     "location": "Addis Ababa, Ethiopia",
     "email": "rohadev0@gmail.com",
-    "phone": "+251 988717219",
+    "phone": "+251 980717219",
     "github": "https://github.com/Group-Git-Repositories/Main-Website-Portfolio",
-    "linkedin": "https://www.linkedin.com/company/hope-web-development",
+    "linkedin": "https://www.linkedin.com/in/roha-dev",
     "channels": {
       "email": {
         "enabled": true,
@@ -17,11 +17,11 @@
       },
       "linkedin": {
         "enabled": true,
-        "url": "https://www.linkedin.com/company/hope-web-development"
+        "url": "https://www.linkedin.com/in/roha-dev"
       },
       "telegram": {
         "enabled": true,
-        "username": "TeddyEt"
+        "username": "ROHAD_59"
       },
       "quoteForm": {
         "enabled": true

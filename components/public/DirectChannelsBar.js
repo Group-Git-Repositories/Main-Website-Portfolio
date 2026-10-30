@@ -2,16 +2,18 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Linkedin, Send, MessageSquare, X } from 'lucide-react';
+import { ensureAbsoluteUrl } from '../../lib/utils';
 
 export default function DirectChannelsBar({ company }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
   // Dynamic contact values derived from company data
-  const phone = company?.phone || '+251 988717219';
+  const phone = company?.phone || '+251 980717219';
   const email = company?.email || 'rohadev0@gmail.com';
-  const linkedinUrl = company?.linkedin || company?.channels?.linkedin?.url || 'https://www.linkedin.com/company/hope-web-development';
-  const telegramUsername = company?.channels?.telegram?.username || 'TeddyEt';
+  const rawLinkedin = company?.linkedin || company?.channels?.linkedin?.url || 'https://www.linkedin.com/in/roha-dev';
+  const linkedinUrl = ensureAbsoluteUrl(rawLinkedin);
+  const telegramUsername = company?.channels?.telegram?.username || 'ROHAD_59';
   const telegramUrl = `https://t.me/${telegramUsername}`;
 
   // Close when clicking outside or pressing Escape

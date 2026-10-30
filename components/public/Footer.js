@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Github, Mail, Phone, MapPin, Lock, Linkedin, Utensils } from 'lucide-react';
+import { ensureAbsoluteUrl } from '../../lib/utils';
 
 export default function Footer({ company }) {
   const currentYear = new Date().getFullYear();
@@ -100,7 +101,7 @@ export default function Footer({ company }) {
             <ul className="space-y-2">
               <li>
                 <a
-                  href={company?.github || 'https://github.com/Group-Git-Repositories/Main-Website-Portfolio'}
+                  href={ensureAbsoluteUrl(company?.github || 'https://github.com/Group-Git-Repositories/Main-Website-Portfolio')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
@@ -111,7 +112,7 @@ export default function Footer({ company }) {
               </li>
               <li>
                 <a
-                  href={company?.linkedin || 'https://www.linkedin.com/company/hope-web-development'}
+                  href={ensureAbsoluteUrl(company?.linkedin || company?.channels?.linkedin?.url || 'https://www.linkedin.com/in/roha-dev')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Save, Check, Phone, Mail, Linkedin, Send, MapPin, Globe } from 'lucide-react';
+import { ensureAbsoluteUrl } from '../../../lib/utils';
 import Button from '../../../components/ui/Button';
 
 export default function SettingsAdminPage() {
@@ -35,18 +36,34 @@ export default function SettingsAdminPage() {
   const handleSave = async () => {
     setSaving(true);
     try {
+      const normalizedData = {
+        ...data,
+        company: {
+          ...data?.company,
+          linkedin: ensureAbsoluteUrl(data?.company?.linkedin),
+          channels: {
+            ...data?.company?.channels,
+            linkedin: {
+              ...(data?.company?.channels?.linkedin || {}),
+              url: ensureAbsoluteUrl(data?.company?.channels?.linkedin?.url || data?.company?.linkedin),
+            },
+          },
+        },
+      };
+
       const res = await fetch('/api/content', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(normalizedData),
       });
 
       const result = await res.json().catch(() => ({}));
       if (!res.ok) {
         throw new Error(result.error || 'Failed to update channel settings.');
       }
-      if (typeof window !== 'undefined' && data?.company) {
-        window.dispatchEvent(new CustomEvent('company-updated', { detail: data.company }));
+      setData(normalizedData);
+      if (typeof window !== 'undefined' && normalizedData?.company) {
+        window.dispatchEvent(new CustomEvent('company-updated', { detail: normalizedData.company }));
       }
       showToast('Settings saved successfully.');
     } catch (err) {
