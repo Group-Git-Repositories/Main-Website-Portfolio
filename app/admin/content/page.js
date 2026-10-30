@@ -53,6 +53,22 @@ export default function ContentAdminPage() {
     }
   };
 
+  const handleResetDefaults = async () => {
+    if (!confirm('This will synchronize your website content with the latest repository defaults (restaurant services, pricing, Ethiopian testimonials). Continue?')) return;
+    setSaving(true);
+    try {
+      const res = await fetch('/api/content?reset=true');
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || 'Failed to sync defaults');
+      setData(result.data);
+      showToast('Successfully synchronized with repository defaults.');
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
   if (loading) {
     return <div className="text-cyan-400 font-mono text-xs">LOADING CONTENT EDITOR...</div>;
   }
@@ -75,16 +91,28 @@ export default function ContentAdminPage() {
           </p>
         </div>
 
-        <Button
-          size="sm"
-          variant="primary"
-          onClick={handleSave}
-          icon={Save}
-          disabled={saving}
-          className="text-xs font-bold"
-        >
-          {saving ? 'Saving...' : 'Save All Changes'}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={handleResetDefaults}
+            disabled={saving}
+            className="text-xs"
+          >
+            Sync Defaults
+          </Button>
+
+          <Button
+            size="sm"
+            variant="primary"
+            onClick={handleSave}
+            icon={Save}
+            disabled={saving}
+            className="text-xs font-bold"
+          >
+            {saving ? 'Saving...' : 'Save All Changes'}
+          </Button>
+        </div>
       </div>
 
       {toastMessage && (
