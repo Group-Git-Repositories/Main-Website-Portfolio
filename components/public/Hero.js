@@ -57,16 +57,24 @@ export default function Hero({ hero, company, onOpenQuote }) {
 
           {/* Action Triggers */}
           <div className="flex flex-wrap items-center gap-4 mb-14">
-            <a href="#showroom" onClick={(e) => handleSmoothScroll(e, '#showroom')}>
-              <Button size="lg" variant="primary" icon={ArrowRight} iconPosition="right" className="text-sm font-bold px-6 py-3">
-                {hero?.primaryCta || 'View Restaurant Samples'}
-              </Button>
-            </a>
-            <a href="#estimator" onClick={(e) => handleSmoothScroll(e, '#estimator')}>
-              <Button size="lg" variant="outline" className="text-sm font-semibold px-6 py-3">
-                {hero?.secondaryCta || 'Calculate Menu Price'}
-              </Button>
-            </a>
+            <Button
+              size="lg"
+              variant="primary"
+              onClick={(e) => handleSmoothScroll(e, '#showroom')}
+              icon={ArrowRight}
+              iconPosition="right"
+              className="text-sm font-bold px-6 py-3 cursor-pointer"
+            >
+              {hero?.primaryCta || 'View Restaurant Samples'}
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={(e) => handleSmoothScroll(e, '#estimator')}
+              className="text-sm font-semibold px-6 py-3 cursor-pointer"
+            >
+              {hero?.secondaryCta || 'Calculate Menu Price'}
+            </Button>
           </div>
 
           {/* Key Metric Indicators */}

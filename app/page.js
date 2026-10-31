@@ -63,7 +63,7 @@ export default function HomePage() {
       </main>
 
       <Footer company={company} />
-      <DirectChannelsBar company={company} />
+      <DirectChannelsBar company={company} onOpenQuote={() => handleOpenQuote(null)} />
 
       <QuoteModal
         isOpen={quoteModalOpen}

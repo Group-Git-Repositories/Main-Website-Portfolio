@@ -12,6 +12,7 @@ import {
   LogOut,
   ExternalLink,
   ShieldCheck,
+  Star,
 } from 'lucide-react';
 
 export default function AdminLayout({ children }) {
@@ -89,6 +90,7 @@ export default function AdminLayout({ children }) {
     { label: 'Showroom Projects', href: '/admin/showroom', icon: Layers },
     { label: 'Site Content', href: '/admin/content', icon: FileText },
     { label: 'Client Inquiries', href: '/admin/inquiries', icon: Inbox },
+    { label: 'Ratings & Comments', href: '/admin/comments', icon: Star },
     { label: 'Channel Settings', href: '/admin/settings', icon: Settings },
   ];
 

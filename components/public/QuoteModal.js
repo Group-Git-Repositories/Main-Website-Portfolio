@@ -20,25 +20,64 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
+  // Reset form or populate from initialData whenever modal opens or initialData changes
   useEffect(() => {
-    if (initialData) {
-      if (initialData.type === 'estimator' || initialData.type === 'restaurant-estimator') {
-        setFormData((prev) => ({
-          ...prev,
-          budget: initialData.estimatedPrice || prev.budget,
-          timeline: initialData.estimatedDays || prev.timeline,
-          projectRef: `Restaurant Estimator: ${initialData.industry} with features: ${initialData.features?.join(', ')}`,
-        }));
-      } else if (initialData.id) {
-        setFormData((prev) => ({
-          ...prev,
-          budget: initialData.specs?.startingPrice ? `From ${initialData.specs.startingPrice}` : prev.budget,
-          timeline: initialData.specs?.turnaroundDays ? `~${initialData.specs.turnaroundDays} Days` : prev.timeline,
-          projectRef: `Sample: ${initialData.title} (${initialData.category})`,
-        }));
+    if (isOpen) {
+      setSubmitted(false);
+      setError('');
+
+      if (initialData) {
+        if (initialData.type === 'estimator' || initialData.type === 'restaurant-estimator') {
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            budget: initialData.estimatedPrice || '9,500 - 16,500 Birr',
+            timeline: initialData.estimatedDays || 'Within 1 Week',
+            projectRef: `Restaurant Estimator: ${initialData.industry} with features: ${initialData.features?.join(', ')}`,
+            message: '',
+          });
+        } else if (initialData.id) {
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            budget: initialData.specs?.startingPrice ? `From ${initialData.specs.startingPrice}` : '9,500 - 16,500 Birr',
+            timeline: initialData.specs?.turnaroundDays ? `~${initialData.specs.turnaroundDays} Days` : 'Within 1 Week',
+            projectRef: `Sample: ${initialData.title} (${initialData.category})`,
+            message: '',
+          });
+        }
+      } else {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          budget: '9,500 - 16,500 Birr',
+          timeline: 'Within 1 Week',
+          projectRef: '',
+          message: '',
+        });
       }
     }
-  }, [initialData]);
+  }, [isOpen, initialData]);
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose?.();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -68,25 +107,39 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
 
   const telegramUrl = company?.channels?.telegram?.username
     ? `https://t.me/${company.channels.telegram.username}`
-    : 'https://t.me/TeddyEt';
+    : 'https://t.me/ROHAD_59';
   const emailAddress = company?.email || 'rohadev0@gmail.com';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
-      <div className="bg-[#070B16] w-full max-w-xl rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="quote-modal-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 cursor-pointer"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose?.();
+        }
+      }}
+    >
+      <div
+        className="bg-[#070B16] w-full max-w-xl rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col cursor-default animate-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="p-5 bg-[#0E1626] border-b border-slate-800 flex items-center justify-between">
           <div>
             <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold">
               Get Started
             </div>
-            <h3 className="text-lg font-bold text-white tracking-tight">
+            <h3 id="quote-modal-title" className="text-lg font-bold text-white tracking-tight">
               Order Your Restaurant Website / Menu
             </h3>
           </div>
           <button
+            type="button"
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800"
+            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -124,8 +177,21 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                 </a>
               </div>
 
-              <div className="pt-2">
-                <Button variant="outline" size="sm" onClick={onClose}>
+              <div className="pt-4 flex items-center justify-center gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setSubmitted(false)}
+                >
+                  Submit Another Inquiry
+                </Button>
+                <Button
+                  type="button"
+                  variant="primary"
+                  size="sm"
+                  onClick={onClose}
+                >
                   Close Window
                 </Button>
               </div>

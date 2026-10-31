@@ -69,7 +69,7 @@ export default function Navbar({ onOpenQuote, company }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group shrink-0">
           <div className="w-10 h-10 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-cyan-500/50 transition-colors shrink-0">
             <img
               src="/IMG_1561newwwwwwww.png"
@@ -106,31 +106,31 @@ export default function Navbar({ onOpenQuote, company }) {
           ))}
         </nav>
 
-        {/* Right Desktop CTA & Controls */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Header Right Action Area */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Always Visible Theme Toggle Button */}
           <ThemeToggle />
 
+          {/* "Get a Website" Action Button (Visible across mobile & desktop) */}
           <Button
             size="sm"
             variant="primary"
             onClick={() => onOpenQuote?.()}
             icon={ArrowRight}
             iconPosition="right"
-            className="text-xs font-semibold px-4 py-2"
+            className="text-xs font-bold px-3 py-2 sm:px-4 sm:py-2 cursor-pointer shadow-sm"
           >
-            Get a Website
+            <span className="hidden xs:inline">Get a Website</span>
+            <span className="xs:hidden">Get Website</span>
           </Button>
-        </div>
 
-        {/* Mobile Header Buttons */}
-        <div className="flex lg:hidden items-center gap-2">
-          <div className="sm:hidden">
-            <ThemeToggle />
-          </div>
+          {/* Mobile Drawer Trigger Hamburger Button */}
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2.5 text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors"
+            className="lg:hidden p-2 text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors cursor-pointer"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -148,6 +148,19 @@ export default function Navbar({ onOpenQuote, company }) {
 
           {/* Drawer Content */}
           <div className="relative bg-white dark:bg-[#070B16] border-b border-slate-200 dark:border-slate-800 px-6 py-6 space-y-5 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto">
+            {/* Theme & Appearance Row */}
+            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div className="flex flex-col">
+                <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                  Visual Theme
+                </span>
+                <span className="text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-medium">
+                  Toggle Light & Dark appearance
+                </span>
+              </div>
+              <ThemeToggle showLabel={true} />
+            </div>
+
             <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 font-semibold pb-2 border-b border-slate-100 dark:border-slate-800">
               Navigation Menu
             </div>
@@ -176,9 +189,9 @@ export default function Navbar({ onOpenQuote, company }) {
                 }}
                 icon={ArrowRight}
                 iconPosition="right"
-                className="w-full text-xs font-bold py-3"
+                className="w-full text-xs font-bold py-3 cursor-pointer"
               >
-                Get a Restaurant Website
+                Get a Website
               </Button>
 
               {company?.phone && (

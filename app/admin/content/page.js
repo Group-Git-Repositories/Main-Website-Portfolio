@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Save, Check, Plus, Trash2, Star, MessageSquareQuote, Utensils, Tag } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
@@ -364,33 +365,42 @@ export default function ContentAdminPage() {
 
       {/* Client Testimonials Section */}
       <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <h3 className="text-base font-bold text-white flex items-center gap-2">
             <MessageSquareQuote className="w-4 h-4 text-cyan-400" />
             <span>Ethiopian Client Testimonials (የደንበኞች ምስክርነት)</span>
           </h3>
-          <button
-            onClick={() => {
-              const next = [
-                ...testimonials,
-                {
-                  id: `test-${Date.now()}`,
-                  clientName: 'አዲስ ደንበኛ (Client Name)',
-                  role: 'ባለቤት (Owner)',
-                  restaurant: 'የሬስቶራንት ስም (Restaurant Name)',
-                  location: 'አዲስ አበባ (Addis Ababa)',
-                  rating: 5,
-                  quote: 'የምስክርነት ጽሁፍ እዚህ ይጻፉ...',
-                  translation: 'English translation here...',
-                },
-              ];
-              setData({ ...data, testimonials: next });
-            }}
-            className="text-xs font-mono text-cyan-400 flex items-center gap-1 hover:underline"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            <span>Add Testimonial</span>
-          </button>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/admin/comments"
+              className="text-xs font-mono text-amber-400 flex items-center gap-1 hover:underline"
+            >
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              <span>Connect Live Ratings & Comments</span>
+            </Link>
+            <button
+              onClick={() => {
+                const next = [
+                  ...testimonials,
+                  {
+                    id: `test-${Date.now()}`,
+                    clientName: 'አዲስ ደንበኛ (Client Name)',
+                    role: 'ባለቤት (Owner)',
+                    restaurant: 'የሬስቶራንት ስም (Restaurant Name)',
+                    location: 'አዲስ አበባ (Addis Ababa)',
+                    rating: 5,
+                    quote: 'የምስክርነት ጽሁፍ እዚህ ይጻፉ...',
+                    translation: 'English translation here...',
+                  },
+                ];
+                setData({ ...data, testimonials: next });
+              }}
+              className="text-xs font-mono text-cyan-400 flex items-center gap-1 hover:underline"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              <span>Add Testimonial</span>
+            </button>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -432,6 +442,32 @@ export default function ContentAdminPage() {
                     className="text-slate-300 text-xs px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded"
                   />
                 </div>
+
+                <div className="flex items-center gap-1 bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 shrink-0">
+                  <span className="text-[10px] font-mono text-slate-400 mr-1">Rating:</span>
+                  {[1, 2, 3, 4, 5].map((starVal) => (
+                    <button
+                      key={starVal}
+                      type="button"
+                      onClick={() => {
+                        const next = [...testimonials];
+                        next[idx].rating = starVal;
+                        setData({ ...data, testimonials: next });
+                      }}
+                      className="p-0.5 hover:scale-110 transition-transform"
+                      title={`${starVal} Star${starVal > 1 ? 's' : ''}`}
+                    >
+                      <Star
+                        className={`w-3.5 h-3.5 ${
+                          starVal <= (Number(t.rating) || 5)
+                            ? 'fill-amber-400 text-amber-400'
+                            : 'text-slate-600'
+                        }`}
+                      />
+                    </button>
+                  ))}
+                </div>
+
                 <button
                   onClick={() => {
                     const next = testimonials.filter((_, i) => i !== idx);

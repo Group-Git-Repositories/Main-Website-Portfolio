@@ -1,0 +1,22 @@
+[
+  {
+    "id": "comment-1",
+    "name": "Kidus Alemayehu",
+    "email": "kidus@barmenu.et",
+    "role": "General Manager at Tomoca Lounge",
+    "rating": 5,
+    "comment": "The mobile speed and interactive QR menu design exceeded our expectations. Our customers love how clear the food categories are, and orders have been much smoother!",
+    "createdAt": "2026-10-25T14:32:00.000Z",
+    "status": "Approved"
+  },
+  {
+    "id": "comment-2",
+    "name": "Selamawit Haile",
+    "email": "selam@habeshacafe.com",
+    "role": "Founder, Habesha Coffee Hub",
+    "rating": 5,
+    "comment": "Exceptional customer service and quick turnaround. The Admin Dashboard makes it super easy to update daily specials and prices on the fly.",
+    "createdAt": "2026-10-28T09:15:00.000Z",
+    "status": "Approved"
+  }
+]
