@@ -16,12 +16,12 @@ export default function Footer({ company }) {
               <div className="w-9 h-9 rounded-xl bg-white border border-slate-700 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
                 <img
                   src="/logo.png"
-                  alt={company?.name || 'ROHA Dev Software Development'}
+                  alt={company?.name || 'ROHA Dev'}
                   className="w-full h-full object-contain p-1"
                 />
               </div>
               <span className="text-base font-bold text-white tracking-wide">
-                {company?.name || 'ROHA Dev Software Development'}
+                {company?.name || 'ROHA Dev'}
               </span>
             </div>
 
@@ -128,7 +128,7 @@ export default function Footer({ company }) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-500">
           <div>
-            &copy; {currentYear} {company?.legalName || 'roha dev software development'}. All rights reserved.
+            &copy; {currentYear} {company?.legalName || 'ROHA Dev'}. All rights reserved.
           </div>
           <div className="flex items-center gap-3">
             <span>Fast Restaurant Websites • Addis Ababa</span>

@@ -203,7 +203,7 @@ export default function SettingsAdminPage() {
                 },
               })
             }
-            placeholder="https://www.linkedin.com/company/hope-web-development"
+            placeholder="https://www.linkedin.com/company/roha-dev"
             className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
         </div>
@@ -297,7 +297,7 @@ export default function SettingsAdminPage() {
                   company: { ...company, legalName: e.target.value },
                 })
               }
-              placeholder="roha dev software development"
+              placeholder="ROHA Dev"
               className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
             />
           </div>

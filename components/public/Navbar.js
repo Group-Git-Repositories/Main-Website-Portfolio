@@ -73,7 +73,7 @@ export default function Navbar({ onOpenQuote, company }) {
           <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-cyan-500/50 transition-colors shrink-0">
             <img
               src="/logo.png"
-              alt={company?.name || 'ROHA Dev Software Development'}
+              alt={company?.name || 'ROHA Dev'}
               className="w-full h-full object-contain p-1"
             />
           </div>
