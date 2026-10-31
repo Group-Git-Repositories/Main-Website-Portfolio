@@ -70,11 +70,16 @@ export default function Navbar({ onOpenQuote, company }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-cyan-500/50 transition-colors shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-cyan-500/50 transition-colors shrink-0">
             <img
-              src="/logo.png"
+              src="/IMG_1561newwwwwwww.png"
               alt={company?.name || 'ROHA Dev'}
-              className="w-full h-full object-contain p-1"
+              className="w-full h-full object-contain p-1 block dark:hidden"
+            />
+            <img
+              src="/IMG_1564jfurur.png"
+              alt={company?.name || 'ROHA Dev'}
+              className="w-full h-full object-contain p-1 hidden dark:block"
             />
           </div>
           <div>
