@@ -98,11 +98,16 @@ export default function AdminLayout({ children }) {
       <header className="border-b border-slate-800 bg-[#0E1626] px-4 sm:px-8 h-16 flex items-center justify-between sticky top-0 z-30">
         <div className="flex items-center gap-6">
           <Link href="/admin" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-white border border-slate-700 flex items-center justify-center overflow-hidden shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center overflow-hidden shrink-0">
               <img
-                src="/logo.png"
+                src="/IMG_1561newwwwwwww.png"
                 alt={companyName || 'ROHA Dev'}
-                className="w-full h-full object-contain p-0.5"
+                className="w-full h-full object-contain p-0.5 block dark:hidden"
+              />
+              <img
+                src="/IMG_1564jfurur.png"
+                alt={companyName || 'ROHA Dev'}
+                className="w-full h-full object-contain p-0.5 hidden dark:block"
               />
             </div>
             <div className="hidden sm:block">

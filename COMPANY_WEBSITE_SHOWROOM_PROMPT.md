@@ -2,14 +2,14 @@
 
 > **Prompt Role & Target Engine**: Feed this specification into an AI Coding Assistant (Claude 3.7 / Gemini 2.5 / Cursor / Antigravity) to generate the complete production codebase for the company portfolio and website showroom.
 > **Repository Target**: `https://github.com/Group-Git-Repositories/Main-Website-Portfolio`  
-> **Brand Identity**: HOPE Web Development (`Hope_Teams`)  
+> **Brand Identity**: ROHA Dev  
 > **Reference Architecture**: Upgraded from personal developer portfolio baseline (`C:\portfolio`)
 
 ---
 
 ## 1. MISSION & HIGH-LEVEL OVERVIEW
 
-You are tasked with building a modern, high-performance web agency portfolio and **interactive "Workshop Showroom"** for **HOPE Web Development**. 
+You are tasked with building a modern, high-performance web agency portfolio and **interactive "Workshop Showroom"** for **ROHA Dev**. 
 
 The website serves two vital purposes:
 1. **Interactive Workshop Showroom**: A high-converting digital exhibition where prospective clients (business owners, startups, corporate clients) can browse real website samples, test them inside responsive device frames (Desktop, Tablet, Mobile), examine deliverables/timelines, and click **"Order a Site Like This"** to immediately initiate an inquiry.
@@ -207,7 +207,7 @@ The generated codebase must follow this strict file tree:
 │   └── constants.js                  # Industry categories, default theme settings
 ├── public/
 │   ├── projects/                     # Default project showcase screenshots
-│   ├── branding/                     # HOPE Web Development logos and SVG badges
+│   ├── branding/                     # ROHA Dev logos and SVG badges
 │   └── favicon.ico
 ├── next.config.js                    # Next.js optimization and image remote patterns
 ├── tailwind.config.js                # Custom color palettes, typography, border radiuses
@@ -221,7 +221,7 @@ The generated codebase must follow this strict file tree:
 ```json
 {
   "company": {
-    "name": "HOPE Web Development",
+    "name": "ROHA Dev",
     "legalName": "Hope Teams Digital Solutions",
     "tagline": "Precision Engineered Web Architecture & Digital Showroom",
     "location": "Addis Ababa, Ethiopia",
@@ -232,7 +232,7 @@ The generated codebase must follow this strict file tree:
       "whatsapp": {
         "enabled": true,
         "number": "+251973951191",
-        "defaultMessage": "Hello HOPE Web Development, I would like to inquire about building a website."
+        "defaultMessage": "Hello ROHA Dev, I would like to inquire about building a website."
       },
       "telegram": {
         "enabled": true,

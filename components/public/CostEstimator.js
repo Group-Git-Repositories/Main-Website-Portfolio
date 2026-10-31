@@ -3,13 +3,17 @@
 import { useState } from 'react';
 import { BASE_INDUSTRY_PRICING, ESTIMATOR_MODULES } from '../../lib/constants';
 import Button from '../ui/Button';
-import { Check, Clock, ArrowRight } from 'lucide-react';
+import { Check, Clock, ArrowRight, Utensils, Sparkles } from 'lucide-react';
 
 export default function CostEstimator({ onCommissionSpec }) {
-  const [selectedIndustry, setSelectedIndustry] = useState('Corporate & B2B');
-  const [selectedModules, setSelectedModules] = useState(['cms', 'whatsapp']);
+  const [selectedIndustry, setSelectedIndustry] = useState('Habesha & Traditional Restaurant');
+  const [selectedModules, setSelectedModules] = useState(['qr_menu', 'fasting_toggle', 'admin_cms']);
 
-  const base = BASE_INDUSTRY_PRICING[selectedIndustry] || { basePrice: 18000, baseDays: 5 };
+  const base = BASE_INDUSTRY_PRICING[selectedIndustry] || {
+    basePrice: 14000,
+    baseDays: 4,
+    desc: 'Traditional Habesha restaurant website with cultural dishes & table booking',
+  };
 
   const modulesCost = selectedModules.reduce((acc, modId) => {
     const found = ESTIMATOR_MODULES.find((m) => m.id === modId);
@@ -22,7 +26,7 @@ export default function CostEstimator({ onCommissionSpec }) {
   }, 0);
 
   const totalMinPrice = base.basePrice + modulesCost;
-  const totalMaxPrice = Math.round(totalMinPrice * 1.2);
+  const totalMaxPrice = Math.round(totalMinPrice * 1.15);
   const totalDays = base.baseDays + modulesDays;
 
   const toggleModule = (id) => {
@@ -39,7 +43,7 @@ export default function CostEstimator({ onCommissionSpec }) {
     );
 
     onCommissionSpec?.({
-      type: 'estimator',
+      type: 'restaurant-estimator',
       industry: selectedIndustry,
       estimatedPrice: `${totalMinPrice.toLocaleString()} - ${totalMaxPrice.toLocaleString()} Birr`,
       estimatedDays: `~${totalDays} Days`,
@@ -49,50 +53,70 @@ export default function CostEstimator({ onCommissionSpec }) {
 
   return (
     <section id="estimator" className="py-20 md:py-28 bg-slate-50 dark:bg-[#070B16] border-t border-slate-200/80 dark:border-slate-800/80">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-2xl mb-12">
-          <div className="text-xs font-mono font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase mb-3">
-            Price Calculator
+        <div className="max-w-2xl mb-12 sm:mb-16">
+          <div className="text-xs font-mono font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase mb-3 flex items-center gap-2">
+            <Utensils className="w-3.5 h-3.5" />
+            <span>Restaurant Cost Estimator</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
             Calculate Your Website Price
           </h2>
-          <p className="text-base text-slate-600 dark:text-slate-300">
-            Choose your business type and features to get an immediate estimated price in Birr.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
+            Select your restaurant concept and the menu features you need to get an instant, transparent price estimate in Ethiopian Birr (ETB).
           </p>
         </div>
 
         {/* Estimator Workbench */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Controls: Step 1 & Step 2 */}
-          <div className="lg:col-span-2 space-y-8 bg-white dark:bg-[#0E1626] p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-800/80">
-            {/* Step 1: Industry Type */}
+          <div className="lg:col-span-2 space-y-8 bg-white dark:bg-[#0E1626] p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+            {/* Step 1: Restaurant Type */}
             <div>
-              <div className="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold mb-3">
-                1. Choose Business Type
+              <div className="flex items-center justify-between mb-3">
+                <div className="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold">
+                  1. Choose Your Restaurant Concept
+                </div>
+                <span className="text-[11px] font-mono text-slate-400">Step 1 of 2</span>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {Object.keys(BASE_INDUSTRY_PRICING).map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedIndustry(cat)}
-                    className={`p-3 rounded-xl text-left border transition-all text-xs font-medium ${
-                      selectedIndustry === cat
-                        ? 'border-slate-900 bg-slate-50 dark:border-cyan-500 dark:bg-cyan-500/10 text-slate-950 dark:text-white font-bold shadow-sm'
-                        : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900/40'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {Object.keys(BASE_INDUSTRY_PRICING).map((cat) => {
+                  const item = BASE_INDUSTRY_PRICING[cat];
+                  const isSelected = selectedIndustry === cat;
+                  return (
+                    <button
+                      key={cat}
+                      type="button"
+                      onClick={() => setSelectedIndustry(cat)}
+                      className={`p-3.5 rounded-xl text-left border transition-all text-xs flex flex-col justify-between min-h-[92px] ${
+                        isSelected
+                          ? 'border-slate-900 bg-slate-100 dark:border-cyan-400 dark:bg-cyan-500/10 text-slate-950 dark:text-white font-bold ring-1 ring-slate-900 dark:ring-cyan-400 shadow-sm'
+                          : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900/40'
+                      }`}
+                    >
+                      <div>
+                        <div className="font-semibold text-sm leading-snug mb-1">{cat}</div>
+                        <div className="text-[11px] font-normal text-slate-500 dark:text-slate-400 line-clamp-2">
+                          {item.desc}
+                        </div>
+                      </div>
+                      <div className="mt-2 text-[11px] font-mono text-cyan-700 dark:text-cyan-400 font-bold">
+                        Base: {item.basePrice.toLocaleString()} Birr
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Step 2: Select Modules */}
+            {/* Step 2: Select Restaurant Features */}
             <div>
-              <div className="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold mb-3">
-                2. Select Features You Need
+              <div className="flex items-center justify-between mb-3">
+                <div className="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold">
+                  2. Select Restaurant Features & Add-ons
+                </div>
+                <span className="text-[11px] font-mono text-slate-400">Step 2 of 2</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {ESTIMATOR_MODULES.map((mod) => {
@@ -101,27 +125,30 @@ export default function CostEstimator({ onCommissionSpec }) {
                     <div
                       key={mod.id}
                       onClick={() => toggleModule(mod.id)}
-                      className={`p-3.5 rounded-xl border cursor-pointer flex items-center justify-between transition-all ${
+                      className={`p-3.5 rounded-xl border cursor-pointer transition-all flex items-start gap-3 select-none ${
                         isChecked
-                          ? 'border-slate-900 bg-slate-50 dark:border-cyan-500 dark:bg-cyan-500/10 text-slate-950 dark:text-white shadow-sm'
-                          : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900/40'
+                          ? 'border-cyan-500/80 bg-cyan-50/50 dark:bg-cyan-500/10 dark:border-cyan-500/60 shadow-sm'
+                          : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/30 hover:border-slate-300 dark:hover:border-slate-700'
                       }`}
                     >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-4 h-4 rounded flex items-center justify-center border text-[10px] ${
-                            isChecked
-                              ? 'bg-slate-900 border-slate-900 text-white dark:bg-cyan-400 dark:border-cyan-400 dark:text-slate-950 font-bold'
-                              : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-transparent'
-                          }`}
-                        >
-                          {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
-                        </div>
-                        <span className="text-xs font-medium">{mod.label}</span>
+                      <div
+                        className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 mt-0.5 border transition-all ${
+                          isChecked
+                            ? 'bg-cyan-500 border-cyan-500 text-slate-950 font-bold'
+                            : 'border-slate-300 dark:border-slate-700 bg-transparent'
+                        }`}
+                      >
+                        {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                       </div>
-                      <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 shrink-0 font-medium">
-                        +{mod.price.toLocaleString()} Birr
-                      </span>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-semibold text-slate-900 dark:text-white leading-snug">
+                          {mod.label}
+                        </div>
+                        <div className="text-[11px] font-mono text-cyan-700 dark:text-cyan-400 font-medium mt-1">
+                          +{mod.price.toLocaleString()} Birr • +{mod.days} Day
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
@@ -129,57 +156,75 @@ export default function CostEstimator({ onCommissionSpec }) {
             </div>
           </div>
 
-          {/* Real-time Summary Card */}
-          <div className="bg-white dark:bg-[#0E1626] p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6 sticky top-28">
-            <div className="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold">
-              Estimated Total
+          {/* Price Summary Breakdown Card */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 text-white border border-slate-800 space-y-6 shadow-xl sticky top-28">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+              <span className="text-xs font-mono uppercase text-cyan-400 font-semibold tracking-wider">
+                Price Estimate
+              </span>
+              <span className="text-[10px] font-mono bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-800">
+                100% Guaranteed Price
+              </span>
             </div>
 
+            {/* Total Estimated Price */}
             <div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 font-mono mb-1">
-                Type
+              <div className="text-xs font-mono text-slate-400 mb-1">Estimated Investment</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                {totalMinPrice.toLocaleString()} Birr
               </div>
-              <div className="text-base font-bold text-slate-900 dark:text-white">
-                {selectedIndustry}
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-4">
-              <div>
-                <div className="text-xs font-mono text-slate-400 mb-1">
-                  Estimated Price
-                </div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                  {totalMinPrice.toLocaleString()} – {totalMaxPrice.toLocaleString()} Birr
-                </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  Includes full design, free hosting setup, and simple text editor.
-                </div>
-              </div>
-
-              <div>
-                <div className="text-xs font-mono text-slate-400 flex items-center gap-1.5 mb-1">
-                  <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Estimated Time</span>
-                </div>
-                <div className="text-lg font-bold text-slate-900 dark:text-white">
-                  ~{totalDays} Days
-                </div>
+              <div className="text-xs text-slate-400 mt-1">
+                Range: {totalMinPrice.toLocaleString()} - {totalMaxPrice.toLocaleString()} Birr
               </div>
             </div>
 
-            <div className="pt-2">
-              <Button
-                size="md"
-                variant="primary"
-                onClick={handleCommission}
-                icon={ArrowRight}
-                iconPosition="right"
-                className="w-full text-xs font-semibold"
-              >
-                Order With This Estimate
-              </Button>
+            {/* Turnaround Time */}
+            <div className="flex items-center gap-2 text-xs font-mono text-slate-300 bg-slate-800/80 p-3 rounded-xl border border-slate-700/60">
+              <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span>Ready for customers in ~{totalDays} business days</span>
             </div>
+
+            {/* Specification Summary */}
+            <div className="space-y-2 text-xs font-mono text-slate-400 pt-2 border-t border-slate-800">
+              <div className="flex justify-between">
+                <span>Restaurant Type:</span>
+                <span className="text-slate-200 font-semibold truncate max-w-[170px] text-right">
+                  {selectedIndustry}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>Base Price:</span>
+                <span className="text-slate-200">{base.basePrice.toLocaleString()} Birr</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Selected Add-ons:</span>
+                <span className="text-slate-200">{selectedModules.length} features (+{modulesCost.toLocaleString()} Birr)</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Domain & Hosting:</span>
+                <span className="text-emerald-400 font-semibold">Included (1 Year Free)</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Admin Page:</span>
+                <span className="text-emerald-400 font-semibold">Included</span>
+              </div>
+            </div>
+
+            {/* Action CTA */}
+            <Button
+              size="md"
+              variant="primary"
+              onClick={handleCommission}
+              icon={ArrowRight}
+              iconPosition="right"
+              className="w-full text-xs font-bold py-3"
+            >
+              Order This Restaurant Setup
+            </Button>
+
+            <p className="text-[11px] text-slate-500 text-center font-mono">
+              Pay via CBE, Telebirr, or Awash. Work begins after small deposit.
+            </p>
           </div>
         </div>
       </div>

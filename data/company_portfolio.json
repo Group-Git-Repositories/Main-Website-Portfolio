@@ -1,12 +1,13 @@
 {
+  "version": 3,
   "company": {
     "name": "ROHA Dev",
-    "legalName": "Hope Teams Digital Solutions",
-    "tagline": "Fast Static Websites For Modern Businesses",
-    "shortAbout": "We build clean, ultra-fast static websites that load instantly, never crash, and help your business get more clients. Easy to maintain with a simple admin page.",
+    "legalName": "ROHA Dev",
+    "tagline": "Fast Restaurant Websites & Digital QR Menus",
+    "shortAbout": "We build ultra-fast restaurant websites, digital QR menus, and online ordering systems that open instantly on any phone in Addis Ababa and across Ethiopia. Easy to maintain with a simple admin page.",
     "location": "Addis Ababa, Ethiopia",
     "email": "rohadev0@gmail.com",
-    "phone": "+251 988717219",
+    "phone": "+251 980717219",
     "github": "https://github.com/Group-Git-Repositories/Main-Website-Portfolio",
     "linkedin": "https://www.linkedin.com/in/roha-dev",
     "channels": {
@@ -20,7 +21,7 @@
       },
       "telegram": {
         "enabled": true,
-        "username": "TeddyEt"
+        "username": "ROHAD_59"
       },
       "quoteForm": {
         "enabled": true
@@ -28,11 +29,11 @@
     }
   },
   "hero": {
-    "badgeText": "Fast Static Websites",
-    "headline": "Simple, Fast Websites That Help Your Business Grow",
-    "subheadline": "We build clean static websites that open instantly on any phone or computer. Pick a sample from our showroom or ask for a custom build.",
-    "primaryCta": "See Website Samples",
-    "secondaryCta": "Calculate Price"
+    "badgeText": "Restaurant & Menu Websites in Ethiopia",
+    "headline": "Boost Your Restaurant Sales With Instant Digital Menus & Websites",
+    "subheadline": "We build ultra-fast restaurant websites and digital QR menus that open in under 1 second on any smartphone. Let customers browse your fasting (የጾም) and non-fasting dishes, book tables, and order directly on WhatsApp or Telegram.",
+    "primaryCta": "View Restaurant Samples",
+    "secondaryCta": "Calculate Menu Price"
   },
   "settings": {
     "accentTheme": "neon-cyan",
@@ -40,296 +41,343 @@
   },
   "projects": [
     {
-      "id": "proj-ecom-01",
-      "title": "Shop & Product Catalog",
-      "tagline": "Clean product catalog with direct WhatsApp and phone ordering",
-      "category": "e-Commerce",
-      "featured": true,
-      "mockups": {
-        "desktop": "/projects/aura_desktop.svg",
-        "tablet": "/projects/aura_tablet.svg",
-        "mobile": "/projects/aura_mobile.svg"
-      },
-      "liveUrl": "https://example.com/demo/aura-store",
-      "deliverables": [
-        "Fast static pages",
-        "Mobile-friendly design",
-        "WhatsApp order button",
-        "Simple admin page"
-      ],
-      "specs": {
-        "turnaroundDays": 7,
-        "showTurnaround": true,
-        "startingPrice": "",
-        "showPrice": true,
-        "enableOrderCta": true
-      },
-      "description": "A clean online catalog for your products. Customers can browse easily on their phone and click one button to order directly on WhatsApp or call your shop.",
-      "techStack": [
-        "Fast Static HTML",
-        "Tailwind CSS",
-        "WhatsApp Button"
-      ]
-    },
-    {
-      "id": "proj-corp-02",
-      "title": "Business & Office Profile",
-      "tagline": "Professional company website for consulting, agencies, and offices",
-      "category": "Corporate & B2B",
-      "featured": true,
-      "mockups": {
-        "desktop": "/projects/apex_desktop.svg",
-        "tablet": "/projects/apex_tablet.svg",
-        "mobile": "/projects/apex_mobile.svg"
-      },
-      "liveUrl": "https://example.com/demo/apex-capital",
-      "deliverables": [
-        "Company overview",
-        "Services & team list",
-        "Location map & phone",
-        "Simple text editor"
-      ],
-      "specs": {
-        "turnaroundDays": 5,
-        "showTurnaround": true,
-        "startingPrice": "18,000 Birr",
-        "showPrice": true,
-        "enableOrderCta": true
-      },
-      "description": "Showcase your company services, client work, and contact details with zero loading delay. Built to make a strong, trustworthy impression on clients.",
-      "techStack": [
-        "Fast Static Pages",
-        "Clean Layout",
-        "Fast Loading"
-      ]
-    },
-    {
-      "id": "proj-rest-03",
-      "title": "Café & Restaurant Menu",
-      "tagline": "Digital food and drink menu with one-tap phone calls and table booking",
-      "category": "Restaurant & Hospitality",
+      "id": "proj-rest-01",
+      "title": "Lucy Habesha Cultural Dining",
+      "tagline": "Traditional Ethiopian restaurant menu with cultural coffee ceremony and table booking",
+      "category": "Habesha & Traditional Dining",
       "featured": true,
       "mockups": {
         "desktop": "/projects/lumina_desktop.svg",
         "tablet": "/projects/lumina_tablet.svg",
         "mobile": "/projects/lumina_mobile.svg"
       },
-      "liveUrl": "https://example.com/demo/lumina-bistro",
+      "liveUrl": "https://example.com/demo/lucy-habesha",
       "deliverables": [
-        "Mobile food menu",
-        "One-tap call button",
-        "Location & hours",
-        "Photo gallery"
+        "Fasting (የጾም) & Non-Fasting Menu",
+        "Instant Table Reservation Form",
+        "Traditional Coffee Ceremony Showcase",
+        "Google Maps & Directions"
       ],
       "specs": {
         "turnaroundDays": 4,
         "showTurnaround": true,
-        "startingPrice": "14,000 Birr",
+        "startingPrice": "16,500 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Let customers check your food and drink prices on their phone before visiting. Loads fast even on slow mobile internet.",
+      "description": "Showcases authentic Ethiopian culinary heritage with clear dish descriptions in Amharic & English. Guests can explore specials, check fasting platters, and reserve dinner tables.",
       "techStack": [
-        "Static Menu",
-        "Mobile First",
-        "Instant Loading"
+        "Fast Mobile Menu",
+        "Amharic & English",
+        "Instant Table Booking"
       ]
     },
     {
-      "id": "proj-real-04",
-      "title": "Real Estate & House Rentals",
-      "tagline": "Property showcase with clear photos, prices, and agent contact",
-      "category": "Real Estate & Property",
+      "id": "proj-rest-02",
+      "title": "Aroma Specialty Café & Roastery",
+      "tagline": "Modern coffee house digital menu with breakfast specials and daily pastries",
+      "category": "Café, Bakery & Breakfast",
       "featured": true,
       "mockups": {
-        "desktop": "/projects/haven_desktop.svg",
-        "tablet": "/projects/haven_tablet.svg",
-        "mobile": "/projects/haven_mobile.svg"
+        "desktop": "/projects/aura_desktop.svg",
+        "tablet": "/projects/aura_tablet.svg",
+        "mobile": "/projects/aura_mobile.svg"
       },
-      "liveUrl": "https://example.com/demo/haven-estates",
+      "liveUrl": "https://example.com/demo/aroma-cafe",
       "deliverables": [
-        "Clean property cards",
-        "Photo viewer",
-        "Direct agent phone",
-        "Filter by area"
+        "High-Speed QR Code Menu",
+        "Espresso & Specialty Brew Catalog",
+        "Daily Fresh Pastry Showcase",
+        "Direct Call & Wi-Fi Info"
       ],
       "specs": {
-        "turnaroundDays": 6,
+        "turnaroundDays": 3,
         "showTurnaround": true,
-        "startingPrice": "24,000 Birr",
+        "startingPrice": "9,500 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Display available houses, apartments, or land with clear photos, prices, and direct phone contact for your agents.",
+      "description": "Clean, stylish digital menu designed for fast café environments. Customers scan a table QR code and instantly browse hot drinks, iced blends, and fresh bakery selections.",
       "techStack": [
-        "Static Gallery",
-        "Fast Photos",
-        "Agent Contact"
+        "Instant QR Menu",
+        "Clean Minimalist UI",
+        "Phone-Optimized"
       ]
     },
     {
-      "id": "proj-saas-05",
-      "title": "App & Software Showcase",
-      "tagline": "Simple product landing page explaining features and downloads",
-      "category": "SaaS & Web Apps",
+      "id": "proj-rest-03",
+      "title": "Addis Burger & Pizza Grill",
+      "tagline": "High-energy fast food menu with WhatsApp direct delivery orders",
+      "category": "Fast Food, Burger & Pizza",
       "featured": true,
       "mockups": {
         "desktop": "/projects/pulse_desktop.svg",
         "tablet": "/projects/pulse_tablet.svg",
         "mobile": "/projects/pulse_mobile.svg"
       },
-      "liveUrl": "https://example.com/demo/pulse-metrics",
+      "liveUrl": "https://example.com/demo/addis-burger",
       "deliverables": [
-        "Simple feature list",
-        "Clear pricing table",
-        "Download button",
-        "User guide"
+        "Direct WhatsApp Order Button",
+        "Appetizing Food Photography Cards",
+        "Combo Deals & Special Offers",
+        "Zero-Lag Mobile Navigation"
+      ],
+      "specs": {
+        "turnaroundDays": 3,
+        "showTurnaround": true,
+        "startingPrice": "11,000 Birr",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Designed to convert hungry visitors into instant takeaway and delivery orders. Includes direct WhatsApp cart checkout with delivery location sharing.",
+      "techStack": [
+        "WhatsApp Direct Order",
+        "Crisp Food Cards",
+        "Instant Load"
+      ]
+    },
+    {
+      "id": "proj-rest-04",
+      "title": "Sweet Blossom Bakery & Pastry",
+      "tagline": "Artisan cake catalog with custom birthday cake inquiries and Telegram booking",
+      "category": "Café, Bakery & Breakfast",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/haven_desktop.svg",
+        "tablet": "/projects/haven_tablet.svg",
+        "mobile": "/projects/haven_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/sweet-blossom",
+      "deliverables": [
+        "Custom Cake Catalog with Sizes & Prices",
+        "One-Click Telegram Order Button",
+        "Wedding & Birthday Inquiry Form",
+        "Easy Price Update Admin Page"
+      ],
+      "specs": {
+        "turnaroundDays": 4,
+        "showTurnaround": true,
+        "startingPrice": "12,500 Birr",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Present artisan desserts and custom event cakes with clear pricing per kg and serving sizes. Clients can submit their custom inscriptions and date requirements easily.",
+      "techStack": [
+        "Product Catalog",
+        "Telegram Order",
+        "Price Management"
+      ]
+    },
+    {
+      "id": "proj-rest-05",
+      "title": "Skyline Lounge & Cocktail Bar",
+      "tagline": "VIP dining, premium mixology menu, and weekly DJ night event schedule",
+      "category": "Lounge, Bar & Grill",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/apex_desktop.svg",
+        "tablet": "/projects/apex_tablet.svg",
+        "mobile": "/projects/apex_mobile.svg"
+      },
+      "liveUrl": "https://example.com/demo/skyline-lounge",
+      "deliverables": [
+        "VIP Cabana & Table Reservation",
+        "Nightlife Cocktail & Bottle Menu",
+        "Weekly Live Music & DJ Schedule",
+        "Valet & Dress Code Info"
       ],
       "specs": {
         "turnaroundDays": 5,
         "showTurnaround": true,
-        "startingPrice": "22,000 Birr",
+        "startingPrice": "16,500 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Explain what your app does in plain words. Designed to help visitors understand your tool and download or sign up easily.",
+      "description": "A dark, elegant digital experience built for upscale lounges and bars. Highlights signature cocktails, evening steaks, and VIP table reservations.",
       "techStack": [
-        "Fast Static Pages",
-        "Clean Layout",
-        "Call to Action"
+        "Luxury Dark Mode",
+        "VIP Booking Form",
+        "Event Schedule"
       ]
     },
     {
-      "id": "proj-creat-06",
-      "title": "Creative & Personal Portfolio",
-      "tagline": "Clean photo gallery and bio for architects, photographers, and artists",
-      "category": "Creative & Portfolio",
+      "id": "proj-rest-06",
+      "title": "Express QR Table Menu",
+      "tagline": "Lightweight contactless QR code menu for tables, counters, and food trucks",
+      "category": "Digital QR Menu Express",
       "featured": true,
       "mockups": {
         "desktop": "/projects/forma_desktop.svg",
         "tablet": "/projects/forma_tablet.svg",
         "mobile": "/projects/forma_mobile.svg"
       },
-      "liveUrl": "https://example.com/demo/studio-forma",
+      "liveUrl": "https://example.com/demo/express-qr-menu",
       "deliverables": [
-        "Large photo gallery",
-        "Short personal bio",
-        "Contact form",
-        "Fast loading"
+        "Instant Table QR Scan in < 1s",
+        "Fasting (የጾም) / Non-Fasting Filter",
+        "Phone Admin to Edit Prices Anytime",
+        "No App Download Required"
       ],
       "specs": {
-        "turnaroundDays": 4,
+        "turnaroundDays": 2,
         "showTurnaround": true,
-        "startingPrice": "15,000 Birr",
+        "startingPrice": "9,500 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "A calm, clean portfolio that puts your work first. Loads fast with no clutter.",
+      "description": "The fastest way to put your food menu on customer phones. Eliminates dirty paper menus and allows instant price updates whenever ingredient costs change.",
       "techStack": [
-        "Static Gallery",
-        "Minimalist",
-        "Mobile First"
+        "Ultra-Lightweight Static",
+        "Fasting Filter Tabs",
+        "Mobile CMS"
       ]
     }
   ],
   "services": [
     {
-      "id": "srv-bespoke-web",
-      "title": "New Static Website",
-      "summary": "We build your business website from start to finish. Fast, secure, and easy to read on all phone screens.",
-      "startingPrice": "14,000 Birr",
-      "turnaround": "4-6 Days",
+      "id": "srv-qr-menu",
+      "title": "Digital QR Code Menu Website",
+      "summary": "Ultra-fast contactless digital menu for restaurant tables. Guests scan with their phone camera to view full menus with photos, prices, and fasting/non-fasting tabs.",
+      "startingPrice": "9,500 Birr",
+      "turnaround": "2-3 Days",
       "features": [
-        "Opens in less than 1 second",
-        "Works smoothly on all phones",
-        "Simple admin page to change text and photos",
-        "Free 1-year hosting setup"
+        "Opens in under 1 second on mobile data",
+        "Fasting (የጾም) and Non-Fasting (የፍስክ) category switch",
+        "Simple phone admin to change food prices anytime",
+        "Custom printed QR code counter/table display files"
       ]
     },
     {
-      "id": "srv-ecommerce",
-      "title": "Catalog & Product Showcase",
-      "summary": "Display your products with photos, prices, and direct WhatsApp or phone ordering buttons.",
-      "startingPrice": "26,000 Birr",
-      "turnaround": "6-8 Days",
+      "id": "srv-full-restaurant",
+      "title": "Complete Restaurant & Table Booking Website",
+      "summary": "Full multi-page restaurant website with online table booking, chef specials, high-resolution food gallery, working hours, and Google Maps integration.",
+      "startingPrice": "16,500 Birr",
+      "turnaround": "4-5 Days",
       "features": [
-        "Product photos and clean layout",
-        "One-click WhatsApp order button",
-        "Simple admin page to add new items",
-        "No monthly shop fees"
+        "Online table reservation & VIP dining requests",
+        "Bilingual menu in Amharic & English (በሁለት ቋንቋ)",
+        "Google Maps directions and one-tap phone call",
+        "Photo showcase for traditional & modern dining"
       ]
     },
     {
-      "id": "srv-redesign",
-      "title": "Website Redesign & Speed Fix",
-      "summary": "Is your current website slow or hard to use on phones? We rebuild it into a fast, clean static website.",
-      "startingPrice": "12,000 Birr",
-      "turnaround": "3-5 Days",
+      "id": "srv-online-ordering",
+      "title": "WhatsApp & Telegram Food Ordering System",
+      "summary": "Turn online visitors into paying takeaway and delivery clients. Customers select items and dispatch the order directly to your restaurant's WhatsApp or Telegram.",
+      "startingPrice": "24,000 Birr",
+      "turnaround": "5-7 Days",
       "features": [
-        "Instant loading on mobile data",
-        "Modern clean layout",
-        "Keep your existing domain and text",
-        "No complex maintenance needed"
+        "Direct-to-WhatsApp and Telegram instant checkout",
+        "Zero commissions on sales (keep 100% of your revenue)",
+        "Delivery address, phone number, and special request notes",
+        "Automatic order summary formatted for your kitchen staff"
       ]
     }
   ],
   "pricingPackages": [
     {
-      "id": "pkg-starter",
-      "name": "Starter Website",
-      "price": "14,000 Birr",
-      "idealFor": "Small shops, consultants, and personal profiles",
-      "turnaround": "4 Days",
+      "id": "pkg-qr-menu",
+      "name": "QR Digital Menu",
+      "price": "9,500 Birr",
+      "idealFor": "Cafés, bakeries, juice bars, and quick-service food spots",
+      "turnaround": "3 Days",
       "features": [
-        "Up to 4 clean pages",
-        "Mobile & computer friendly",
-        "Contact form & direct WhatsApp link",
-        "Simple admin page to edit text",
-        "Zero monthly hosting maintenance"
+        "Instant-load digital QR menu",
+        "Fasting (የጾም) & Non-Fasting dish categories",
+        "Simple admin page to change prices from your phone",
+        "Custom QR code sticker & acrylic stand design",
+        "Free 1-year ultra-fast hosting setup"
       ]
     },
     {
-      "id": "pkg-business",
-      "name": "Standard Business",
-      "price": "24,000 Birr",
+      "id": "pkg-standard-restaurant",
+      "name": "Standard Restaurant & Bar",
+      "price": "16,500 Birr",
       "popular": true,
-      "idealFor": "Companies, restaurants, and real estate offices",
-      "turnaround": "6 Days",
+      "idealFor": "Traditional Ethiopian restaurants, lounges, and family dining",
+      "turnaround": "5 Days",
       "features": [
-        "Up to 8 custom pages",
-        "Product or project showroom",
-        "Photo gallery & menu/catalog",
-        "Custom contact form",
-        "Simple admin page to update photos and text"
+        "Complete restaurant website + Digital QR Menu",
+        "Online table reservation & event booking form",
+        "Direct WhatsApp & one-tap phone call buttons",
+        "Food & cocktail photo gallery with chef specials",
+        "Google Maps directions & opening hours",
+        "Simple admin dashboard to update photos and prices"
       ]
     },
     {
-      "id": "pkg-enterprise",
-      "name": "Full Custom",
-      "price": "38,000 Birr",
-      "idealFor": "Larger catalogs and custom business needs",
-      "turnaround": "8-10 Days",
+      "id": "pkg-premium-dining",
+      "name": "Premium Dining & Multi-Branch",
+      "price": "28,000 Birr",
+      "idealFor": "Multi-branch restaurant chains, luxury hotel dining, and high-volume lounges",
+      "turnaround": "7-9 Days",
       "features": [
-        "Complete multi-page static website",
-        "Interactive product or project viewer",
-        "Direct ordering workflows",
-        "Full admin control room",
-        "Dedicated launch support"
+        "Multi-branch location selector (Bole, Kazanchis, Piassa, etc.)",
+        "Direct WhatsApp & Telegram takeaway ordering system",
+        "VIP cabana & private event booking workflow",
+        "Bilingual menu support in Amharic & English",
+        "Dedicated admin control room & priority technical support"
       ]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "clientName": "አቶ ዳዊት ተስፋዬ (Dawit Tesfaye)",
+      "role": "ባለቤት እና ስራ አስኪያጅ",
+      "restaurant": "ሉሲ ባህላዊ ሬስቶራንት (Lucy Cultural Restaurant)",
+      "location": "ቦሌ፣ አዲስ አበባ (Bole, Addis Ababa)",
+      "rating": 5,
+      "quote": "የሮሃ ዴቭ ቡድን የሰራችልን የQR ኮድ ዲጂታል ሜኑ ደንበኞቻችንን በጣም አስደስቷል። በስልካቸው ወዲያውኑ ከፍተው የጾም እና የፍስክ ምግቦቻችንን ማየት ችለዋል። የጠረጴዛ ማስያዣውም ስራችንን በእጅጉ አቀላጥፎልናል።",
+      "translation": "The QR code digital menu built by Roha Dev delighted our guests. They instantly browse our fasting and non-fasting dishes on their phones, and table bookings have made our operations effortless."
+    },
+    {
+      "id": "test-2",
+      "clientName": "ወ/ሮ ሰላማዊት አሰፋ (Selamawit Assefa)",
+      "role": "መስራች እና ዋና አስተዳዳሪ",
+      "restaurant": "ካፌ አሮማ እና ቤከሪ (Café Aroma & Bakery)",
+      "location": "ፒያሳ፣ አዲስ አበባ (Piassa, Addis Ababa)",
+      "rating": 5,
+      "quote": "ከዚህ በፊት የነበረን ድረ-ገጽ በጣም ይዘገይ ነበር፤ ሮሃ ዴቭ የሰሩልን ግን በሴኮንድ ውስጥ ነው በስልክ የሚከፈተው። ደንበኞቻችን በዋትስአፕ በቀጥታ ኬክ እና መጋገሪያዎችን እንዲያዙ በማድረጋችን ሽያጫችን በከፍተኛ ሁኔታ ጨምሯል።",
+      "translation": "Our previous site was painfully slow, but Roha Dev's website loads in under a second on mobile data. Adding direct WhatsApp ordering for our cakes increased our daily sales noticeably."
+    },
+    {
+      "id": "test-3",
+      "clientName": "ቴዎድሮስ በቀለ (Tewodros Bekele)",
+      "role": "ኦፕሬሽን ማናጀር",
+      "restaurant": "አዲስ በርገር እና ግሪል (Addis Burger & Grill)",
+      "location": "ካዛንቺስ፣ አዲስ አበባ (Kazanchis, Addis Ababa)",
+      "rating": 5,
+      "quote": "ዋጋ በየጊዜው ሲቀየር ሜኑ እንደገና ማሳተም ቀረልን! በአድሚን ገጻችን በኩል በስልካችን ወዲያውኑ የምግብ ዋጋዎችን እንቀይራለን። እጅግ አስተማማኝ፣ ፈጣን እና ኢትዮጵያ ውስጥ ላሉ ሬስቶራንቶች ተስማሚ ስራ ነው።",
+      "translation": "No more re-printing paper menus every time prices change! With our phone admin page we update food prices in seconds. Super reliable and perfectly built for Ethiopian restaurants."
+    },
+    {
+      "id": "test-4",
+      "clientName": "ሄለን ታደሰ (Helen Tadesse)",
+      "role": "የደንበኞች አገልግሎት ኃላፊ",
+      "restaurant": "ብሉ ስካይ ላውንጅ (Blue Sky Lounge & Dining)",
+      "location": "ሳርቤት፣ አዲስ አበባ (Sarbet, Addis Ababa)",
+      "rating": 5,
+      "quote": "የቪአይፒ ጠረጴዛ ማስያዣ እና የምሽት የሙዚቃ ፕሮግራሞቻችንን በድረ-ገጻችን ማስተዋወቅ ከጀመርን በኋላ አዳዲስ ደንበኞች በብዛት አግኝተናል። ለኢትዮጵያ ሬስቶራንቶች እና ላውንጆች የሚመጥን ምርጥ ቴክኖሎጂ ነው።",
+      "translation": "Ever since we started offering VIP table bookings and live night event schedules on our website, we've welcomed scores of new guests. Top-tier tech made for Ethiopian hospitality."
     }
   ],
   "faq": [
     {
-      "question": "Why should I choose a static website?",
-      "answer": "Static websites are pre-built pages that open instantly without waiting for a slow database. They are secure, rarely break, cost almost nothing to host, and load smoothly even on slow mobile internet."
+      "question": "የQR ኮድ ዲጂታል ሜኑ ለሬስቶራንቴ ምን ጥቅም አለው? (Why choose a Digital QR Menu?)",
+      "answer": "የወረቀት ሜኑ የማሳተሚያ ወጪን ሙሉ በሙሉ ያስቀራል። የንጥረ ነገር ዋጋ ሲጨምር በስልክዎ በሴኮንድ ውስጥ ዋጋ መቀየር ይችላሉ። ደንበኞችም ጠረጴዛው ላይ ያለውን QR ኮድ በካሜራቸው በመቃኘት የጾም እና የፍስክ ምግቦችን ያለምንም መዘግየት ይመለከታሉ።"
     },
     {
-      "question": "How long does it take to finish?",
-      "answer": "Most websites are ready in 4 to 7 days once you send us your logo, photos, and basic company details."
+      "question": "በስልኬ የምግብ ዋጋዎችን እና ፎቶዎችን በቀላሉ መቀየር እችላለሁ? (Can I edit prices from my phone?)",
+      "answer": "አዎ! እያንዳንዱ ዌብሳይት ቀላል የአድሚን ገጽ (Admin Page) አለው። ከስልክዎ ሆነው በማንኛውም ሰዓት አዳዲስ ምግቦችን መጨመር፣ የነበሩትን ዋጋዎች መቀየር ወይም ያለቁ ምግቦችን ለጊዜው ማጥፋት ይችላሉ።"
     },
     {
-      "question": "How does payment work?",
-      "answer": "We accept local bank transfers (CBE, Telebirr, Awash, etc.). We start work with a small initial deposit, and you pay the rest after you review and approve the final website."
+      "question": "የክፍያ ሁኔታው እንዴት ነው? (How does payment work?)",
+      "answer": "በሀገር ውስጥ ባንኮች (ንግድ ባንክ CBE፣ ቴሌብር Telebirr፣ አዋሽ Awash እና በሌሎችም) ክፍያ እንቀበላለን። ስራውን በቅድመ ክፍያ (Advance Deposit) እንጀምራለን፤ ሙሉውን ድረ-ገጽ አይተው ካጸደቁ በኋላ ቀሪውን ይከፍላሉ።"
+    },
+    {
+      "question": "ድረ-ገጹ በስንት ቀናት ውስጥ ተሰርቶ ያልቃል? (How long does delivery take?)",
+      "answer": "የQR ኮድ ሜኑ ከ 2 እስከ 3 ቀናት ውስጥ ዝግጁ ይሆናል። ሙሉ የሬስቶራንት ድረ-ገጽ ደግሞ ከ 4 እስከ 5 ቀናት ውስጥ ተጠናቆ ለስራ ዝግጁ ይሆናል።"
     }
   ]
 }

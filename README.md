@@ -1,4 +1,4 @@
-# HOPE Web Development | Digital Showroom & Workshop
+# ROHA Dev | Digital Showroom & Workshop
 
 > **Precision Engineered Web Architecture & Interactive Website Workshop**  
 > **Repository**: [Group-Git-Repositories/Main-Website-Portfolio](https://github.com/Group-Git-Repositories/Main-Website-Portfolio)
@@ -7,7 +7,7 @@
 
 ## Overview
 
-This repository contains the official corporate portfolio and **interactive website showroom** for **HOPE Web Development** (`Hope_Teams`).
+This repository contains the official corporate portfolio and **interactive website showroom** for **ROHA Dev**.
 
 The platform is designed to turn prospective clients into commissioned projects by showcasing real, production-grade website samples across multi-device viewports (Desktop, Tablet, Mobile) with real-time budget and turnaround estimates.
 

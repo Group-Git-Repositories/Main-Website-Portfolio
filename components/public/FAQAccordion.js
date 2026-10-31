@@ -21,7 +21,7 @@ export default function FAQAccordion({ items = [] }) {
             Common Client Questions
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-            Everything you need to know about commissioning a site from HOPE Web Development.
+            Everything you need to know about commissioning a site from ROHA Dev.
           </p>
         </div>
 

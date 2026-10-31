@@ -2,28 +2,18 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Linkedin, Send, MessageSquare, X } from 'lucide-react';
-
-// Helper to ensure external links always have an absolute protocol (e.g. https://)
-// Preventing relative navigation to your own domain (e.g. yoursite.com/www.linkedin.com/...)
-function normalizeExternalUrl(url, fallback = '') {
-  if (!url || typeof url !== 'string') return fallback;
-  const trimmed = url.trim();
-  if (!trimmed) return fallback;
-  if (/^https?:\/\//i.test(trimmed)) return trimmed;
-  if (trimmed.startsWith('//')) return 'https:' + trimmed;
-  return 'https://' + trimmed;
-}
+import { ensureAbsoluteUrl } from '../../lib/utils';
 
 export default function DirectChannelsBar({ company }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
-  // Dynamic contact values derived from the single source of truth (company data)
-  const phone = company?.phone || '+251 973 951 191';
-  const email = company?.email || 'contact@hopeteams.com';
+  // Dynamic contact values derived from company data
+  const phone = company?.phone || '+251 980717219';
+  const email = company?.email || 'rohadev0@gmail.com';
   const rawLinkedin = company?.linkedin || company?.channels?.linkedin?.url || 'https://www.linkedin.com/in/roha-dev';
-  const linkedinUrl = normalizeExternalUrl(rawLinkedin, 'https://www.linkedin.com/in/roha-dev');
-  const telegramUsername = company?.channels?.telegram?.username || 'TeddyEt';
+  const linkedinUrl = ensureAbsoluteUrl(rawLinkedin);
+  const telegramUsername = company?.channels?.telegram?.username || 'ROHAD_59';
   const telegramUrl = `https://t.me/${telegramUsername}`;
 
   // Close when clicking outside or pressing Escape
@@ -112,20 +102,18 @@ export default function DirectChannelsBar({ company }) {
             return (
               <a
                 key={opt.id}
+                role="menuitem"
                 href={opt.href}
                 target={opt.external ? '_blank' : undefined}
                 rel={opt.external ? 'noopener noreferrer' : undefined}
-                onClick={() => setIsOpen(false)}
-                className={`group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white dark:bg-[#0E1626] text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700/80 shadow-xl text-xs font-mono transition-all hover:scale-102 ${opt.hoverBg}`}
+                className={`group flex items-center gap-3 px-3.5 py-2 rounded-xl bg-white dark:bg-[#0E1626] border border-slate-200 dark:border-slate-800 shadow-lg text-slate-800 dark:text-slate-100 transition-all duration-200 ${opt.hoverBg}`}
               >
-                <div className="flex flex-col text-right">
-                  <span className="font-semibold text-[12px]">{opt.label}</span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400 group-hover:text-white/80">
-                    {opt.sublabel}
-                  </span>
+                <div className="flex flex-col items-end text-right">
+                  <span className="text-xs font-semibold leading-tight font-mono">{opt.label}</span>
+                  <span className="text-[10px] text-slate-400 group-hover:text-white/80">{opt.sublabel}</span>
                 </div>
-                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800/80 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
-                  <Icon className={`w-4 h-4 ${opt.iconColor} group-hover:text-white transition-colors`} />
+                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-colors">
+                  <Icon className={`w-4 h-4 ${opt.iconColor} group-hover:text-white`} />
                 </div>
               </a>
             );
@@ -133,28 +121,30 @@ export default function DirectChannelsBar({ company }) {
         </div>
       )}
 
-      {/* Main Single Floating Contact Icon Button */}
+      {/* Floating Toggle Pill Button */}
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        aria-label="Toggle contact menu"
-        className={`group flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl font-mono text-xs font-bold transition-all duration-200 hover:scale-105 active:scale-95 border ${
+        aria-haspopup="menu"
+        aria-label={isOpen ? 'Close contact options' : 'Open direct contact options'}
+        className={`flex items-center gap-2.5 px-4 py-3 rounded-full shadow-xl font-mono text-xs font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 ${
           isOpen
-            ? 'bg-slate-900 text-white border-slate-700 dark:bg-slate-800 dark:text-white dark:border-slate-600'
-            : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-cyan-400 dark:hover:bg-cyan-300 dark:text-slate-950 border-slate-700 dark:border-cyan-300'
+            ? 'bg-slate-900 text-white dark:bg-slate-800 border border-slate-700 ring-2 ring-cyan-500/50'
+            : 'bg-cyan-500 hover:bg-cyan-400 text-slate-950 hover:scale-105 active:scale-95 shadow-cyan-500/25'
         }`}
       >
-        <div className="relative flex items-center justify-center">
-          {isOpen ? (
-            <X className="w-4 h-4 transition-transform duration-200" />
-          ) : (
-            <>
-              <MessageSquare className="w-4 h-4 transition-transform duration-200" />
-              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            </>
-          )}
-        </div>
-        <span>{isOpen ? 'Close' : 'Contact'}</span>
+        {isOpen ? (
+          <>
+            <X className="w-4 h-4" />
+            <span>Close</span>
+          </>
+        ) : (
+          <>
+            <MessageSquare className="w-4 h-4" />
+            <span>Quick Contact</span>
+          </>
+        )}
       </button>
     </aside>
   );

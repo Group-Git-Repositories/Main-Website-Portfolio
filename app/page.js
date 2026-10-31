@@ -7,6 +7,7 @@ import ShowroomGrid from '../components/public/ShowroomGrid';
 import CostEstimator from '../components/public/CostEstimator';
 import ServicesList from '../components/public/ServicesList';
 import PricingMatrix from '../components/public/PricingMatrix';
+import ClientTestimonials from '../components/public/ClientTestimonials';
 import FAQAccordion from '../components/public/FAQAccordion';
 import Footer from '../components/public/Footer';
 import DirectChannelsBar from '../components/public/DirectChannelsBar';
@@ -39,12 +40,12 @@ export default function HomePage() {
     setQuoteModalOpen(true);
   };
 
-
   const company = data?.company || {};
   const hero = data?.hero || {};
   const projects = data?.projects || [];
   const services = data?.services || [];
   const packages = data?.pricingPackages || [];
+  const testimonials = data?.testimonials || [];
   const faq = data?.faq || [];
 
   return (
@@ -57,6 +58,7 @@ export default function HomePage() {
         <CostEstimator onCommissionSpec={handleOpenQuote} />
         <ServicesList services={services} onOpenQuote={() => handleOpenQuote(null)} />
         <PricingMatrix packages={packages} onOpenQuote={() => handleOpenQuote(null)} />
+        <ClientTestimonials testimonials={testimonials} />
         <FAQAccordion items={faq} />
       </main>
 

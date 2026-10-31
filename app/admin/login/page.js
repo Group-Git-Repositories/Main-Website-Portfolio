@@ -54,11 +54,16 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-[#070B16] text-white flex flex-col justify-center items-center p-4">
       <div className="w-full max-w-md bg-[#0E1626] border border-slate-800 rounded-2xl p-8 shadow-2xl">
         <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-white border border-slate-700 flex items-center justify-center overflow-hidden shadow-sm shadow-cyan-500/20 shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center overflow-hidden shadow-sm shadow-cyan-500/20 shrink-0">
             <img
-              src="/logo.png"
+              src="/IMG_1561newwwwwwww.png"
               alt={companyName || 'ROHA Dev'}
-              className="w-full h-full object-contain p-1"
+              className="w-full h-full object-contain p-1 block dark:hidden"
+            />
+            <img
+              src="/IMG_1564jfurur.png"
+              alt={companyName || 'ROHA Dev'}
+              className="w-full h-full object-contain p-1 hidden dark:block"
             />
           </div>
           <div>
