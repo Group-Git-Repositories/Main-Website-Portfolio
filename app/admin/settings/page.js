@@ -4,6 +4,17 @@ import { useState, useEffect } from 'react';
 import { Save, Check, Phone, Mail, Linkedin, Send, MapPin, Globe } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
+// Helper to ensure external links always have an absolute protocol (e.g. https://)
+// Preventing relative navigation to your own domain (e.g. yoursite.com/www.linkedin.com/...)
+function normalizeExternalUrl(url, fallback = '') {
+  if (!url || typeof url !== 'string') return fallback;
+  const trimmed = url.trim();
+  if (!trimmed) return fallback;
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (trimmed.startsWith('//')) return 'https:' + trimmed;
+  return 'https://' + trimmed;
+}
+
 export default function SettingsAdminPage() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -35,18 +46,35 @@ export default function SettingsAdminPage() {
   const handleSave = async () => {
     setSaving(true);
     try {
+      const sanitizedCompany = {
+        ...company,
+        linkedin: company.linkedin ? normalizeExternalUrl(company.linkedin) : '',
+        channels: {
+          ...channels,
+          linkedin: {
+            ...(channels.linkedin || {}),
+            url: company.linkedin ? normalizeExternalUrl(company.linkedin) : '',
+          },
+        },
+      };
+      const sanitizedData = {
+        ...data,
+        company: sanitizedCompany,
+      };
+
       const res = await fetch('/api/content', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(sanitizedData),
       });
 
       const result = await res.json().catch(() => ({}));
       if (!res.ok) {
         throw new Error(result.error || 'Failed to update channel settings.');
       }
-      if (typeof window !== 'undefined' && data?.company) {
-        window.dispatchEvent(new CustomEvent('company-updated', { detail: data.company }));
+      setData(sanitizedData);
+      if (typeof window !== 'undefined' && sanitizedData?.company) {
+        window.dispatchEvent(new CustomEvent('company-updated', { detail: sanitizedData.company }));
       }
       showToast('Settings saved successfully.');
     } catch (err) {
@@ -176,7 +204,7 @@ export default function SettingsAdminPage() {
                 company: { ...company, linkedin: e.target.value },
               })
             }
-            placeholder="https://www.linkedin.com/company/hope-web-development"
+            placeholder="https://www.linkedin.com/in/roha-dev"
             className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs font-mono focus:border-cyan-500 focus:outline-none"
           />
         </div>

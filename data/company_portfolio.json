@@ -1,6 +1,6 @@
 {
   "company": {
-    "name": "HOPE Web Development",
+    "name": "ROHA Dev",
     "legalName": "Hope Teams Digital Solutions",
     "tagline": "Fast Static Websites For Modern Businesses",
     "shortAbout": "We build clean, ultra-fast static websites that load instantly, never crash, and help your business get more clients. Easy to maintain with a simple admin page.",
@@ -8,7 +8,7 @@
     "email": "rohadev0@gmail.com",
     "phone": "+251 988717219",
     "github": "https://github.com/Group-Git-Repositories/Main-Website-Portfolio",
-    "linkedin": "https://www.linkedin.com/company/hope-web-development",
+    "linkedin": "https://www.linkedin.com/in/roha-dev",
     "channels": {
       "email": {
         "enabled": true,
@@ -16,7 +16,7 @@
       },
       "linkedin": {
         "enabled": true,
-        "url": "https://www.linkedin.com/company/hope-web-development"
+        "url": "https://www.linkedin.com/in/roha-dev"
       },
       "telegram": {
         "enabled": true,

@@ -3,6 +3,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Linkedin, Send, MessageSquare, X } from 'lucide-react';
 
+// Helper to ensure external links always have an absolute protocol (e.g. https://)
+// Preventing relative navigation to your own domain (e.g. yoursite.com/www.linkedin.com/...)
+function normalizeExternalUrl(url, fallback = '') {
+  if (!url || typeof url !== 'string') return fallback;
+  const trimmed = url.trim();
+  if (!trimmed) return fallback;
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (trimmed.startsWith('//')) return 'https:' + trimmed;
+  return 'https://' + trimmed;
+}
+
 export default function DirectChannelsBar({ company }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
@@ -10,7 +21,8 @@ export default function DirectChannelsBar({ company }) {
   // Dynamic contact values derived from the single source of truth (company data)
   const phone = company?.phone || '+251 973 951 191';
   const email = company?.email || 'contact@hopeteams.com';
-  const linkedinUrl = company?.linkedin || company?.channels?.linkedin?.url || 'https://www.linkedin.com/company/hope-web-development';
+  const rawLinkedin = company?.linkedin || company?.channels?.linkedin?.url || 'https://www.linkedin.com/in/roha-dev';
+  const linkedinUrl = normalizeExternalUrl(rawLinkedin, 'https://www.linkedin.com/in/roha-dev');
   const telegramUsername = company?.channels?.telegram?.username || 'TeddyEt';
   const telegramUrl = `https://t.me/${telegramUsername}`;
 
