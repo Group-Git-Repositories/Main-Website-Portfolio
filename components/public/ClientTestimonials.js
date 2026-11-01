@@ -8,13 +8,9 @@ import {
   MapPin,
   Building2,
   MessageSquare,
-  Plus,
-  Send,
   Sparkles,
   AlertCircle,
   User,
-  ChevronDown,
-  ChevronUp,
 } from 'lucide-react';
 
 export default function ClientTestimonials({ testimonials: initialTestimonials = [] }) {
@@ -164,7 +160,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
   return (
     <section
       id="testimonials"
-      className="py-20 md:py-28 border-t border-slate-200/80 dark:border-slate-800/80 relative"
+      className="py-14 sm:py-20 md:py-28 border-t border-slate-200/80 dark:border-slate-800/80 relative"
     >
       <div id="reviews" className="absolute -top-24 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,24 +171,24 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
               <span className="inline-block w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
               <span>የደንበኞች ምስክርነት እና ደረጃ • Testimonials & Ratings</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
               Trusted by Ethiopian Restaurants & Clients
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Hear directly from Addis Ababa restaurant owners, café founders, and lounge managers about our fast digital menus and website services.
             </p>
           </div>
 
           {/* Aggregate Rating Badge & Quick Action Button */}
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-amber-50 dark:bg-[#0E1626] border border-amber-200 dark:border-amber-500/30">
-              <div className="flex items-center gap-1 text-amber-500">
+            <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-amber-50 dark:bg-[#0E1626] border border-amber-200 dark:border-amber-500/30">
+              <div className="flex items-center gap-1.5 text-amber-500">
                 <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                <span className="text-lg font-extrabold text-slate-900 dark:text-white font-mono">
+                <span className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white font-mono">
                   {avgScore}
                 </span>
               </div>
-              <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 pl-2.5">
+              <div className="text-xs font-mono text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 pl-3">
                 <div>{totalReviews} Reviews</div>
                 <div className="text-emerald-600 dark:text-emerald-400 font-semibold">100% Verified</div>
               </div>
@@ -201,7 +197,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
             <button
               type="button"
               onClick={scrollToForm}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-md shadow-cyan-600/20 transition-all active:scale-95 cursor-pointer"
+              className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-md shadow-cyan-600/20 active:scale-95 transition-all min-h-[44px] touch-manipulation cursor-pointer"
             >
               <Star className="w-4 h-4 fill-white" />
               <span>Rate & Review</span>
@@ -209,30 +205,24 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
           </div>
         </div>
 
-        {/* Comment & Rating Form - Always accessible */}
+        {/* Comment & Rating Form - Mobile-optimized inputs */}
         {showForm && (
           <div
             id="rating-form"
-            className="mb-12 p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-cyan-500/40 shadow-xl relative"
+            className="mb-10 sm:mb-12 p-5 sm:p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-cyan-500/40 shadow-xl relative"
           >
-            <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800">
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-                  <span>Submit Your Testimonial & Rating</span>
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  Select your star rating and share your experience with our services.
-                </p>
-              </div>
-
-              <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
-                Verified Feedback
-              </span>
+            <div className="pb-4 mb-6 border-b border-slate-200 dark:border-slate-800">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <MessageSquare className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                <span>Submit Your Testimonial & Rating</span>
+              </h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                Select your star rating and share your experience with our services.
+              </p>
             </div>
 
             {successMsg && (
-              <div className="mb-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm flex items-start gap-3">
+              <div className="mb-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300 text-sm flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold">Review Received!</div>
@@ -242,7 +232,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
             )}
 
             {errorMsg && (
-              <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 text-red-800 dark:text-red-300 text-xs sm:text-sm flex items-start gap-3">
+              <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 text-red-800 dark:text-red-300 text-sm flex items-start gap-3">
                 <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold">Submission Error</div>
@@ -252,12 +242,12 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Star Rating Picker */}
+              {/* Star Rating Picker - Min 44x44px touch target per star */}
               <div>
-                <label className="block text-xs font-bold font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                <label className="block text-xs font-bold font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
                   Select Rating (ደረጃ ይስጡ) <span className="text-amber-500">*</span>
                 </label>
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                   {[1, 2, 3, 4, 5].map((starVal) => {
                     const isSelected = starVal <= rating;
                     return (
@@ -265,39 +255,40 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
                         key={starVal}
                         type="button"
                         onClick={() => setRating(starVal)}
-                        className="p-1.5 focus:outline-none transition-transform hover:scale-105 cursor-pointer rounded-lg"
+                        className="w-11 h-11 flex items-center justify-center p-2 focus:outline-none transition-transform hover:scale-110 active:scale-95 cursor-pointer rounded-xl touch-manipulation"
                         title={`${starVal} Star${starVal > 1 ? 's' : ''}`}
                       >
                         <Star
-                          className={`w-8 h-8 sm:w-9 sm:h-9 transition-all duration-200 ${
+                          className={`w-7 h-7 sm:w-8 sm:h-8 transition-colors duration-150 ${
                             isSelected
-                              ? 'fill-amber-400 text-amber-400 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] brightness-110 scale-105'
-                              : 'fill-slate-800 text-slate-700 dark:fill-[#080d1a] dark:text-slate-800 drop-shadow-none brightness-50 opacity-25 scale-95'
+                              ? 'fill-amber-400 text-amber-400'
+                              : 'fill-slate-100 text-slate-300 dark:fill-slate-800/80 dark:text-slate-600'
                           }`}
                         />
                       </button>
                     );
                   })}
-                  <span className="ml-2 text-xs font-mono font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800">
+                  <span className="mt-1 sm:mt-0 sm:ml-2 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 min-h-[44px] flex items-center">
                     {ratingDescriptions[rating] || `${rating}/5 Stars`}
                   </span>
                 </div>
               </div>
 
-              {/* Name & Role Inputs */}
+              {/* Name, Role & Email Inputs - 16px text-base to prevent iOS zoom */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                     Your Name (ስም)
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-slate-400 absolute left-3 top-3 pointer-events-none" />
+                    <User className="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
                     <input
                       type="text"
+                      autoComplete="name"
                       placeholder="e.g. Dawit Haile"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full pl-10 pr-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-cyan-500 min-h-[48px]"
                     />
                   </div>
                 </div>
@@ -307,13 +298,13 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
                     Role / Restaurant Name
                   </label>
                   <div className="relative">
-                    <Building2 className="w-4 h-4 text-slate-400 absolute left-3 top-3 pointer-events-none" />
+                    <Building2 className="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
                     <input
                       type="text"
                       placeholder="e.g. General Manager, Addis Lounge"
                       value={role}
                       onChange={(e) => setRole(e.target.value)}
-                      className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full pl-10 pr-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-cyan-500 min-h-[48px]"
                     />
                   </div>
                 </div>
@@ -324,15 +315,17 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
                   </label>
                   <input
                     type="email"
+                    inputMode="email"
+                    autoComplete="email"
                     placeholder="contact@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-cyan-500 min-h-[48px]"
                   />
                 </div>
               </div>
 
-              {/* Comment text area */}
+              {/* Comment text area - 16px text to prevent iOS zoom */}
               <div>
                 <label className="block text-xs font-bold font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   Your Testimonial / Comment (ምስክርነት / አስተያየት)
@@ -343,15 +336,15 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
                   placeholder="Share how our Ethiopian digital menus, QR ordering, or website development impacted your operations (optional)..."
                   value={commentText}
                   onChange={(e) => setCommentText(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-2">
+              <div className="flex justify-end pt-2">
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-md shadow-cyan-600/20 disabled:opacity-50 transition-all cursor-pointer active:scale-95"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-base font-bold text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-md shadow-cyan-600/20 disabled:opacity-50 transition-all cursor-pointer active:scale-95 min-h-[48px] touch-manipulation"
                 >
                   {submitting ? (
                     <span>Submitting Rating...</span>
@@ -367,92 +360,76 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
           </div>
         )}
 
-        {/* Filter Navigation Tabs */}
-        <div className="flex items-center gap-2 pb-6 border-b border-slate-200/80 dark:border-slate-800/80 mb-8 overflow-x-auto text-xs font-mono">
+        {/* Filter Navigation Tabs - Horizontal touch scrolling */}
+        <div className="flex items-center gap-2 pb-5 border-b border-slate-200/80 dark:border-slate-800/80 mb-8 overflow-x-auto text-xs font-mono">
           <button
             type="button"
             onClick={() => setFilterTab('all')}
-            className={`px-4 py-2 rounded-xl whitespace-nowrap transition-colors cursor-pointer ${
+            className={`px-4 py-2.5 rounded-xl whitespace-nowrap transition-colors cursor-pointer min-h-[44px] touch-manipulation flex items-center ${
               filterTab === 'all'
                 ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-bold border border-cyan-500/30'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            All Testimonials & Ratings ({allItems.length})
+            All Testimonials ({allItems.length})
           </button>
           <button
             type="button"
             onClick={() => setFilterTab('featured')}
-            className={`px-4 py-2 rounded-xl whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer ${
+            className={`px-4 py-2.5 rounded-xl whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer min-h-[44px] touch-manipulation ${
               filterTab === 'featured'
                 ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-bold border border-cyan-500/30'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Featured Testimonials ({featuredList.length})</span>
+            <span>Client Testimonials ({featuredList.length})</span>
           </button>
           <button
             type="button"
             onClick={() => setFilterTab('community')}
-            className={`px-4 py-2 rounded-xl whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer ${
+            className={`px-4 py-2.5 rounded-xl whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer min-h-[44px] touch-manipulation ${
               filterTab === 'community'
                 ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-bold border border-cyan-500/30'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Community Ratings & Comments ({communityList.length})</span>
+            <span>Community Ratings ({communityList.length})</span>
           </button>
         </div>
 
-        {/* Testimonials & Ratings Grid */}
+        {/* Testimonials & Ratings Grid - Stacks vertically on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {displayedItems.map((t) => (
             <div
               key={t.id || t.name}
-              className="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 relative group overflow-hidden"
+              className="flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 relative group overflow-hidden"
             >
               {/* Background Accent watermark */}
               <div className="absolute top-4 right-4 text-slate-100 dark:text-slate-800/40 pointer-events-none select-none group-hover:text-cyan-500/10 transition-colors">
-                <Quote className="w-16 h-16 stroke-[1]" />
+                <Quote className="w-14 sm:w-16 h-14 sm:h-16 stroke-[1]" />
               </div>
 
               <div className="relative z-10">
-                {/* Rating Stars & Badges */}
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="flex items-center gap-1">
-                    {[...Array(t.rating || 5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 fill-amber-400 text-amber-400 stroke-none"
-                      />
-                    ))}
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    {t.isFeatured ? (
-                      <div className="flex items-center gap-1 text-[11px] font-mono font-medium text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 px-2.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-800/60">
-                        <Sparkles className="w-3 h-3 text-amber-400" />
-                        <span>የተመረጠ (Featured)</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-1.5 text-[11px] font-mono font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/60">
-                        <CheckCircle className="w-3.5 h-3.5" />
-                        <span>የተረጋገጠ (Verified)</span>
-                      </div>
-                    )}
-                  </div>
+                {/* Rating Stars */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(t.rating || 5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-amber-400 text-amber-400 stroke-none"
+                    />
+                  ))}
                 </div>
 
-                {/* Main Quote */}
-                <p className="text-sm sm:text-base text-slate-800 dark:text-slate-100 font-medium leading-relaxed mb-4">
+                {/* Main Quote - Minimum 16px body font */}
+                <p className="text-base sm:text-lg text-slate-800 dark:text-slate-100 font-medium leading-relaxed mb-4">
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
                 {/* English translation if present */}
                 {t.translation && (
-                  <p className="text-xs text-slate-500 dark:text-slate-400 italic leading-relaxed mb-6 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 italic leading-relaxed mb-6 pt-3 border-t border-slate-100 dark:border-slate-800/80">
                     &ldquo;{t.translation}&rdquo;
                   </p>
                 )}
@@ -466,20 +443,20 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <div className="font-bold text-sm text-slate-900 dark:text-white truncate">
+                    <div className="font-bold text-sm sm:text-base text-slate-900 dark:text-white truncate">
                       {t.name}
                     </div>
-                    <div className="text-xs text-cyan-700 dark:text-cyan-400 font-medium truncate">
+                    <div className="text-xs sm:text-sm text-cyan-700 dark:text-cyan-400 font-medium truncate">
                       {t.role}
                     </div>
-                    <div className="flex items-center gap-3 mt-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1 text-xs font-mono text-slate-500 dark:text-slate-400">
                       <span className="flex items-center gap-1 truncate">
-                        <Building2 className="w-3 h-3 text-slate-400 shrink-0" />
+                        <Building2 className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                         <span className="truncate">{t.restaurant}</span>
                       </span>
                       {t.location && (
-                        <span className="hidden sm:flex items-center gap-1 shrink-0">
-                          <MapPin className="w-3 h-3 text-cyan-500 shrink-0" />
+                        <span className="hidden xs:flex items-center gap-1 shrink-0">
+                          <MapPin className="w-3.5 h-3.5 text-cyan-500 shrink-0" />
                           <span>{t.location}</span>
                         </span>
                       )}
@@ -488,7 +465,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
                 </div>
 
                 {t.date && (
-                  <span className="text-[10px] font-mono text-slate-400 shrink-0 hidden sm:block">
+                  <span className="text-xs font-mono text-slate-400 shrink-0 hidden sm:block">
                     {new Date(t.date).toLocaleDateString()}
                   </span>
                 )}

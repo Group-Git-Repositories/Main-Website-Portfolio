@@ -20,6 +20,17 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#070B16' },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark scroll-smooth">
@@ -31,7 +42,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-white dark:bg-[#070B16] text-slate-900 dark:text-slate-100 min-h-screen selection:bg-slate-700 selection:text-white">
+      <body className="bg-white dark:bg-[#070B16] text-slate-900 dark:text-slate-100 min-h-screen selection:bg-slate-700 selection:text-white antialiased">
         {children}
       </body>
     </html>

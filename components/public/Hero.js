@@ -22,7 +22,7 @@ export default function Hero({ hero, company, onOpenQuote }) {
     e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
-      const offset = 85;
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -36,34 +36,34 @@ export default function Hero({ hero, company, onOpenQuote }) {
   };
 
   return (
-    <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 tech-grid-bg">
+    <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-24 md:pt-28 md:pb-32 tech-grid-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {/* Section Subtitle */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/20 text-xs font-mono font-semibold tracking-wider text-cyan-700 dark:text-cyan-400 uppercase mb-6">
-            <Utensils className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/20 text-xs font-mono font-semibold tracking-wider text-cyan-700 dark:text-cyan-400 uppercase mb-5 sm:mb-6">
+            <Utensils className="w-3.5 h-3.5 shrink-0" />
             <span>{badgeText}</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-6">
+          {/* Headline - Responsive typography */}
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-5 sm:mb-6">
             {headline}
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-10 max-w-2xl">
+          {/* Subheadline - Minimum 16px body font with generous line spacing */}
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-8 sm:mb-10 max-w-2xl">
             {subheadline}
           </p>
 
-          {/* Action Triggers */}
-          <div className="flex flex-wrap items-center gap-4 mb-14">
+          {/* Action Triggers - Stack vertically full-width on mobile */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10 sm:mb-14 w-full sm:w-auto">
             <Button
               size="lg"
               variant="primary"
               onClick={(e) => handleSmoothScroll(e, '#showroom')}
               icon={ArrowRight}
               iconPosition="right"
-              className="text-sm font-bold px-6 py-3 cursor-pointer"
+              className="w-full sm:w-auto text-base font-bold px-6 py-3.5 cursor-pointer min-h-[48px]"
             >
               {hero?.primaryCta || 'View Restaurant Samples'}
             </Button>
@@ -71,20 +71,23 @@ export default function Hero({ hero, company, onOpenQuote }) {
               size="lg"
               variant="outline"
               onClick={(e) => handleSmoothScroll(e, '#estimator')}
-              className="text-sm font-semibold px-6 py-3 cursor-pointer"
+              className="w-full sm:w-auto text-base font-semibold px-6 py-3.5 cursor-pointer min-h-[48px]"
             >
               {hero?.secondaryCta || 'Calculate Menu Price'}
             </Button>
           </div>
 
-          {/* Key Metric Indicators */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 max-w-lg">
+          {/* Key Metric Indicators - Mobile-friendly cards */}
+          <div className="grid grid-cols-1 xs:grid-cols-3 gap-3.5 sm:gap-6 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800/80 max-w-lg">
             {metrics.map((m) => {
               const Icon = m.icon;
               return (
-                <div key={m.label} className="space-y-1">
+                <div
+                  key={m.label}
+                  className="p-3 sm:p-0 rounded-xl bg-slate-50/60 dark:bg-slate-900/40 sm:bg-transparent sm:dark:bg-transparent border border-slate-200/60 dark:border-slate-800/60 sm:border-none space-y-1"
+                >
                   <div className="flex items-center gap-1.5 text-xs font-mono text-cyan-700 dark:text-cyan-400">
-                    <Icon className="w-3.5 h-3.5" />
+                    <Icon className="w-3.5 h-3.5 shrink-0" />
                     <span>{m.label}</span>
                   </div>
                   <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">

@@ -75,6 +75,7 @@ export default function ContentAdminPage() {
   }
 
   const hero = data?.hero || {};
+  const company = data?.company || {};
   const services = data?.services || [];
   const packages = data?.pricingPackages || [];
   const testimonials = data?.testimonials || [];
@@ -198,6 +199,44 @@ export default function ContentAdminPage() {
               className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs"
             />
           </div>
+        </div>
+      </div>
+
+      {/* Vision & Mission Copy */}
+      <div className="p-6 rounded-2xl bg-[#0E1626] border border-slate-800 space-y-4">
+        <h3 className="text-base font-bold text-white flex items-center gap-2">
+          <span>Company Vision & Mission</span>
+        </h3>
+        <p className="text-xs text-slate-400 font-mono">
+          Edit the vision and mission statements displayed on the homepage.
+        </p>
+
+        <div>
+          <label className="block text-xs font-mono text-cyan-400 mb-1">
+            Our Vision Statement
+          </label>
+          <textarea
+            rows={3}
+            value={company.vision || ''}
+            onChange={(e) =>
+              setData({ ...data, company: { ...company, vision: e.target.value } })
+            }
+            className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs resize-none"
+          />
+        </div>
+
+        <div>
+          <label className="block text-xs font-mono text-blue-400 mb-1">
+            Our Mission Statement
+          </label>
+          <textarea
+            rows={3}
+            value={company.mission || ''}
+            onChange={(e) =>
+              setData({ ...data, company: { ...company, mission: e.target.value } })
+            }
+            className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs resize-none"
+          />
         </div>
       </div>
 

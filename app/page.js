@@ -6,6 +6,7 @@ import Hero from '../components/public/Hero';
 import ShowroomGrid from '../components/public/ShowroomGrid';
 import CostEstimator from '../components/public/CostEstimator';
 import ServicesList from '../components/public/ServicesList';
+import VisionMission from '../components/public/VisionMission';
 import PricingMatrix from '../components/public/PricingMatrix';
 import ClientTestimonials from '../components/public/ClientTestimonials';
 import FAQAccordion from '../components/public/FAQAccordion';
@@ -54,9 +55,10 @@ export default function HomePage() {
 
       <main className="flex-1">
         <Hero hero={hero} company={company} onOpenQuote={() => handleOpenQuote(null)} />
+        <VisionMission company={company} />
         <ShowroomGrid projects={projects} onSelectProjectForQuote={handleOpenQuote} />
-        <CostEstimator onCommissionSpec={handleOpenQuote} />
         <ServicesList services={services} onOpenQuote={() => handleOpenQuote(null)} />
+        <CostEstimator onCommissionSpec={handleOpenQuote} />
         <PricingMatrix packages={packages} onOpenQuote={() => handleOpenQuote(null)} />
         <ClientTestimonials testimonials={testimonials} />
         <FAQAccordion items={faq} />
