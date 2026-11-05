@@ -76,11 +76,6 @@ export default function Footer({ company }) {
                 </a>
               </li>
               <li>
-                <a href="#estimator" className="hover:text-cyan-400 transition-colors py-1 inline-block text-sm">
-                  Price Calculator
-                </a>
-              </li>
-              <li>
                 <a href="#pricing" className="hover:text-cyan-400 transition-colors py-1 inline-block text-sm">
                   Pricing Packages
                 </a>

@@ -70,10 +70,10 @@ export default function Hero({ hero, company, onOpenQuote }) {
             <Button
               size="lg"
               variant="outline"
-              onClick={(e) => handleSmoothScroll(e, '#estimator')}
+              onClick={(e) => handleSmoothScroll(e, '#pricing')}
               className="w-full sm:w-auto text-base font-semibold px-6 py-3.5 cursor-pointer min-h-[48px]"
             >
-              {hero?.secondaryCta || 'Calculate Menu Price'}
+              {hero?.secondaryCta || 'View Pricing Plans'}
             </Button>
           </div>
 

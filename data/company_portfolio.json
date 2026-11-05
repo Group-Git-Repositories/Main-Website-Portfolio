@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 7,
   "company": {
     "name": "ROHA Dev",
     "legalName": "ROHA Dev",
@@ -35,7 +35,7 @@
     "headline": "Boost Your Restaurant Sales With Instant Digital Menus & Websites",
     "subheadline": "We build ultra-fast restaurant websites and digital QR menus that open in under 1 second on any smartphone. Let customers browse your fasting (የጾም) and non-fasting dishes, book tables, and order directly on WhatsApp or Telegram.",
     "primaryCta": "View Restaurant Samples",
-    "secondaryCta": "Calculate Menu Price"
+    "secondaryCta": "View Pricing Plans"
   },
   "settings": {
     "accentTheme": "neon-cyan",
@@ -44,162 +44,162 @@
   "projects": [
     {
       "id": "proj-rest-01",
-      "title": "Lucy Habesha Cultural Dining",
-      "tagline": "Traditional Ethiopian restaurant menu with cultural coffee ceremony and table booking",
-      "category": "Habesha & Traditional Dining",
+      "title": "Cobalt Kitchen & Bar",
+      "tagline": "Modern-American kitchen and craft bar serving bold, seasonal plates and handcrafted cocktails",
+      "category": "Lounge, Bar & Grill",
       "featured": true,
       "mockups": {
-        "desktop": "/projects/lumina_desktop.svg",
-        "tablet": "/projects/lumina_tablet.svg",
-        "mobile": "/projects/lumina_mobile.svg"
+        "desktop": "/projects/cobalt_desktop.png",
+        "tablet": "/projects/cobalt_tablet.png",
+        "mobile": "/projects/cobalt_mobile.png"
       },
-      "liveUrl": "https://example.com/demo/lucy-habesha",
+      "liveUrl": "https://cobalt-kitchen-bar.vercel.app/",
       "deliverables": [
-        "Fasting (የጾም) & Non-Fasting Menu",
-        "Instant Table Reservation Form",
-        "Traditional Coffee Ceremony Showcase",
-        "Google Maps & Directions"
+        "Bold Seasonal Plates & Chef Specials Menu",
+        "Signature Handcrafted Cocktail Program",
+        "Online Dinner & Group Table Reservations",
+        "Farm-to-Table Sourcing & Private Dining Guide"
       ],
       "specs": {
         "turnaroundDays": 4,
         "showTurnaround": true,
-        "startingPrice": "16,500 Birr",
+        "startingPrice": "17,500 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "Showcases authentic Ethiopian culinary heritage with clear dish descriptions in Amharic & English. Guests can explore specials, check fasting platters, and reserve dinner tables.",
+      "description": "A vibrant modern-American dining destination serving bold seasonal plates, award-winning handcrafted cocktails, and farm-to-table culinary experiences with instant online table reservations.",
       "techStack": [
-        "Fast Mobile Menu",
-        "Amharic & English",
-        "Instant Table Booking"
+        "Modern Kitchen Aesthetic",
+        "Interactive Craft Bar Menu",
+        "Instant Table Reservations"
       ]
     },
     {
       "id": "proj-rest-02",
-      "title": "Aroma Specialty Café & Roastery",
-      "tagline": "Modern coffee house digital menu with breakfast specials and daily pastries",
-      "category": "Café, Bakery & Breakfast",
+      "title": "SHEBA - Modern Ethiopian Table",
+      "tagline": "Modern Ethiopian dining house in Addis Ababa with curated digital menu, cultural storytelling, and wine pairings",
+      "category": "Habesha & Traditional Dining",
       "featured": true,
       "mockups": {
-        "desktop": "/projects/aura_desktop.svg",
-        "tablet": "/projects/aura_tablet.svg",
-        "mobile": "/projects/aura_mobile.svg"
+        "desktop": "/projects/sheba_desktop.png",
+        "tablet": "/projects/sheba_tablet.png",
+        "mobile": "/projects/sheba_mobile.png"
       },
-      "liveUrl": "https://example.com/demo/aroma-cafe",
+      "liveUrl": "https://sheba-pi.vercel.app/",
       "deliverables": [
-        "High-Speed QR Code Menu",
-        "Espresso & Specialty Brew Catalog",
-        "Daily Fresh Pastry Showcase",
-        "Direct Call & Wi-Fi Info"
-      ],
-      "specs": {
-        "turnaroundDays": 3,
-        "showTurnaround": true,
-        "startingPrice": "9,500 Birr",
-        "showPrice": true,
-        "enableOrderCta": true
-      },
-      "description": "Clean, stylish digital menu designed for fast café environments. Customers scan a table QR code and instantly browse hot drinks, iced blends, and fresh bakery selections.",
-      "techStack": [
-        "Instant QR Menu",
-        "Clean Minimalist UI",
-        "Phone-Optimized"
-      ]
-    },
-    {
-      "id": "proj-rest-03",
-      "title": "Addis Burger & Pizza Grill",
-      "tagline": "High-energy fast food menu with WhatsApp direct delivery orders",
-      "category": "Fast Food, Burger & Pizza",
-      "featured": true,
-      "mockups": {
-        "desktop": "/projects/pulse_desktop.svg",
-        "tablet": "/projects/pulse_tablet.svg",
-        "mobile": "/projects/pulse_mobile.svg"
-      },
-      "liveUrl": "https://example.com/demo/addis-burger",
-      "deliverables": [
-        "Direct WhatsApp Order Button",
-        "Appetizing Food Photography Cards",
-        "Combo Deals & Special Offers",
-        "Zero-Lag Mobile Navigation"
-      ],
-      "specs": {
-        "turnaroundDays": 3,
-        "showTurnaround": true,
-        "startingPrice": "11,000 Birr",
-        "showPrice": true,
-        "enableOrderCta": true
-      },
-      "description": "Designed to convert hungry visitors into instant takeaway and delivery orders. Includes direct WhatsApp cart checkout with delivery location sharing.",
-      "techStack": [
-        "WhatsApp Direct Order",
-        "Crisp Food Cards",
-        "Instant Load"
-      ]
-    },
-    {
-      "id": "proj-rest-04",
-      "title": "Sweet Blossom Bakery & Pastry",
-      "tagline": "Artisan cake catalog with custom birthday cake inquiries and Telegram booking",
-      "category": "Café, Bakery & Breakfast",
-      "featured": true,
-      "mockups": {
-        "desktop": "/projects/haven_desktop.svg",
-        "tablet": "/projects/haven_tablet.svg",
-        "mobile": "/projects/haven_mobile.svg"
-      },
-      "liveUrl": "https://example.com/demo/sweet-blossom",
-      "deliverables": [
-        "Custom Cake Catalog with Sizes & Prices",
-        "One-Click Telegram Order Button",
-        "Wedding & Birthday Inquiry Form",
-        "Easy Price Update Admin Page"
+        "Interactive Starters, Mains & Desserts Digital Menu",
+        "Cultural Storytelling Dish Cards with Amharic Roots",
+        "Curated Sommelier Wine & Beverage Pairings",
+        "Instant Online Dinner & VIP Table Reservation"
       ],
       "specs": {
         "turnaroundDays": 4,
-        "showTurnaround": true,
-        "startingPrice": "12,500 Birr",
-        "showPrice": true,
-        "enableOrderCta": true
-      },
-      "description": "Present artisan desserts and custom event cakes with clear pricing per kg and serving sizes. Clients can submit their custom inscriptions and date requirements easily.",
-      "techStack": [
-        "Product Catalog",
-        "Telegram Order",
-        "Price Management"
-      ]
-    },
-    {
-      "id": "proj-rest-05",
-      "title": "Skyline Lounge & Cocktail Bar",
-      "tagline": "VIP dining, premium mixology menu, and weekly DJ night event schedule",
-      "category": "Lounge, Bar & Grill",
-      "featured": true,
-      "mockups": {
-        "desktop": "/projects/apex_desktop.svg",
-        "tablet": "/projects/apex_tablet.svg",
-        "mobile": "/projects/apex_mobile.svg"
-      },
-      "liveUrl": "https://example.com/demo/skyline-lounge",
-      "deliverables": [
-        "VIP Cabana & Table Reservation",
-        "Nightlife Cocktail & Bottle Menu",
-        "Weekly Live Music & DJ Schedule",
-        "Valet & Dress Code Info"
-      ],
-      "specs": {
-        "turnaroundDays": 5,
         "showTurnaround": true,
         "startingPrice": "16,500 Birr",
         "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "A dark, elegant digital experience built for upscale lounges and bars. Highlights signature cocktails, evening steaks, and VIP table reservations.",
+      "description": "A modern Ethiopian dining house in Addis Ababa that reimagines timeless culinary traditions. Features a rich interactive digital menu with Starters, Mains, Desserts, and boutique wines where every dish tells a story.",
       "techStack": [
-        "Luxury Dark Mode",
-        "VIP Booking Form",
-        "Event Schedule"
+        "Modern Habesha Dining",
+        "Interactive Story Menu",
+        "Bilingual Cultural Cards"
+      ]
+    },
+    {
+      "id": "proj-rest-03",
+      "title": "Mesa - Authentic Ethiopian Restaurant",
+      "tagline": "Where ancient flavors meet modern elegance - Authentic East African dining and coffee ceremony",
+      "category": "Habesha & Traditional Dining",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/mesa_desktop.png",
+        "tablet": "/projects/mesa_tablet.png",
+        "mobile": "/projects/mesa_mobile.png"
+      },
+      "liveUrl": "https://mesa-nu-seven.vercel.app/",
+      "deliverables": [
+        "Generational Spices & Authentic Heritage Menu",
+        "Traditional Ethiopian Coffee Ceremony Experience",
+        "Direct Table & Group Reservation Booking System",
+        "Interactive Timeline, Story & Visual Feast Gallery"
+      ],
+      "specs": {
+        "turnaroundDays": 4,
+        "showTurnaround": true,
+        "startingPrice": "15,500 Birr",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Where ancient flavors meet modern elegance. An authentic Ethiopian dining destination celebrating generational spice recipes, rich cultural history, traditional coffee ceremonies, and seamless online table reservations.",
+      "techStack": [
+        "Gold Luxury Dark Theme",
+        "Heritage Story Timeline",
+        "Direct Table Reservation"
+      ]
+    },
+    {
+      "id": "proj-rest-04",
+      "title": "Brasa - Modern Hearth Cuisine",
+      "tagline": "Wood-fire gastronomy, aged steaks, open-hearth cooking, and artisan seasonal tasting menu",
+      "category": "Fine Dining & Hotel Restaurant",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/brasa_desktop.png",
+        "tablet": "/projects/brasa_tablet.png",
+        "mobile": "/projects/brasa_mobile.png"
+      },
+      "liveUrl": "https://brasa-taupe.vercel.app/",
+      "deliverables": [
+        "Modern Wood-Fire Hearth Tasting Menu",
+        "Interactive Dish Filtering & Descriptions",
+        "Intimate Dinner & Private Event Inquiries",
+        "Artisan Cellar & Curated Wine Pairings"
+      ],
+      "specs": {
+        "turnaroundDays": 4,
+        "showTurnaround": true,
+        "startingPrice": "16,500 Birr",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "Where wood-fire craft meets the art of the table. Modern hearth cuisine featuring open-flame cooking, prime aged cuts, seasonal farm-to-table starters, and wood-smoked desserts with interactive menu browsing.",
+      "techStack": [
+        "Modern Hearth UI",
+        "Interactive Menu Showcase",
+        "Fast Mobile Experience"
+      ]
+    },
+    {
+      "id": "proj-rest-05",
+      "title": "Lafto Lounge & Restaurant",
+      "tagline": "Elevated Addis Ababa lounge & dining with signature Ethiopian fusion, craft cocktails, and nightly live entertainment",
+      "category": "Lounge, Bar & Grill",
+      "featured": true,
+      "mockups": {
+        "desktop": "/projects/lafto_desktop.png",
+        "tablet": "/projects/lafto_tablet.png",
+        "mobile": "/projects/lafto_mobile.png"
+      },
+      "liveUrl": "https://lafto-lounge-restaurant.vercel.app/",
+      "deliverables": [
+        "Signature Ethiopian Fusion & Cocktail Menu",
+        "VIP Cabana & Dinner Table Reservations",
+        "Nightly Live Music & Entertainment Schedule",
+        "Atmospheric Lounge & Culinary Photo Showcase"
+      ],
+      "specs": {
+        "turnaroundDays": 5,
+        "showTurnaround": true,
+        "startingPrice": "18,500 Birr",
+        "showPrice": true,
+        "enableOrderCta": true
+      },
+      "description": "An elevated lounge and dining experience in Addis Ababa. Highlights signature Ethiopian-inspired cuisine, curated craft cocktails, tableside tibs flambé, and nightly live entertainment with seamless online table reservations.",
+      "techStack": [
+        "Luxury Nightlife UI",
+        "VIP Table Reservation",
+        "Live Music & Events"
       ]
     },
     {

@@ -37,7 +37,6 @@ export default function Navbar({ onOpenQuote, company }) {
     { label: 'Our Purpose', href: '#about' },
     { label: 'Sample Websites', href: '#showroom' },
     { label: 'What We Build', href: '#services' },
-    { label: 'Price Calculator', href: '#estimator' },
     { label: 'Prices', href: '#pricing' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'FAQ', href: '#faq' },

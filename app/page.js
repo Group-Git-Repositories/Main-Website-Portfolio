@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/public/Navbar';
 import Hero from '../components/public/Hero';
 import ShowroomGrid from '../components/public/ShowroomGrid';
-import CostEstimator from '../components/public/CostEstimator';
 import ServicesList from '../components/public/ServicesList';
 import VisionMission from '../components/public/VisionMission';
 import PricingMatrix from '../components/public/PricingMatrix';
@@ -58,7 +57,6 @@ export default function HomePage() {
         <VisionMission company={company} />
         <ShowroomGrid projects={projects} onSelectProjectForQuote={handleOpenQuote} />
         <ServicesList services={services} onOpenQuote={() => handleOpenQuote(null)} />
-        <CostEstimator onCommissionSpec={handleOpenQuote} />
         <PricingMatrix packages={packages} onOpenQuote={() => handleOpenQuote(null)} />
         <ClientTestimonials testimonials={testimonials} />
         <FAQAccordion items={faq} />
