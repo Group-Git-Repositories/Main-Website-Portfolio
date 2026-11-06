@@ -11,6 +11,8 @@ import {
   Sparkles,
   AlertCircle,
   User,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 
 export default function ClientTestimonials({ testimonials: initialTestimonials = [] }) {
@@ -20,6 +22,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
   const [submitting, setSubmitting] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [showAll, setShowAll] = useState(false);
 
   // Form states
   const [name, setName] = useState('');
@@ -156,6 +159,25 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
       : filterTab === 'community'
       ? communityList
       : allItems;
+
+  const INITIAL_VISIBLE_COUNT = 4;
+  const hasMoreThanLimit = displayedItems.length > INITIAL_VISIBLE_COUNT;
+  const visibleItems = showAll ? displayedItems : displayedItems.slice(0, INITIAL_VISIBLE_COUNT);
+
+  const handleToggleShow = () => {
+    if (showAll) {
+      const el = document.getElementById('testimonials-grid') || document.getElementById('testimonials');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    setShowAll((prev) => !prev);
+  };
+
+  const handleTabChange = (tab) => {
+    setFilterTab(tab);
+    setShowAll(false);
+  };
 
   return (
     <section
@@ -364,7 +386,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
         <div className="flex items-center gap-2 pb-5 border-b border-slate-200/80 dark:border-slate-800/80 mb-8 overflow-x-auto text-xs font-mono">
           <button
             type="button"
-            onClick={() => setFilterTab('all')}
+            onClick={() => handleTabChange('all')}
             className={`px-4 py-2.5 rounded-xl whitespace-nowrap transition-colors cursor-pointer min-h-[44px] touch-manipulation flex items-center ${
               filterTab === 'all'
                 ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-bold border border-cyan-500/30'
@@ -375,7 +397,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
           </button>
           <button
             type="button"
-            onClick={() => setFilterTab('featured')}
+            onClick={() => handleTabChange('featured')}
             className={`px-4 py-2.5 rounded-xl whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer min-h-[44px] touch-manipulation ${
               filterTab === 'featured'
                 ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-bold border border-cyan-500/30'
@@ -387,7 +409,7 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
           </button>
           <button
             type="button"
-            onClick={() => setFilterTab('community')}
+            onClick={() => handleTabChange('community')}
             className={`px-4 py-2.5 rounded-xl whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer min-h-[44px] touch-manipulation ${
               filterTab === 'community'
                 ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-bold border border-cyan-500/30'
@@ -400,8 +422,8 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
         </div>
 
         {/* Testimonials & Ratings Grid - Stacks vertically on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {displayedItems.map((t) => (
+        <div id="testimonials-grid" className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {visibleItems.map((t) => (
             <div
               key={t.id || t.name}
               className="flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#0E1626] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 relative group overflow-hidden"
@@ -473,6 +495,32 @@ export default function ClientTestimonials({ testimonials: initialTestimonials =
             </div>
           ))}
         </div>
+
+        {/* Show More / Show Less Button when exceeding 4 items */}
+        {hasMoreThanLimit && (
+          <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center">
+            <button
+              type="button"
+              onClick={handleToggleShow}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm sm:text-base font-bold text-slate-800 dark:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow transition-all duration-200 cursor-pointer min-h-[48px] touch-manipulation group active:scale-95"
+              aria-expanded={showAll}
+            >
+              {showAll ? (
+                <>
+                  <span>Show Less (ያነሰ አሳይ)</span>
+                  <ChevronUp className="w-4 h-4 text-cyan-600 dark:text-cyan-400 group-hover:-translate-y-0.5 transition-transform" />
+                </>
+              ) : (
+                <>
+                  <span>
+                    Show More ({displayedItems.length - INITIAL_VISIBLE_COUNT} more) • ተጨማሪ ይመልከቱ
+                  </span>
+                  <ChevronDown className="w-4 h-4 text-cyan-600 dark:text-cyan-400 group-hover:translate-y-0.5 transition-transform" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

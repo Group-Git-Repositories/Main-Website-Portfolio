@@ -61,10 +61,10 @@
         "Farm-to-Table Sourcing & Private Dining Guide"
       ],
       "specs": {
-        "turnaroundDays": 4,
+        "turnaroundDays": 14,
         "showTurnaround": true,
         "startingPrice": "17,500 Birr",
-        "showPrice": true,
+        "showPrice": false,
         "enableOrderCta": true
       },
       "description": "A vibrant modern-American dining destination serving bold seasonal plates, award-winning handcrafted cocktails, and farm-to-table culinary experiences with instant online table reservations.",
@@ -93,10 +93,10 @@
         "Instant Online Dinner & VIP Table Reservation"
       ],
       "specs": {
-        "turnaroundDays": 4,
+        "turnaroundDays": 14,
         "showTurnaround": true,
         "startingPrice": "16,500 Birr",
-        "showPrice": true,
+        "showPrice": false,
         "enableOrderCta": true
       },
       "description": "A modern Ethiopian dining house in Addis Ababa that reimagines timeless culinary traditions. Features a rich interactive digital menu with Starters, Mains, Desserts, and boutique wines where every dish tells a story.",
@@ -125,10 +125,10 @@
         "Interactive Timeline, Story & Visual Feast Gallery"
       ],
       "specs": {
-        "turnaroundDays": 4,
+        "turnaroundDays": 14,
         "showTurnaround": true,
         "startingPrice": "15,500 Birr",
-        "showPrice": true,
+        "showPrice": false,
         "enableOrderCta": true
       },
       "description": "Where ancient flavors meet modern elegance. An authentic Ethiopian dining destination celebrating generational spice recipes, rich cultural history, traditional coffee ceremonies, and seamless online table reservations.",
@@ -157,10 +157,10 @@
         "Artisan Cellar & Curated Wine Pairings"
       ],
       "specs": {
-        "turnaroundDays": 4,
+        "turnaroundDays": 14,
         "showTurnaround": true,
         "startingPrice": "16,500 Birr",
-        "showPrice": true,
+        "showPrice": false,
         "enableOrderCta": true
       },
       "description": "Where wood-fire craft meets the art of the table. Modern hearth cuisine featuring open-flame cooking, prime aged cuts, seasonal farm-to-table starters, and wood-smoked desserts with interactive menu browsing.",
@@ -189,10 +189,10 @@
         "Atmospheric Lounge & Culinary Photo Showcase"
       ],
       "specs": {
-        "turnaroundDays": 5,
+        "turnaroundDays": 14,
         "showTurnaround": true,
         "startingPrice": "18,500 Birr",
-        "showPrice": true,
+        "showPrice": false,
         "enableOrderCta": true
       },
       "description": "An elevated lounge and dining experience in Addis Ababa. Highlights signature Ethiopian-inspired cuisine, curated craft cocktails, tableside tibs flambé, and nightly live entertainment with seamless online table reservations.",
@@ -221,10 +221,10 @@
         "No App Download Required"
       ],
       "specs": {
-        "turnaroundDays": 2,
+        "turnaroundDays": 14,
         "showTurnaround": true,
         "startingPrice": "9,500 Birr",
-        "showPrice": true,
+        "showPrice": false,
         "enableOrderCta": true
       },
       "description": "The fastest way to put your food menu on customer phones. Eliminates dirty paper menus and allows instant price updates whenever ingredient costs change.",
@@ -382,5 +382,5 @@
       "answer": "የQR ኮድ ሜኑ ከ 2 እስከ 3 ቀናት ውስጥ ዝግጁ ይሆናል። ሙሉ የሬስቶራንት ድረ-ገጽ ደግሞ ከ 4 እስከ 5 ቀናት ውስጥ ተጠናቆ ለስራ ዝግጁ ይሆናል።"
     }
   ],
-  "lastSaved": "2026-10-31T18:42:45.419Z"
+  "lastSaved": "2026-11-05T07:56:33.907Z"
 }

@@ -19,6 +19,8 @@ import {
   Sparkles,
   ExternalLink,
   ArrowRight,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 
 export default function AdminCommentsPage() {
@@ -30,6 +32,9 @@ export default function AdminCommentsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [actionLoading, setActionLoading] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
+  const [showAllComments, setShowAllComments] = useState(false);
+
+  const INITIAL_COMMENTS_LIMIT = 4;
 
   useEffect(() => {
     loadAllFeedback();
@@ -180,6 +185,10 @@ export default function AdminCommentsPage() {
     return matchesRating && matchesSearch;
   });
 
+  const visibleComments = showAllComments
+    ? filteredComments
+    : filteredComments.slice(0, INITIAL_COMMENTS_LIMIT);
+
   const filteredTestimonials = testimonials.filter((t) => {
     const matchesRating =
       filterRating === 'all' ? true : Number(t.rating || 5) === Number(filterRating);
@@ -299,7 +308,10 @@ export default function AdminCommentsPage() {
       <div className="space-y-4">
         <div className="flex items-center gap-2 border-b border-slate-800 pb-2 text-xs font-mono">
           <button
-            onClick={() => setActiveTab('all')}
+            onClick={() => {
+              setActiveTab('all');
+              setShowAllComments(false);
+            }}
             className={`px-3.5 py-1.5 rounded-lg transition-colors ${
               activeTab === 'all'
                 ? 'bg-cyan-500/20 text-cyan-400 font-bold border border-cyan-500/40'
@@ -309,7 +321,10 @@ export default function AdminCommentsPage() {
             All Submissions ({totalCount})
           </button>
           <button
-            onClick={() => setActiveTab('comments')}
+            onClick={() => {
+              setActiveTab('comments');
+              setShowAllComments(false);
+            }}
             className={`px-3.5 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 ${
               activeTab === 'comments'
                 ? 'bg-cyan-500/20 text-cyan-400 font-bold border border-cyan-500/40'
@@ -320,7 +335,10 @@ export default function AdminCommentsPage() {
             <span>User Comments & Ratings ({comments.length})</span>
           </button>
           <button
-            onClick={() => setActiveTab('testimonials')}
+            onClick={() => {
+              setActiveTab('testimonials');
+              setShowAllComments(false);
+            }}
             className={`px-3.5 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 ${
               activeTab === 'testimonials'
                 ? 'bg-cyan-500/20 text-cyan-400 font-bold border border-cyan-500/40'
@@ -382,7 +400,7 @@ export default function AdminCommentsPage() {
       <div className="space-y-4">
         {/* If showing comments (tab 'all' or 'comments') */}
         {(activeTab === 'all' || activeTab === 'comments') &&
-          filteredComments.map((c) => {
+          visibleComments.map((c) => {
             const stars = Math.min(5, Math.max(1, Number(c.rating) || 5));
             const isHidden = c.status === 'Hidden';
             const isWorking = actionLoading === c.id;
@@ -533,6 +551,31 @@ export default function AdminCommentsPage() {
               </div>
             );
           })}
+
+        {/* Show More / Show Less for Admin comments when exceeding limit */}
+        {filteredComments.length > INITIAL_COMMENTS_LIMIT && (activeTab === 'all' || activeTab === 'comments') && (
+          <div className="flex justify-center pt-2">
+            <button
+              type="button"
+              onClick={() => setShowAllComments((prev) => !prev)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-mono font-bold text-slate-300 bg-slate-900 border border-slate-700 hover:border-cyan-500/50 hover:text-white transition-all cursor-pointer"
+            >
+              {showAllComments ? (
+                <>
+                  <span>Show Less Comments</span>
+                  <ChevronUp className="w-3.5 h-3.5 text-cyan-400" />
+                </>
+              ) : (
+                <>
+                  <span>
+                    Show More Comments ({filteredComments.length - INITIAL_COMMENTS_LIMIT} more)
+                  </span>
+                  <ChevronDown className="w-3.5 h-3.5 text-cyan-400" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
 
         {/* If showing testimonials (tab 'all' or 'testimonials') */}
         {(activeTab === 'all' || activeTab === 'testimonials') &&
