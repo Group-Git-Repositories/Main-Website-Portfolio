@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="admin"
+                placeholder="Enter username"
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
               />
             </div>
@@ -141,10 +141,6 @@ export default function AdminLoginPage() {
             </div>
           </div>
         </form>
-
-        <div className="mt-8 pt-4 border-t border-slate-800/80 text-center text-[11px] font-mono text-slate-500">
-          Default seed: admin / hope2026 (configurable in .env)
-        </div>
       </div>
     </div>
   );
