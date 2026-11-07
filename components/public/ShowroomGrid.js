@@ -30,6 +30,7 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
             const specs = p.specs || {};
             const showPrice = specs.showPrice && specs.startingPrice;
             const showTurnaround = specs.turnaroundDays;
+            const isMobileOptimized = Boolean(p.bestViewedOnMobile || p.id === 'proj-rest-06');
 
             return (
               <div
@@ -52,6 +53,15 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
 
+                  {/* Best Viewed on Mobile Badge Overlay */}
+                  {isMobileOptimized && (
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="text-[10px] font-mono font-semibold bg-slate-950/85 text-amber-300 px-2.5 py-1 rounded-md border border-amber-500/40 shadow-sm backdrop-blur-sm flex items-center gap-1">
+                        📱 Best on Mobile
+                      </span>
+                    </div>
+                  )}
+
                   {/* Desktop hover overlay */}
                   <div className="hidden sm:flex absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center backdrop-blur-[2px]">
                     <span className="text-xs font-mono bg-slate-900/95 text-white px-3.5 py-2 rounded-xl border border-slate-700 flex items-center gap-2 shadow-lg">
@@ -71,8 +81,15 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                 {/* Card Body */}
                 <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-[11px] font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold mb-2">
-                      {p.category}
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <div className="text-[11px] font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold truncate">
+                        {p.category}
+                      </div>
+                      {isMobileOptimized && (
+                        <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 shrink-0">
+                          📱 Mobile-First
+                        </span>
+                      )}
                     </div>
 
                     <h3
@@ -142,8 +159,15 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
             {/* Modal Header */}
             <div className="p-4 sm:px-6 bg-[#0E1626] border-b border-slate-800 flex items-center justify-between shrink-0">
               <div>
-                <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold">
-                  {activeModalProject.category} Sample
+                <div className="flex items-center gap-2">
+                  <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold">
+                    {activeModalProject.category} Sample
+                  </div>
+                  {(activeModalProject.bestViewedOnMobile || activeModalProject.id === 'proj-rest-06') && (
+                    <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300">
+                      Best View on Mobile
+                    </span>
+                  )}
                 </div>
                 <h3 className="text-base sm:text-xl font-bold text-white tracking-tight">
                   {activeModalProject.title}

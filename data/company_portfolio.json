@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "company": {
     "name": "ROHA Dev",
     "legalName": "ROHA Dev",
@@ -204,34 +204,35 @@
     },
     {
       "id": "proj-rest-06",
-      "title": "Express QR Table Menu",
-      "tagline": "Lightweight contactless QR code menu for tables, counters, and food trucks",
+      "title": "R&S Restaurant",
+      "tagline": "Elegant dining and mobile digital menu with chef specials and table booking",
       "category": "Digital QR Menu Express",
       "featured": true,
+      "bestViewedOnMobile": true,
       "mockups": {
-        "desktop": "/projects/forma_desktop.svg",
-        "tablet": "/projects/forma_tablet.svg",
-        "mobile": "/projects/forma_mobile.svg"
+        "desktop": "/projects/rs_desktop.png",
+        "tablet": "/projects/rs_tablet.png",
+        "mobile": "/projects/rs_mobile.png"
       },
-      "liveUrl": "https://example.com/demo/express-qr-menu",
+      "liveUrl": "https://r-s-nine.vercel.app",
       "deliverables": [
-        "Instant Table QR Scan in < 1s",
-        "Fasting (የጾም) / Non-Fasting Filter",
-        "Phone Admin to Edit Prices Anytime",
-        "No App Download Required"
+        "Smartphone-Optimized Mobile QR Menu",
+        "Curated Chef Specials & Food Showcase",
+        "Instant Table & Party Reservation System",
+        "Zero-Lag Touch Navigation in < 1s"
       ],
       "specs": {
-        "turnaroundDays": 14,
+        "turnaroundDays": 2,
         "showTurnaround": true,
-        "startingPrice": "9,500 Birr",
-        "showPrice": false,
+        "startingPrice": "8,500 Birr",
+        "showPrice": true,
         "enableOrderCta": true
       },
-      "description": "The fastest way to put your food menu on customer phones. Eliminates dirty paper menus and allows instant price updates whenever ingredient costs change.",
+      "description": "Crafted specifically for fast smartphone browsing and QR code table scanning. R&S Restaurant offers an inviting digital culinary showcase with smooth course browsing, chef highlights, and online table reservations.",
       "techStack": [
-        "Ultra-Lightweight Static",
-        "Fasting Filter Tabs",
-        "Mobile CMS"
+        "Mobile-First QR Menu",
+        "Touch Navigation Cards",
+        "Table Reservation System"
       ]
     }
   ],

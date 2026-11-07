@@ -64,15 +64,15 @@ export default function Navbar({ onOpenQuote, company }) {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-200 border-b ${
+      className={`sticky top-0 z-40 w-full max-w-full overflow-x-clip transition-all duration-200 border-b ${
         scrolled
           ? 'backdrop-blur-md bg-white/95 dark:bg-[#070B16]/95 border-slate-200/80 dark:border-slate-800 shadow-sm'
           : 'backdrop-blur-sm bg-white/90 dark:bg-[#070B16]/90 border-slate-200 dark:border-slate-800'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink min-w-0">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-cyan-500/50 transition-colors shrink-0">
             <img
               src="/IMG_1561newwwwwwww.png"
@@ -85,11 +85,11 @@ export default function Navbar({ onOpenQuote, company }) {
               className="w-full h-full object-contain p-1 hidden dark:block"
             />
           </div>
-          <div>
-            <div className="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+          <div className="min-w-0">
+            <div className="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5 truncate">
               <span>ROHA Dev</span>
             </div>
-            <div className="text-[9px] sm:text-[10px] font-mono tracking-wider text-cyan-600 dark:text-cyan-400 uppercase font-semibold">
+            <div className="text-[9px] sm:text-[10px] font-mono tracking-wider text-cyan-600 dark:text-cyan-400 uppercase font-semibold truncate">
               Restaurant & Web Software
             </div>
           </div>
@@ -110,9 +110,11 @@ export default function Navbar({ onOpenQuote, company }) {
         </nav>
 
         {/* Header Right Action Area */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Always Visible Theme Toggle */}
-          <ThemeToggle />
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {/* Theme Toggle - Hidden on mobile phones to prevent horizontal scroll and ensure full-screen width */}
+          <div className="hidden sm:inline-flex">
+            <ThemeToggle />
+          </div>
 
           {/* Quick Quote Button */}
           <Button
@@ -121,7 +123,7 @@ export default function Navbar({ onOpenQuote, company }) {
             onClick={() => onOpenQuote?.()}
             icon={ArrowRight}
             iconPosition="right"
-            className="text-xs font-bold px-3 py-2 sm:px-4 sm:py-2.5 shadow-sm min-h-[44px]"
+            className="text-xs font-bold px-2.5 py-2 sm:px-4 sm:py-2.5 shadow-sm min-h-[40px] sm:min-h-[44px]"
           >
             <span className="hidden xs:inline">Get a Website</span>
             <span className="xs:hidden">Get Quote</span>
@@ -131,7 +133,7 @@ export default function Navbar({ onOpenQuote, company }) {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden w-11 h-11 flex items-center justify-center text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all touch-manipulation cursor-pointer"
+            className="lg:hidden w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-slate-700 dark:text-slate-200 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-95 transition-all touch-manipulation cursor-pointer"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
           >
