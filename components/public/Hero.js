@@ -14,7 +14,7 @@ export default function Hero({ hero, company, onOpenQuote }) {
 
   const metrics = [
     { label: 'Mobile Loading', value: 'Instant (< 1s)', icon: Zap },
-    { label: 'Delivery Time', value: '2–5 Days', icon: CheckCircle2 },
+    { label: 'Delivery Time', value: '7–14 Days', icon: CheckCircle2 },
     { label: 'QR Table Menus', value: 'Contactless', icon: QrCode },
   ];
 
