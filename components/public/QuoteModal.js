@@ -11,7 +11,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
     phone: '',
     company: '',
     budget: '9,500 - 16,500 Birr',
-    timeline: 'Ready in ~4-5 Days',
+    timeline: 'Ready in ~14 Days',
     projectRef: '',
     message: '',
   });
@@ -34,7 +34,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
             phone: '',
             company: '',
             budget: initialData.estimatedPrice || '9,500 - 16,500 Birr',
-            timeline: initialData.estimatedDays || 'Ready in ~4-5 Days',
+            timeline: initialData.estimatedDays || 'Ready in ~14 Days',
             projectRef: `Restaurant Estimator: ${initialData.industry} with features: ${initialData.features?.join(', ')}`,
             message: '',
           });
@@ -45,7 +45,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
             phone: '',
             company: '',
             budget: initialData.specs?.startingPrice ? `From ${initialData.specs.startingPrice}` : '9,500 - 16,500 Birr',
-            timeline: initialData.specs?.turnaroundDays ? `Ready in ~${initialData.specs.turnaroundDays} Days` : 'Ready in ~4-5 Days',
+            timeline: initialData.specs?.turnaroundDays ? `Ready in ~${initialData.specs.turnaroundDays} Days` : 'Ready in ~14 Days',
             projectRef: `Sample: ${initialData.title} (${initialData.category})`,
             message: '',
           });
@@ -299,9 +299,9 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                     className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors cursor-pointer"
                   >
-                    <option value="Ready in ~2-3 Days">Ready in ~2-3 Days (QR Digital Menu / Express)</option>
-                    <option value="Ready in ~4-5 Days">Ready in ~4-5 Days (Standard Restaurant & Bar)</option>
-                    <option value="Ready in ~5-7 Days">Ready in ~5-7 Days (Fine Dining & Ordering)</option>
+                    <option value="Ready in ~7 Days">Ready in ~7 Days (Digital QR Code Menus)</option>
+                    <option value="Ready in ~14 Days">Ready in ~14 Days (Standard Restaurant Websites)</option>
+                    <option value="Ready in ~14 Days (Fine Dining & Ordering)">Ready in ~14 Days (Fine Dining & Online Ordering)</option>
                     <option value="Flexible">Flexible Timeline</option>
                   </select>
                 </div>

@@ -108,10 +108,11 @@ export default function ShowroomAdminPage() {
               mockups: { desktop: '', tablet: '', mobile: '' },
               deliverables: ['Custom Next.js Build', 'Admin Gateway', 'Mobile Responsive'],
               specs: {
-                turnaroundDays: 7,
+                turnaroundDays: 14,
                 showTurnaround: true,
-                startingPrice: '$950',
-                showPrice: true,
+                startingPrice: '16,500 Birr',
+                showPrice: false,
+                hidePrice: true,
                 enableOrderCta: true,
               },
               description: '',
@@ -156,9 +157,17 @@ export default function ShowroomAdminPage() {
                     </span>
                   )}
                 </div>
-                <div className="text-xs text-slate-400 font-mono mt-0.5">
-                  Price: {p.specs?.startingPrice || 'N/A'} • Turnaround:{' '}
-                  {p.specs?.turnaroundDays ? `${p.specs.turnaroundDays}d` : 'N/A'}
+                <div className="text-xs text-slate-400 font-mono mt-0.5 flex items-center gap-2 flex-wrap">
+                  <span>
+                    Price: {p.specs?.startingPrice || 'N/A'}{' '}
+                    {p.specs?.showPrice === false || p.specs?.hidePrice === true ? (
+                      <span className="text-amber-400 font-semibold">[Price Hidden]</span>
+                    ) : (
+                      <span className="text-emerald-400 font-semibold">[Price Visible]</span>
+                    )}
+                  </span>
+                  <span>•</span>
+                  <span>Turnaround: {p.specs?.turnaroundDays ? `${p.specs.turnaroundDays} Days` : 'N/A'}</span>
                 </div>
               </div>
             </div>
@@ -369,20 +378,26 @@ function ProjectEditorModal({ project, onClose, onSave }) {
             </div>
 
             <div className="flex flex-col justify-end">
-              <label className="flex items-center gap-2 cursor-pointer text-slate-300">
+              <label className="flex items-center gap-2 cursor-pointer text-slate-200 bg-slate-900 px-3 py-2 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
                 <input
                   type="checkbox"
-                  checked={form.specs?.showPrice}
-                  onChange={(e) =>
+                  checked={form.specs?.showPrice === false || form.specs?.hidePrice === true}
+                  onChange={(e) => {
+                    const isHide = e.target.checked;
                     setForm({
                       ...form,
-                      specs: { ...form.specs, showPrice: e.target.checked },
-                    })
-                  }
-                  className="rounded text-cyan-500"
+                      specs: {
+                        ...form.specs,
+                        showPrice: !isHide,
+                        hidePrice: isHide,
+                      },
+                    });
+                  }}
+                  className="rounded text-cyan-500 w-4 h-4 cursor-pointer"
                 />
-                <span>Show Price</span>
+                <span className="font-semibold text-xs text-white">Hide Price Tag</span>
               </label>
+              <span className="text-[10px] text-slate-400 font-mono mt-1">Ticked = price tag hidden from clients</span>
             </div>
 
             <div className="flex flex-col justify-end">

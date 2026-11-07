@@ -158,11 +158,7 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                         <div className="text-slate-900 dark:text-white font-bold text-sm sm:text-base">
                           From {specs.startingPrice}
                         </div>
-                      ) : (
-                        <div className="text-slate-500 dark:text-slate-400 text-xs">
-                          Custom Quote
-                        </div>
-                      )}
+                      ) : null}
                       {showTurnaround && (
                         <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium ml-auto">
                           <Clock className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
@@ -251,14 +247,18 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                 </div>
 
                 <div className="space-y-4 md:border-l md:border-slate-800 md:pl-6 flex flex-col justify-between pt-4 md:pt-0 border-t md:border-t-0 border-slate-800">
-                  <div className="space-y-1">
-                    <div className="text-xs font-mono text-slate-400">Starting Price</div>
-                    <div className="text-2xl font-extrabold text-white">
-                      {activeModalProject.specs?.startingPrice || 'Custom Quote'}
-                    </div>
+                  <div className="space-y-1.5">
+                    {activeModalProject.specs?.showPrice && activeModalProject.specs?.startingPrice ? (
+                      <>
+                        <div className="text-xs font-mono text-slate-400">Starting Price</div>
+                        <div className="text-2xl font-extrabold text-white">
+                          {activeModalProject.specs?.startingPrice}
+                        </div>
+                      </>
+                    ) : null}
                     <div className="flex items-center gap-1.5 text-xs font-mono text-cyan-400">
                       <Clock className="w-3.5 h-3.5 shrink-0" />
-                      <span>Ready in ~{activeModalProject.specs?.turnaroundDays || '4-5'} Days</span>
+                      <span>Ready in ~{activeModalProject.specs?.turnaroundDays || '14'} Days</span>
                     </div>
                   </div>
 
