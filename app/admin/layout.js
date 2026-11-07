@@ -32,12 +32,13 @@ export default function AdminLayout({ children }) {
 
       try {
         const [authRes, contentRes] = await Promise.all([
-          fetch('/api/auth/verify', { cache: 'no-store' }),
-          fetch('/api/content?t=' + Date.now(), { cache: 'no-store' }),
+          fetch('/api/auth/verify', { cache: 'no-store', credentials: 'include' }),
+          fetch('/api/content?t=' + Date.now(), { cache: 'no-store', credentials: 'include' }),
         ]);
 
         if (!authRes.ok) {
-          router.push('/admin/login');
+          window.location.href = '/admin/login';
+          return;
         }
 
         if (contentRes.ok) {
@@ -47,7 +48,8 @@ export default function AdminLayout({ children }) {
           }
         }
       } catch (err) {
-        router.push('/admin/login');
+        window.location.href = '/admin/login';
+        return;
       } finally {
         setChecking(false);
       }
@@ -62,14 +64,14 @@ export default function AdminLayout({ children }) {
     };
     window.addEventListener('company-updated', handleUpdate);
     return () => window.removeEventListener('company-updated', handleUpdate);
-  }, [pathname, isLoginPage, router]);
+  }, [pathname, isLoginPage]);
 
   const handleLogout = async () => {
     try {
-      await fetch('/api/auth/logout', { method: 'POST' });
-      router.push('/admin/login');
+      await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
+      window.location.href = '/admin/login';
     } catch (_) {
-      router.push('/admin/login');
+      window.location.href = '/admin/login';
     }
   };
 
@@ -156,7 +158,7 @@ export default function AdminLayout({ children }) {
 
           <button
             onClick={handleLogout}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-red-400 hover:bg-red-950/30 border border-transparent hover:border-red-500/30 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-red-400 hover:bg-red-950/30 border border-transparent hover:border-red-500/30 transition-colors cursor-pointer"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Logout</span>

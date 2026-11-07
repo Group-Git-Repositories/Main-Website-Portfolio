@@ -1,13 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ShieldCheck, Lock, User, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Lock, User, ArrowRight, ArrowLeft } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
 export default function AdminLoginPage() {
-  const router = useRouter();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -32,7 +30,11 @@ export default function AdminLoginPage() {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+        credentials: 'include',
+        body: JSON.stringify({
+          username: username.trim(),
+          password: password.trim(),
+        }),
       });
 
       const data = await res.json();
@@ -41,11 +43,10 @@ export default function AdminLoginPage() {
         throw new Error(data.error || 'Invalid username or password');
       }
 
-      router.push('/admin');
-      router.refresh();
+      // Hard redirect to /admin guarantees full cookie delivery and fresh session state
+      window.location.href = '/admin';
     } catch (err) {
       setError(err.message || 'Login failed.');
-    } finally {
       setLoading(false);
     }
   };
@@ -89,6 +90,7 @@ export default function AdminLoginPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter username"
+                autoComplete="username"
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
               />
             </div>
@@ -106,6 +108,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
+                autoComplete="current-password"
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs focus:border-cyan-500 focus:outline-none"
               />
             </div>
