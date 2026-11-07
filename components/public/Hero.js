@@ -19,7 +19,7 @@ export default function Hero({ hero, company, onOpenQuote }) {
   ];
 
   const handleSmoothScroll = (e, id) => {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
       const offset = 80;
@@ -32,6 +32,8 @@ export default function Hero({ hero, company, onOpenQuote }) {
         top: offsetPosition,
         behavior: 'smooth',
       });
+    } else {
+      window.location.hash = id;
     }
   };
 
@@ -60,6 +62,7 @@ export default function Hero({ hero, company, onOpenQuote }) {
             <Button
               size="lg"
               variant="primary"
+              href="#showroom"
               onClick={(e) => handleSmoothScroll(e, '#showroom')}
               icon={ArrowRight}
               iconPosition="right"
@@ -70,6 +73,7 @@ export default function Hero({ hero, company, onOpenQuote }) {
             <Button
               size="lg"
               variant="outline"
+              href="#pricing"
               onClick={(e) => handleSmoothScroll(e, '#pricing')}
               className="w-full sm:w-auto text-base font-semibold px-6 py-3.5 cursor-pointer min-h-[48px]"
             >

@@ -1,12 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DeviceViewportFrame from './DeviceViewportFrame';
 import Button from '../ui/Button';
 import { ArrowUpRight, X, Clock, Check, Eye } from 'lucide-react';
 
 export default function ShowroomGrid({ projects = [], onSelectProjectForQuote }) {
   const [activeModalProject, setActiveModalProject] = useState(null);
+
+  // Close modal when pressing Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setActiveModalProject(null);
+      }
+    };
+    if (activeModalProject) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeModalProject]);
 
   return (
     <section id="showroom" className="py-14 sm:py-20 md:py-28 border-t border-slate-200/80 dark:border-slate-800/80">
@@ -40,6 +59,12 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                 {/* Visual Preview Header - Tap to open simulator */}
                 <div
                   onClick={() => setActiveModalProject(p)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setActiveModalProject(p);
+                    }
+                  }}
                   className="cursor-pointer relative aspect-[16/10] bg-slate-100 dark:bg-[#070B16] border-b border-slate-200 dark:border-slate-800 overflow-hidden touch-manipulation"
                   role="button"
                   tabIndex={0}
@@ -95,6 +120,14 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                     <h3
                       onClick={() => setActiveModalProject(p)}
                       className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight mb-2 cursor-pointer hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setActiveModalProject(p);
+                        }
+                      }}
                     >
                       {p.title}
                     </h3>
@@ -154,10 +187,17 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
 
       {/* Full-Screen Showroom Modal - Responsive across phones & tablets */}
       {activeModalProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/80 backdrop-blur-md">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setActiveModalProject(null);
+            }
+          }}
+        >
           <div className="bg-[#070B16] w-full max-w-5xl h-full sm:h-auto sm:max-h-[94vh] rounded-2xl border border-slate-800 shadow-2xl flex flex-col overflow-hidden">
             {/* Modal Header */}
-            <div className="p-4 sm:px-6 bg-[#0E1626] border-b border-slate-800 flex items-center justify-between shrink-0">
+            <div className="p-3.5 sm:px-6 bg-[#0E1626] border-b border-slate-800 flex items-center justify-between shrink-0">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold">
@@ -174,8 +214,9 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                 </h3>
               </div>
               <button
+                type="button"
                 onClick={() => setActiveModalProject(null)}
-                className="w-11 h-11 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors touch-manipulation cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors touch-manipulation cursor-pointer"
                 aria-label="Close Preview"
               >
                 <X className="w-5 h-5" />

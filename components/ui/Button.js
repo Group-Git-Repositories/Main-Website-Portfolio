@@ -7,11 +7,13 @@ export default function Button({
   className = '',
   icon: Icon,
   iconPosition = 'left',
+  href,
+  type = 'button',
   ...props
 }) {
   // Mobile-first touch-friendly base styles (WCAG 44x44px min target)
   const baseStyles =
-    'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed select-none rounded-xl touch-manipulation active:scale-[0.98] min-h-[44px]';
+    'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed select-none rounded-xl touch-manipulation active:scale-[0.98] cursor-pointer min-h-[44px]';
 
   const sizeStyles = {
     sm: 'text-xs sm:text-sm px-4 py-2.5 gap-2 min-h-[44px]',
@@ -30,11 +32,20 @@ export default function Button({
       'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40',
   };
 
+  const classes = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} className={classes} {...props}>
+        {Icon && iconPosition === 'left' && <Icon className="w-4 h-4 shrink-0" />}
+        <span>{children}</span>
+        {Icon && iconPosition === 'right' && <Icon className="w-4 h-4 shrink-0" />}
+      </a>
+    );
+  }
+
   return (
-    <button
-      className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
-      {...props}
-    >
+    <button type={type} className={classes} {...props}>
       {Icon && iconPosition === 'left' && <Icon className="w-4 h-4 shrink-0" />}
       <span>{children}</span>
       {Icon && iconPosition === 'right' && <Icon className="w-4 h-4 shrink-0" />}
