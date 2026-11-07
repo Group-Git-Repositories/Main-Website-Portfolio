@@ -61,10 +61,10 @@
         "Farm-to-Table Sourcing & Private Dining Guide"
       ],
       "specs": {
-        "turnaroundDays": 14,
+        "turnaroundDays": "4-5",
         "showTurnaround": true,
         "startingPrice": "17,500 Birr",
-        "showPrice": false,
+        "showPrice": true,
         "enableOrderCta": true
       },
       "description": "A vibrant modern-American dining destination serving bold seasonal plates, award-winning handcrafted cocktails, and farm-to-table culinary experiences with instant online table reservations.",
@@ -93,10 +93,10 @@
         "Instant Online Dinner & VIP Table Reservation"
       ],
       "specs": {
-        "turnaroundDays": 14,
+        "turnaroundDays": "4-5",
         "showTurnaround": true,
         "startingPrice": "16,500 Birr",
-        "showPrice": false,
+        "showPrice": true,
         "enableOrderCta": true
       },
       "description": "A modern Ethiopian dining house in Addis Ababa that reimagines timeless culinary traditions. Features a rich interactive digital menu with Starters, Mains, Desserts, and boutique wines where every dish tells a story.",
@@ -125,10 +125,10 @@
         "Interactive Timeline, Story & Visual Feast Gallery"
       ],
       "specs": {
-        "turnaroundDays": 14,
+        "turnaroundDays": "4-5",
         "showTurnaround": true,
         "startingPrice": "15,500 Birr",
-        "showPrice": false,
+        "showPrice": true,
         "enableOrderCta": true
       },
       "description": "Where ancient flavors meet modern elegance. An authentic Ethiopian dining destination celebrating generational spice recipes, rich cultural history, traditional coffee ceremonies, and seamless online table reservations.",
@@ -157,10 +157,10 @@
         "Artisan Cellar & Curated Wine Pairings"
       ],
       "specs": {
-        "turnaroundDays": 14,
+        "turnaroundDays": "5-7",
         "showTurnaround": true,
         "startingPrice": "16,500 Birr",
-        "showPrice": false,
+        "showPrice": true,
         "enableOrderCta": true
       },
       "description": "Where wood-fire craft meets the art of the table. Modern hearth cuisine featuring open-flame cooking, prime aged cuts, seasonal farm-to-table starters, and wood-smoked desserts with interactive menu browsing.",
@@ -189,10 +189,10 @@
         "Atmospheric Lounge & Culinary Photo Showcase"
       ],
       "specs": {
-        "turnaroundDays": 14,
+        "turnaroundDays": "4-5",
         "showTurnaround": true,
         "startingPrice": "18,500 Birr",
-        "showPrice": false,
+        "showPrice": true,
         "enableOrderCta": true
       },
       "description": "An elevated lounge and dining experience in Addis Ababa. Highlights signature Ethiopian-inspired cuisine, curated craft cocktails, tableside tibs flambé, and nightly live entertainment with seamless online table reservations.",
@@ -222,7 +222,7 @@
         "Zero-Lag Touch Navigation in < 1s"
       ],
       "specs": {
-        "turnaroundDays": 2,
+        "turnaroundDays": "2-3",
         "showTurnaround": true,
         "startingPrice": "8,500 Birr",
         "showPrice": true,
@@ -241,7 +241,7 @@
       "id": "srv-qr-menu",
       "title": "Digital QR Code Menu Website",
       "summary": "Ultra-fast contactless digital menu for restaurant tables. Guests scan with their phone camera to view full menus with photos, prices, and fasting/non-fasting tabs.",
-      "startingPrice": "9,500 Birr",
+      "startingPrice": "5,000 Birr",
       "turnaround": "2-3 Days",
       "features": [
         "Opens in under 1 second on mobile data",
@@ -254,7 +254,7 @@
       "id": "srv-full-restaurant",
       "title": "Complete Restaurant & Table Booking Website",
       "summary": "Full multi-page restaurant website with online table booking, chef specials, high-resolution food gallery, working hours, and Google Maps integration.",
-      "startingPrice": "16,500 Birr",
+      "startingPrice": "10,500 Birr",
       "turnaround": "4-5 Days",
       "features": [
         "Online table reservation & VIP dining requests",
@@ -281,26 +281,25 @@
     {
       "id": "pkg-qr-menu",
       "name": "QR Digital Menu",
-      "price": "9,500 Birr",
+      "price": "5,000 Birr",
       "idealFor": "Cafés, bakeries, juice bars, and quick-service food spots",
-      "turnaround": "3 Days",
+      "turnaround": "2-3 Days",
       "features": [
         "Instant-load digital QR menu",
         "Fasting (የጾም) & Non-Fasting dish categories",
         "Simple admin page to change prices from your phone",
-        "Custom QR code sticker & acrylic stand design",
-        "Free 1-year ultra-fast hosting setup"
+        "Custom QR code sticker & acrylic stand design"
       ]
     },
     {
       "id": "pkg-standard-restaurant",
       "name": "Standard Restaurant & Bar",
-      "price": "16,500 Birr",
+      "price": "10,500 Birr",
       "popular": true,
       "idealFor": "Traditional Ethiopian restaurants, lounges, and family dining",
-      "turnaround": "5 Days",
+      "turnaround": "4-5 Days",
       "features": [
-        "Complete restaurant website + Digital QR Menu",
+        "Complete restaurant website + Digital Menu",
         "Online table reservation & event booking form",
         "Direct WhatsApp & one-tap phone call buttons",
         "Food & cocktail photo gallery with chef specials",
@@ -313,7 +312,7 @@
       "name": "Premium Dining & Multi-Branch",
       "price": "28,000 Birr",
       "idealFor": "Multi-branch restaurant chains, luxury hotel dining, and high-volume lounges",
-      "turnaround": "7-9 Days",
+      "turnaround": "5-7 Days",
       "features": [
         "Multi-branch location selector (Bole, Kazanchis, Piassa, etc.)",
         "Direct WhatsApp & Telegram takeaway ordering system",
@@ -383,5 +382,5 @@
       "answer": "የQR ኮድ ሜኑ ከ 2 እስከ 3 ቀናት ውስጥ ዝግጁ ይሆናል። ሙሉ የሬስቶራንት ድረ-ገጽ ደግሞ ከ 4 እስከ 5 ቀናት ውስጥ ተጠናቆ ለስራ ዝግጁ ይሆናል።"
     }
   ],
-  "lastSaved": "2026-11-07T12:05:50.968Z"
+  "lastSaved": "2026-11-07T12:30:14.954Z"
 }

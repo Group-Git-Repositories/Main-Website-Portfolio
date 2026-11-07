@@ -153,21 +153,23 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
 
                   {/* Footer & Action Button */}
                   <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 space-y-3">
-                    {(showPrice || showTurnaround) && (
-                      <div className="flex items-center justify-between text-xs sm:text-sm font-mono">
-                        {showPrice && (
-                          <div className="text-slate-900 dark:text-white font-bold text-sm sm:text-base">
-                            From {specs.startingPrice}
-                          </div>
-                        )}
-                        {showTurnaround && (
-                          <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium">
-                            <Clock className="w-4 h-4 text-cyan-500" />
-                            <span>{specs.turnaroundDays} Days</span>
-                          </div>
-                        )}
-                      </div>
-                    )}
+                    <div className="flex items-center justify-between text-xs sm:text-sm font-mono min-h-[24px]">
+                      {showPrice ? (
+                        <div className="text-slate-900 dark:text-white font-bold text-sm sm:text-base">
+                          From {specs.startingPrice}
+                        </div>
+                      ) : (
+                        <div className="text-slate-500 dark:text-slate-400 text-xs">
+                          Custom Quote
+                        </div>
+                      )}
+                      {showTurnaround && (
+                        <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium ml-auto">
+                          <Clock className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                          <span>Ready in ~{specs.turnaroundDays} Days</span>
+                        </div>
+                      )}
+                    </div>
 
                     <Button
                       size="md"
@@ -254,8 +256,9 @@ export default function ShowroomGrid({ projects = [], onSelectProjectForQuote })
                     <div className="text-2xl font-extrabold text-white">
                       {activeModalProject.specs?.startingPrice || 'Custom Quote'}
                     </div>
-                    <div className="text-xs font-mono text-slate-400">
-                      Ready in ~{activeModalProject.specs?.turnaroundDays || '4'} Days
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-cyan-400">
+                      <Clock className="w-3.5 h-3.5 shrink-0" />
+                      <span>Ready in ~{activeModalProject.specs?.turnaroundDays || '4-5'} Days</span>
                     </div>
                   </div>
 

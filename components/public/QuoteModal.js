@@ -11,7 +11,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
     phone: '',
     company: '',
     budget: '9,500 - 16,500 Birr',
-    timeline: 'Within 1 Week',
+    timeline: 'Ready in ~4-5 Days',
     projectRef: '',
     message: '',
   });
@@ -34,7 +34,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
             phone: '',
             company: '',
             budget: initialData.estimatedPrice || '9,500 - 16,500 Birr',
-            timeline: initialData.estimatedDays || 'Within 1 Week',
+            timeline: initialData.estimatedDays || 'Ready in ~4-5 Days',
             projectRef: `Restaurant Estimator: ${initialData.industry} with features: ${initialData.features?.join(', ')}`,
             message: '',
           });
@@ -45,7 +45,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
             phone: '',
             company: '',
             budget: initialData.specs?.startingPrice ? `From ${initialData.specs.startingPrice}` : '9,500 - 16,500 Birr',
-            timeline: initialData.specs?.turnaroundDays ? `~${initialData.specs.turnaroundDays} Days` : 'Within 1 Week',
+            timeline: initialData.specs?.turnaroundDays ? `Ready in ~${initialData.specs.turnaroundDays} Days` : 'Ready in ~4-5 Days',
             projectRef: `Sample: ${initialData.title} (${initialData.category})`,
             message: '',
           });
@@ -57,7 +57,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
           phone: '',
           company: '',
           budget: '9,500 - 16,500 Birr',
-          timeline: 'Within 1 Week',
+          timeline: 'Ready in ~4-5 Days',
           projectRef: '',
           message: '',
         });
@@ -115,7 +115,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="quote-modal-title"
-      className="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-6 bg-black/75 dark:bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           onClose?.();
@@ -123,38 +123,38 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
       }}
     >
       <div
-        className="bg-[#070B16] w-full sm:max-w-xl h-full sm:h-auto max-h-[100dvh] sm:max-h-[90vh] rounded-t-3xl sm:rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom-5 sm:zoom-in-95 duration-200"
+        className="bg-white dark:bg-[#070B16] text-slate-900 dark:text-white w-full sm:max-w-xl h-full sm:h-auto max-h-[100dvh] sm:max-h-[90vh] rounded-t-3xl sm:rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom-5 sm:zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="p-4 sm:p-5 bg-[#0E1626] border-b border-slate-800 flex items-center justify-between shrink-0">
+        {/* Header - Adapts cleanly to Light & Dark Mode */}
+        <div className="p-4 sm:p-5 bg-slate-50 dark:bg-[#0E1626] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
           <div>
-            <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold">
+            <div className="text-[11px] font-mono uppercase tracking-widest text-cyan-700 dark:text-cyan-400 font-semibold">
               Get Started
             </div>
-            <h3 id="quote-modal-title" className="text-base sm:text-lg font-bold text-white tracking-tight">
+            <h3 id="quote-modal-title" className="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight">
               Order Your Restaurant Website / Menu
             </h3>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="w-11 h-11 flex items-center justify-center text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors touch-manipulation cursor-pointer"
+            className="w-11 h-11 flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors touch-manipulation cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Content - Scrollable on mobile */}
-        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
+        {/* Content - Scrollable on mobile, pristine light/dark background */}
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1 bg-white dark:bg-[#070B16]">
           {submitted ? (
             <div className="py-8 text-center space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto border border-cyan-500/20">
+              <div className="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 flex items-center justify-center mx-auto border border-cyan-200 dark:border-cyan-500/20">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
-              <h4 className="text-xl font-bold text-white">Inquiry Received!</h4>
-              <p className="text-base text-slate-300 max-w-sm mx-auto leading-relaxed">
+              <h4 className="text-xl font-bold text-slate-900 dark:text-white">Inquiry Received!</h4>
+              <p className="text-base text-slate-600 dark:text-slate-300 max-w-sm mx-auto leading-relaxed">
                 Thank you! Our team will review your restaurant details and contact you within 24 hours to begin your setup.
               </p>
 
@@ -170,9 +170,9 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                 </a>
                 <a
                   href={`mailto:${emailAddress}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold shadow-sm transition-colors border border-slate-700 min-h-[48px] touch-manipulation"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white text-sm font-semibold shadow-sm transition-colors border border-slate-300 dark:border-slate-700 min-h-[48px] touch-manipulation"
                 >
-                  <Mail className="w-4 h-4 text-amber-400" />
+                  <Mail className="w-4 h-4 text-amber-500 dark:text-amber-400" />
                   <span>Send Email</span>
                 </a>
               </div>
@@ -201,8 +201,8 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4 pb-6">
               {formData.projectRef && (
-                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-400">
-                  <span className="text-slate-500">Selected Setup: </span>
+                <div className="p-3 rounded-xl bg-cyan-50 dark:bg-slate-900 border border-cyan-200/80 dark:border-slate-800 text-xs font-mono text-cyan-800 dark:text-cyan-400">
+                  <span className="text-slate-500 dark:text-slate-400 font-semibold">Selected Setup: </span>
                   {formData.projectRef}
                 </div>
               )}
@@ -210,7 +210,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               {/* Name & Email - 16px text-base to prevent iOS automatic zoom */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                     Your Name *
                   </label>
                   <input
@@ -220,12 +220,12 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Dawit Tesfaye"
-                    className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none min-h-[48px]"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                     Email Address *
                   </label>
                   <input
@@ -236,7 +236,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="dawit@restaurant.com"
-                    className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none min-h-[48px]"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors"
                   />
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               {/* Phone & Restaurant Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                     Phone / Telegram (Ethiopia)
                   </label>
                   <input
@@ -254,12 +254,12 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+251 988 ..."
-                    className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none min-h-[48px]"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                     Restaurant or Café Name
                   </label>
                   <input
@@ -267,7 +267,7 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     placeholder="Lucy Restaurant / Aroma Café"
-                    className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none min-h-[48px]"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors"
                   />
                 </div>
               </div>
@@ -275,40 +275,41 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
               {/* Budget & Desired Timeline */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                     Target Budget (Birr)
                   </label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none min-h-[48px]"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors cursor-pointer"
                   >
-                    <option value="9,500 - 16,500 Birr">9,500 – 16,500 Birr (QR Digital Menu / Café)</option>
-                    <option value="16,500 - 28,000 Birr">16,500 – 28,000 Birr (Standard Restaurant & Bar)</option>
-                    <option value="28,000+ Birr">28,000+ Birr (Premium Multi-Branch / Hotel)</option>
+                    <option value="5,000 - 8,500 Birr">5,000 – 8,500 Birr (QR Digital Menu Express)</option>
+                    <option value="10,500 - 18,500 Birr">10,500 – 18,500 Birr (Standard Restaurant & Bar)</option>
+                    <option value="24,000+ Birr">24,000+ Birr (Premium Multi-Branch / Hotel)</option>
                     <option value="Custom Quote">Custom Quote</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                     Desired Timeline
                   </label>
                   <select
                     value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                    className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none min-h-[48px]"
+                    className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none min-h-[48px] transition-colors cursor-pointer"
                   >
-                    <option value="Urgent (2-3 Days)">Urgent (2 to 3 Days)</option>
-                    <option value="Standard (4-6 Days)">Standard (4 to 6 Days)</option>
-                    <option value="Flexible">Flexible</option>
+                    <option value="Ready in ~2-3 Days">Ready in ~2-3 Days (QR Digital Menu / Express)</option>
+                    <option value="Ready in ~4-5 Days">Ready in ~4-5 Days (Standard Restaurant & Bar)</option>
+                    <option value="Ready in ~5-7 Days">Ready in ~5-7 Days (Fine Dining & Ordering)</option>
+                    <option value="Flexible">Flexible Timeline</option>
                   </select>
                 </div>
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-mono text-slate-300 mb-1.5">
+                <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 font-medium">
                   Menu Items & Specific Preferences
                 </label>
                 <textarea
@@ -316,12 +317,12 @@ export default function QuoteModal({ isOpen, onClose, initialData, company }) {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Mention your restaurant location in Addis Ababa, number of dishes, fasting categories, or specific order buttons..."
-                  className="w-full px-3.5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-base focus:border-cyan-500 focus:outline-none resize-none"
+                  className="w-full px-3.5 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base focus:bg-white dark:focus:bg-slate-900 focus:border-cyan-500 focus:outline-none resize-none transition-colors"
                 />
               </div>
 
               {error && (
-                <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/40 text-red-300 text-xs font-mono">
+                <div className="p-3 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-500/40 text-red-700 dark:text-red-300 text-xs font-mono">
                   {error}
                 </div>
               )}

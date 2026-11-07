@@ -1,5 +1,5 @@
 import React from 'react';
-import { QrCode, UtensilsCrossed, Send, Check, ArrowRight, Sparkles } from 'lucide-react';
+import { QrCode, UtensilsCrossed, Send, Check, ArrowRight, Sparkles, Clock } from 'lucide-react';
 import Button from '../ui/Button';
 
 export default function ServicesList({ services = [], onOpenQuote }) {
@@ -58,22 +58,30 @@ export default function ServicesList({ services = [], onOpenQuote }) {
 
                 <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
                   <div>
-                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Starting at</span>
+                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Starting at</span>
                     <div className="text-base sm:text-xl font-bold text-slate-900 dark:text-white">
                       {srv.startingPrice}
                     </div>
                   </div>
 
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => onOpenQuote?.()}
-                    icon={ArrowRight}
-                    iconPosition="right"
-                    className="text-xs sm:text-sm font-semibold min-h-[44px]"
-                  >
-                    Inquire
-                  </Button>
+                  <div className="flex flex-col items-end gap-1.5">
+                    {srv.turnaround && (
+                      <div className="flex items-center gap-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                        <Clock className="w-3 h-3 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                        <span>Ready in ~{srv.turnaround}</span>
+                      </div>
+                    )}
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => onOpenQuote?.()}
+                      icon={ArrowRight}
+                      iconPosition="right"
+                      className="text-xs sm:text-sm font-semibold min-h-[40px] px-3"
+                    >
+                      Inquire
+                    </Button>
+                  </div>
                 </div>
               </div>
             );

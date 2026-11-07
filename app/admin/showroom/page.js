@@ -355,15 +355,15 @@ function ProjectEditorModal({ project, onClose, onSave }) {
             <div>
               <label className="block text-slate-400 font-mono text-[10px] mb-1">Turnaround Days</label>
               <input
-                type="number"
+                type="text"
                 value={form.specs?.turnaroundDays || ''}
                 onChange={(e) =>
                   setForm({
                     ...form,
-                    specs: { ...form.specs, turnaroundDays: parseInt(e.target.value, 10) || 7 },
+                    specs: { ...form.specs, turnaroundDays: e.target.value },
                   })
                 }
-                placeholder="7"
+                placeholder="4-5"
                 className="w-full px-2.5 py-1.5 rounded bg-slate-950 border border-slate-800 text-white"
               />
             </div>

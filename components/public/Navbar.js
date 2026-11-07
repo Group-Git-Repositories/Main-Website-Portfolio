@@ -111,23 +111,22 @@ export default function Navbar({ onOpenQuote, company }) {
 
         {/* Header Right Action Area */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-          {/* Theme Toggle - Hidden on mobile phones to prevent horizontal scroll and ensure full-screen width */}
-          <div className="hidden sm:inline-flex">
-            <ThemeToggle />
-          </div>
+          {/* Theme Toggle - Always visible (on mobile, replaces Get Quote button) */}
+          <ThemeToggle />
 
-          {/* Quick Quote Button */}
-          <Button
-            size="sm"
-            variant="primary"
-            onClick={() => onOpenQuote?.()}
-            icon={ArrowRight}
-            iconPosition="right"
-            className="text-xs font-bold px-2.5 py-2 sm:px-4 sm:py-2.5 shadow-sm min-h-[40px] sm:min-h-[44px]"
-          >
-            <span className="hidden xs:inline">Get a Website</span>
-            <span className="xs:hidden">Get Quote</span>
-          </Button>
+          {/* Quick Quote Button - Hidden on mobile, visible on tablet and desktop */}
+          <div className="hidden sm:inline-flex">
+            <Button
+              size="sm"
+              variant="primary"
+              onClick={() => onOpenQuote?.()}
+              icon={ArrowRight}
+              iconPosition="right"
+              className="text-xs font-bold px-3 py-2 sm:px-4 sm:py-2.5 shadow-sm min-h-[40px] sm:min-h-[44px]"
+            >
+              Get a Website
+            </Button>
+          </div>
 
           {/* Mobile Hamburger Button - Minimum 44x44px Touch Target */}
           <button
