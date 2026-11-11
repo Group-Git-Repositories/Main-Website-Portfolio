@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, CheckCircle2, Zap, Utensils, QrCode } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, QrCode } from 'lucide-react';
 import Button from '../ui/Button';
 
 export default function Hero({ hero, company, onOpenQuote }) {
@@ -10,7 +10,6 @@ export default function Hero({ hero, company, onOpenQuote }) {
   const subheadline =
     hero?.subheadline ||
     'We build ultra-fast restaurant websites and digital QR menus that open in under 1 second on any smartphone. Let customers browse your fasting (የጾም) and non-fasting dishes, book tables, and order directly on WhatsApp or Telegram.';
-  const badgeText = hero?.badgeText || 'Restaurant & Menu Websites in Ethiopia';
 
   const metrics = [
     { label: 'Mobile Loading', value: 'Instant (< 1s)', icon: Zap },
@@ -41,12 +40,6 @@ export default function Hero({ hero, company, onOpenQuote }) {
     <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-24 md:pt-28 md:pb-32 tech-grid-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          {/* Section Subtitle */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/20 text-xs font-mono font-semibold tracking-wider text-cyan-700 dark:text-cyan-400 uppercase mb-5 sm:mb-6">
-            <Utensils className="w-3.5 h-3.5 shrink-0" />
-            <span>{badgeText}</span>
-          </div>
-
           {/* Headline - Responsive typography */}
           <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-5 sm:mb-6">
             {headline}
