@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 10,
   "company": {
     "name": "ROHA Dev",
     "legalName": "ROHA Dev",
@@ -387,6 +387,5 @@
       "answer": "የQR ኮድ ሜኑ ከ 5 እስከ 7 ቀናት ውስጥ ዝግጁ ይሆናል። ሙሉ የሬስቶራንት ድረ-ገጽ ደግሞ ከ 10 እስከ 14 ቀናት ውስጥ ተጠናቆ ለስራ ዝግጁ ይሆናል።"
     }
   ],
-  "version": 9,
   "lastSaved": "2026-11-07T15:34:34.894Z"
 }
